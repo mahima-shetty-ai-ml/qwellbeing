@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">  
+    <title>Document</title>
+    <!--Jquery, CSS, JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+
+    <!--CSS file-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                
+                <a class="navbar-brand" href="#">Quarantine WellBeing</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Guide</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Virtual Chatbot</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Emergency
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="https://covidrelief.glideapp.io/">Resources</a></li>
+                  <li><a class="dropdown-item" href="https://covidrelief.glideapp.io/dl/ewAiAHQAIgA6ADAALAAiAHMAIgA6ACIAbQBlAG4AdQAtADAAOABhADAAOQA1ADUAYwAtADMAMwAyADUALQA0ADIAMgAwAC0AOAA4AGMAOAAtADEANgA0ADcAMgBlADEAMAA3ADcAYQAwAC0ANAAwADQAYwBjADIAOABkADAAMgAxADEAZQA4AGMAYQBkADUAMwBhAGMAMgA3ADgAZAAzADgAZgBiAGMAMQAxACIALAAiAHIAIgA6ACIAMABuAHYAegBEAGUAVgB3AFQAaABPADcAVgBuADMAMQA4AFAANgAxAHYAZwAiACwAIgBuACIAOgAiAFMAdABhAHQAZQB3AGkAcwBlACAAQwBvAHYAaQBkACAASABlAGwAcABsAGkAbgBlAHMAIgB9AA%3D%3D">Contact numbers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  More
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="login.html">Covid Tracker</a></li>
+                  <li><a class="dropdown-item" href="login.html">Login</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header>    
+
+
+<!--login modal
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="form col-md-12 center-block">
+                <div class="form-group">
+                  <input class="form-control input-lg" placeholder="Email" type="text">
+                </div>
+                <div class="form-group">
+                  <input class="form-control input-lg" placeholder="Password" type="password">
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary btn-lg btn-block">Login</button>
+                  <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>  -->
+  
+<section style="margin: 50px;">
+<h1>Basic Guidelines for Home Quarantine</h1><br>
+<div class="row">
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/2.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/3.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/4.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/5.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/6.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/7.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/8.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/9.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/10.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section style="margin: 50px;">
+  <h1>Prevention for the caretakers</h1><br>
+  <div class="row">
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/11.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/12.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/2.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/3.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/4.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/5.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/6.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: rgb(226, 226, 226); border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/7.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+<!--footer-->
+<section style="background-color: rgb(56, 56, 56);">
+   <div style="text-align: center;"><br>
+    <h4 style="color: white;">Copyright @2021</h4>
+   </div>>
+</section>
+</body>
+</html>
