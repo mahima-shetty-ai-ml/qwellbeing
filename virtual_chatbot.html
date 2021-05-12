@@ -79,14 +79,90 @@
 
                                         </div>
 
+                                        <!-- asking oximeter -->
+                                    <div data-conv-fork="first-question">
+                                        <div data-conv-case="yes">
+                                            <select name="oximeter[]" data-conv-question="What is your Oximeter pulse rating?" >
+                                                <option value="below90">Below 90</option>
+                                                <option value="90-94">90 - 94</option>
+                                                <option value="95">95</option>
+                                                <option value="96above">96 - above</option>
+                                                <option value="none">I don't have an oximeter</option>
+
+                                            </select>
+                                        </div>
+                                        <div data-conv-case="no">
+                                            <select name="p_measures" data-conv-question="Okay. Have a look at this precautionary measures to protect yourself from coronavirus." >
+                                                <option value="yes" data-callback="index_page">Ok</option>
+		                                    	
+                                            </select>
+
+                                            <!-- <input type="text" data-conv-question="Okay. Have a look at this precautionary measures to protect yourself from coronavirus." > -->
+                                            <!-- data-no-answer="true" -->
+                                            
+                                        </div>
+                                    </div>
+
+                                    <!-- response to oximeter -->
+                                    <div data-conv-fork="oximeter[]">
+
+                                        <div data-conv-case="below90">
+                                            <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
+                                            <select name="doctor_consultancy" data-conv-question="Would you like to consult doctor?" >
+                                                <option value="yes" data-callback="login">Yes</option>
+	                                            <option value="no">No</option>
+                                            </select>
+
+                                        </div>
+                                        <div data-conv-case="90-94">
+                                            <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
+                                            <select name="doctor_consultancy" data-conv-question="Would you like to consult doctor?" >
+                                                <option value="yes" data-callback="login">Yes</option>
+	                                            <option value="no">No</option>
+                                            </select>
+
+                                        </div>
+                                        <div data-conv-case="95">
+                                            <input type="text" data-conv-question="Looks perfect!" data-no-answer="true">
+                                            <select name="p_measures" data-conv-question="Okay. Have a look at this precautionary measures to protect yourself from coronavirus." >
+                                                <option value="yes" data-callback="index_page">Ok</option>
+		                                    	
+                                            </select>
+
+                                        </div>
+
+                                        <div data-conv-case="96above">
+                                            <input type="text" data-conv-question="Looks perfect!" data-no-answer="true">
+                                            <select name="p_measures" data-conv-question="Okay. Have a look at this precautionary measures to protect yourself from coronavirus." >
+                                                <option value="yes" data-callback="index_page">Ok</option>
+		                                    	
+                                            </select>
+
+                                        </div>
+
+                                        <div data-conv-case="none">
+                                            <input type="text" data-conv-question="Okay, cool!" data-no-answer="true">
+                                            <!-- <select name="p_measures" data-conv-question="Okay. Have a look at this precautionary measures to protect yourself from coronavirus." >
+                                                <option value="yes" data-callback="index_page">Ok</option>
+		                                    	
+                                            </select> -->
+
+                                        </div>
+
+
+
+
+
+
                                         <!-- asking for less common symptoms -->
                                         <div data-conv-case="none">
                                             <select name="less_common[]" data-conv-question="Did you faced any of the following problem?" >
                                                 <option value="sore throat">sore throat</option>
                                                 <option value="loss of taste or smell">loss of taste or smell</option>
                                                 <option value="conjunctivitis">conjunctivitis</option>
-                                                <option value="none">None</option>
                                                 <option value="discolouration of fingers">discolouration of fingers</option>
+                                                <option value="none">None</option>
+                                                
                                                 
                                             </select>
                                             
