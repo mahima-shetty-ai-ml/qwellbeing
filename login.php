@@ -6,7 +6,7 @@
 
         $email_address = $_POST['email-address'];  
         $password = $_POST['password'];  
-        $sql = "select *from users where email_address = '$email_address'"; 
+        $sql = "select * from users where email_address = '$email_address'"; 
 
         $result = mysqli_query($conn, $sql);
         
@@ -64,7 +64,7 @@
                     <a class="nav-link" href="index.html">Guide</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/virtual_chatbot.html">Virtual Chatbot</a>
+                    <a class="nav-link" href="virtual_chatbot.html">Virtual Chatbot</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -80,8 +80,8 @@
                       More
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="login.html">Covid Tracker</a></li>
-                      <li><a class="dropdown-item" href="login.html">Login</a></li>
+                      <li><a class="dropdown-item" href="login.php">Covid Tracker</a></li>
+                      <li><a class="dropdown-item" href="login.php">Login</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -120,7 +120,7 @@
                                     <div class="col-md-6 offset-md-4">
                                         <div class="checkbox">
                                             <label>
-                                                Don't have an account? <a href="register.html">Register</a>
+                                                Don't have an account? <a href="register.php">Register</a>
                                             </label>
                                         </div>
                                     </div>

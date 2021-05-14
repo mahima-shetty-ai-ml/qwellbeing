@@ -201,7 +201,7 @@
                                     <div class="col-md-6 offset-md-4">
                                         <div class="checkbox">
                                             <label>
-                                                Already have an account? <a href="login.html">Login</a>
+                                                Already have an account? <a href="login.php">Login</a>
                                             </label>
                                         </div>
                                     </div>
