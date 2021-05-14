@@ -165,6 +165,53 @@
                         <div class="card-header">Register</div>
                         <div class="card-body">
                             <form action="register.php" method="POST">
+                            <div class="form-group row">
+                                    <label for="fname" class="col-md-4 col-form-label text-md-right">First name: </label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="fname" class="form-control" name="fname" required autofocus>
+                                    </div>
+                                </div><br>
+                                
+
+                                <div class="form-group row">
+                                    <label for="lname" class="col-md-4 col-form-label text-md-right">Last name: </label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="lname" class="form-control" name="lname" required autofocus>
+                                    </div>
+                                </div><br>
+                                
+                                <div class="form-group row">
+                                    <label for="age" class="col-md-4 col-form-label text-md-right">Age: </label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="age" class="form-control" name="age" required autofocus>
+                                    </div>
+                                </div><br>
+
+                                <div class="form-group row">
+                                    <label for="age" class="col-md-4 col-form-label text-md-right">Gender: </label>
+                                    <div class="col-md-6">
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="gender" id="male">
+  <label class="form-check-label" for="male">
+    Male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="gender" id="female">
+  <label class="form-check-label" for="female">
+    Female
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="gender" id="other">
+  <label class="form-check-label" for="other">
+    Other
+  </label>
+</div>
+                                    </div>
+                                </div><br>
+
+                                
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-mail address: </label>
                                     <div class="col-md-6">

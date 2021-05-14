@@ -45,11 +45,7 @@
                     <a class="nav-link"  href="index.html">Guide</a>
                   </li>
                   <li class="nav-item">
-<<<<<<< HEAD
-                    <a class="nav-link active" aria-current="page" href="virtual_chatbot.html">Virtual Chatbot</a>
-=======
                     <a class="nav-link" href="/virtual_chatbot.html">Virtual Chatbot</a>
->>>>>>> fd2a29253f92ae630362cc2211c8e129e9a3bf66
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -67,7 +63,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <li><a class="dropdown-item" href="login.html">Covid Tracker</a></li>
-                      <li><a class="dropdown-item" href="login.php">Login</a></li>
+                      <li><a class="dropdown-item" data-toggle="modal" data-target="#loginModal">Login</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -359,5 +355,64 @@
 			console.log(convForm);
 		});
 	</script>
+
+<!--login moadal-->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Covid tracker - Daily Update</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-12">
+              <form action="login.php" method="POST">
+                <div class="form-group row">
+                    <label for="email_address" class="col-md-4 col-form-label text-md-right">E-mail address: </label>
+                    <div class="col-md-6">
+                        <input type="text" id="email_address" class="form-control" name="email-address" required autofocus>
+                    </div>
+                </div>
+  
+            <br>
+  
+                <div class="form-group row">
+                    <label for="password" class="col-md-4 col-form-label text-md-right">Password: </label>
+                    <div class="col-md-6">
+                        <input type="password" id="password" class="form-control" name="password" required>
+                    </div>
+                </div><br>
+  
+                <div class="form-group row">
+                    <div class="col-md-6 offset-md-4">
+                        <div class="checkbox">
+                            <label>
+                                Don't have an account? <a href="register.php">Register</a>
+                            </label>
+                        </div>
+                    </div>
+                </div><br>
+  
+                <div class="col-md-6 offset-md-4">
+                    <button type="submit" class="btn btn-primary">
+                        Login
+                    </button>
+                    <a href="#" class="btn btn-link">
+                        Forgot Your Password?
+                    </a>
+                </div>
+        </div>
+        </form>
+  </div>
+  </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
 </body>
 </html>
