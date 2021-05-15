@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Patient dashboard</title>
 	<!-- Load Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
@@ -207,7 +208,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Guide</a>
+                <a class="nav-link" href="index.html">Guide</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="virtual_chatbot.html">Virtual Chatbot</a>
@@ -222,7 +223,7 @@
                 </ul>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Profile
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -237,8 +238,361 @@
       </nav>
 </header>    
 <!--end of Navbar-->
+<!--dashboard-->
+<section style="margin: 20px;">
+  <div class="row">
+    <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title d-inline-block">Symptoms</h4> 
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Symptom/Days</th>
+                  <th scope="col">1</th>
+                  <th scope="col">2</th>
+                  <th scope="col">3</th>
+                  <th scope="col">4</th>
+                  <th scope="col">5</th>
+                  <th scope="col">6</th>
+                  <th scope="col">7</th>
+                  <th scope="col">8</th>
+                  <th scope="col">9</th>
+                  <th scope="col">10</th>
+                  <th scope="col">11</th>
+                  <th scope="col">12</th>
+                  <th scope="col">13</th>
+                  <th scope="col">14</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Dry Cough</th>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th scope="row">Fever</th>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th scope="row">Breathlessness</th>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sore throat</th>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th scope="row">Headache</th>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th scope="row">Body pain</th>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th scope="row">Diarrhea</th>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th scope="row">Nausea/vomiting</th>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <th scope="row">Irritability/confusion</th>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
+      <div class="card">
+        <div class="card-body" style="margin: 0px; padding: 5%;">
+          <div class="chart-title">
+            <h4>Oxygen level</h4>
+            <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
+          </div>	
+          <canvas id="linegraph"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
+      <div class="card">
+        <div class="card-body" style="margin: 0px; padding: 5%;">
+          <div class="chart-title">
+            <h4>Temperature</h4>
+            <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
+          </div>	
+          <canvas id="linegraph1"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
+      <div class="card">
+        <div class="card-body" style="margin: 0px; padding: 5%;">
+          <div class="chart-title">
+            <h4>Heart Rate</h4>
+            <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
+          </div>	
+          <canvas id="linegraph2"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div  style="text-align: center;" class="col-md-2">
+            <svg xmlns="http://www.w3.org/2000/svg"   width="80px" height="150px"  fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">Prevention for caretakers</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <a style="margin-bottom: 20px;" href="#" class="btn btn-primary float-right">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div style="text-align: center;" class="col-md-2">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="100px" height="150px" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+              <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+            </svg>          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">Home Quarantine Guidelines</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <a style="margin-bottom: 20px;" href="#" class="btn btn-primary float-right">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div  style="text-align: center;" class="col-md-2">
+            <svg xmlns="http://www.w3.org/2000/svg"  width="100px" height="150px" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            </svg>
+          </div>
+          <div class="col-md-10">
+            <div class="card-body">
+              <h5 class="card-title">Daily Checklist</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <a style="margin-bottom: 20px;" class="btn btn-primary float-right" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Check the list!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  </div></div>
+</section>
+<script src="src/js/jquery-3.2.1.min.js"></script>
+<script src="src/js/popper.min.js"></script>
+  <script src="src/js/jquery.slimscroll.js"></script>
+  <script src="src/js/Chart.bundle.js"></script>
+  <script src="src/js/chart.js"></script>
+  <script src="src/js/app.js"></script>
 
 
+  <!--Checklish-->
 
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Checklist for Covid Warriors!</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="row">
+        <div class="col-md-12">
+          <form action="#" method="POST">
+<div class="form-group row">
+  <div style="text-align: center;">
+    <img style="width: 150px;" src="images/checklist.png"/>
+  </div>
+<div class="col-md-6">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Dry cough
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Fever
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Breathlessness
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Sore throat
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Headache
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Body pain
+    </label>
+  </div><div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Diarrhea
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Nausea/vomiting
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Irritability/confusion
+    </label>
+  </div>
+    </div>
+  </div>
 </body>
 </html>
