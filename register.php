@@ -32,7 +32,7 @@
             
         
         
-            $sql = "Select * from users where email_address='$email_address'";
+            $sql = "Select * from patients where email_address='$email_address'";
             
             $result = mysqli_query($conn, $sql);
             
@@ -47,7 +47,7 @@
                                         PASSWORD_DEFAULT);
                         
                     // Password Hashing is used here. 
-                    $sql = "INSERT INTO `users` ( `email_address`,`first_name`, `last_name`, `age`, `gender`, `password`, `date`) VALUES ('$email_address', '$first_name' ,'$last_name','$age','$gender','$hash', current_timestamp())";
+                    $sql = "INSERT INTO `patients` ( `email_address`,`first_name`, `last_name`, `age`, `gender`, `password`, `date`) VALUES ('$email_address', '$first_name' ,'$last_name','$age','$gender','$hash', current_timestamp())";
             
                     
                     $result = mysqli_query($conn, $sql);

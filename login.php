@@ -6,7 +6,7 @@
 
         $email_address = $_POST['email-address'];  
         $password = $_POST['password'];  
-        $sql = "select * from users where email_address = '$email_address'"; 
+        $sql = "select * from patients where email_address = '$email_address'"; 
 
         $result = mysqli_query($conn, $sql);
         
@@ -17,7 +17,7 @@
         if($count == 1 && password_verify($password,$row['password'])){  
             echo "<script>
                             alert('Login successful');
-                            window.location.href='./profile.php';
+                            window.location.href='./p_dashboard.html';
                 </script>";  
         }  
         else{  
