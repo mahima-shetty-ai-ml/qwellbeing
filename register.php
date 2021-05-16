@@ -6,7 +6,10 @@
         
         include 'connect.php ';
         
-        
+        $first_name = $_POST["fname"]; 
+        $last_name = $_POST["lname"]; 
+        $age =   $_POST["age"]; 
+        $gender = $_POST["gender"]; 
         $email_address = $_POST["email-address"]; 
         $password = $_POST["password"]; 
         $conpassword = $_POST["conpassword"];
@@ -44,17 +47,24 @@
                                         PASSWORD_DEFAULT);
                         
                     // Password Hashing is used here. 
-                    $sql = "INSERT INTO `users` ( `email_address`, 
-                        `password`, `date`) VALUES ('$email_address', 
-                        '$hash', current_timestamp())";
+                    $sql = "INSERT INTO `users` ( `email_address`,`first_name`, `last_name`, `age`, `gender`, `password`, `date`) VALUES ('$email_address', '$first_name' ,'$last_name','$age','$gender','$hash', current_timestamp())";
             
+                    
                     $result = mysqli_query($conn, $sql);
+                    
+                    // if(!$result){
+                    //     echo "<script>
+                    //     alert('error in gender  $gender');
+
+                    //     window.location.href='./register.php';
+                    // </script>";
+                    // }
             
                     if ($result) {
                     
                         echo "<script>
                             alert('You have been sucessfully registered');
-                            window.location.href='./profile.php';
+                            window.location.href='./p_dashboard.html';
                         </script>";
                     }
                 } //end if password
@@ -108,7 +118,7 @@
     });
     </script>
     <!--CSS file-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
 
@@ -188,26 +198,26 @@
                                 </div><br>
 
                                 <div class="form-group row">
-                                    <label for="age" class="col-md-4 col-form-label text-md-right">Gender: </label>
+                                    <label  class="col-md-4 col-form-label text-md-right">Gender: </label>
                                     <div class="col-md-6">
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="gender" id="male">
-  <label class="form-check-label" for="male">
-    Male
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="gender" id="female">
-  <label class="form-check-label" for="female">
-    Female
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="gender" id="other">
-  <label class="form-check-label" for="other">
-    Other
-  </label>
-</div>
+                                        <div class="form-check">
+                                        <input class="form-check-input" type="radio" value = "male" name="gender" id="male">
+                                        <label class="form-check-label" for="male">
+                                            Male
+                                        </label>
+                                        </div>
+                                        <div class="form-check">
+                                        <input class="form-check-input" type="radio" value = "female" name="gender" id="female">
+                                        <label class="form-check-label" for="female">
+                                            Female
+                                        </label>
+                                        </div>
+                                        <div class="form-check">
+                                        <input class="form-check-input" type="radio" value = "other" name="gender" id="other">
+                                        <label class="form-check-label" for="other">
+                                            Other
+                                        </label>
+                                        </div>
                                     </div>
                                 </div><br>
 
