@@ -54,17 +54,17 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">
                     
-                    <a class="navbar-brand" href="#">Quarantine WellBeing</a>
+                    <a class="navbar-brand" href="./index.html">Quarantine WellBeing</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="index.html">Guide</a>
+                    <a class="nav-link" href="./qw.html">Guide</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="virtual_chatbot.html">Virtual Chatbot</a>
+                    <a class="nav-link" href="./virtual_chatbot.html">Virtual Chatbot</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -80,8 +80,8 @@
                       More
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="login.php">Covid Tracker</a></li>
-                      <li><a class="dropdown-item" href="login.php">Login</a></li>
+                      <li><a class="dropdown-item" href="./login.php">Covid Tracker</a></li>
+                      <li><a class="dropdown-item" href="./login.php">Login</a></li>
                     </ul>
                   </li>
                 </ul>

@@ -57,5 +57,6 @@ h5{
 }
 .card{
     margin:15px ;
-    background-color:#F8F4F1;
+    /* background-color:#F8F4F1; */
+    background-color: brown;
 }

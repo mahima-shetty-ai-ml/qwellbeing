@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Quarantine Well Being</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="src/css/main.css">
    
 </head>
 <body>
@@ -15,19 +15,19 @@
 
     <div class="navbar">
         <div class="container">
-            <a class="logo" href="/index.html">Q-<span>WELLBEING</span></a>
+            <a class="logo" href="./index.html">Q-<span>WELLBEING</span></a>
             <img  class="mobile-menu" id="mobile-cta" src="images/menu.svg" alt="Navigation">     
             <!-- navbar -->
             <nav>
                 <img class="mobile-menu" id="mobile-exit" src="images/exit.svg" alt="exit">
                 <ul class="primary-nav">
-                    <li class="current"  id="home"><a href="/index.html">HOME</a></li>
-                    <li><a href="/qw.html" id="wellbeing" target="blank">Q-WELLBEING</a></li>
-                    <li id="chat" id="chatbot"><a href="#">NEED A FRIEND?</a></li>
+                    <li class="current"  id="home"><a href="./index.html">HOME</a></li>
+                    <li><a href="./qw.html" id="wellbeing" target="blank">Q-WELLBEING</a></li>
+                    <li id="chat" id="chatbot"><a href="./virtual_chatbot.html">NEED A FRIEND?</a></li>
                 </ul>
 
                 <ul class="sec-now">
-                    <li><a href="/contact.html" target="blank">CONTACT</a></li>
+                    <li><a href="./contact.html" target="blank">CONTACT</a></li>
                     <li><a href="/about.html" target="blank"> ABOUT US</a></li>
                 </ul>
             </nav>
@@ -103,7 +103,7 @@
             <h2>
                 contact
             </h2>
-            <form action="backend.php">
+            <form id = "contact" action="backend.php">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name">
             
