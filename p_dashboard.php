@@ -1,6 +1,25 @@
 <?php 
 session_start();
+include 'connect.php';
+  $temperature = '';
+	$heartrate = '';
+  $oxygen = '';
 
+	//query to get data from the table
+	$sql = "SELECT * FROM `dailyupdate` where id = 16 ";
+    $result = mysqli_query($conn, $sql);
+
+	//loop through the returned data
+	while ($row = mysqli_fetch_array($result)) {
+
+		$temperature = $temperature . '"'. $row['temperature'].'",';
+		$heartrate = $heartrate . '"'. $row['heartrate'] .'",';
+    $oxygen = $oxygen . '"'. $row['oxygen'] .'",';
+	}
+
+	$temperature = trim($temperature,",");
+	$heartrate = trim($heartrate,",");
+  $oxygen = trim($oxygen,",");
 ?>
 
 
@@ -22,8 +41,26 @@ session_start();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+		
+  <!-- <style type="text/css">			
+			body{
+				font-family: Arial;
+			    margin: 80px 100px 10px 100px;
+			    padding: 0;
+			    color: white;
+			    text-align: center;
+			    background: #555652;
+			}
 
- 
+			.container {
+				color: #E8E9EB;
+				background: #222;
+				border: #555652 1px solid;
+				padding: 10px;
+			}
+		</style> -->
+
 </head>
 <body>
 
@@ -277,9 +314,9 @@ session_start();
                     if(!$result){
                           die("QUERY FAILED.".mysqli_error($conn));
                       }
-                    echo "hih";
+                    
                     echo $result;
-                    echo "shabash god";
+                    
                     
                     if ($result) {
                       echo "Successfully added!";
@@ -435,7 +472,7 @@ session_start();
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Covid Tracker - Update</a></li>
                   <li><a class="dropdown-item" href="#">Profile settings</a></li>
-                  <li><a class="dropdown-item" href="#" >Logout</a></li>
+                  <li><a class="dropdown-item" href="./p_dashboard.php" >Logout</a></li>
                 </ul>
               </li>
             </ul>
@@ -452,6 +489,48 @@ session_start();
         <div class="card-header">
           <h4 class="card-title d-inline-block">Symptoms</h4> 
         </div>
+
+        <!-- <div class="container">	
+            <h1>USE CHART.JS WITH MYSQL DATASETS</h1>       
+            <canvas id="chart" style="width: 100%; height: 65vh; background: #222; border: 1px solid #555652; margin-top: 10px;"></canvas>
+
+            <script>
+              var ctx = document.getElementById("chart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                      datasets: 
+                      [{
+                          label: 'Temperature',
+                          data: [<?php echo $temperature; ?>],
+                          backgroundColor: 'transparent',
+                          borderColor:'rgba(255,99,132)',
+                          borderWidth: 3
+                      },
+
+                      {
+                        label: 'Heart Rate',
+                          data: [<?php echo $heartrate; ?>],
+                          backgroundColor: 'transparent',
+                          borderColor:'rgba(0,255,255)',
+                          borderWidth: 3	
+                      }]
+                  },
+              
+                  options: {
+                      scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
+                      tooltips:{mode: 'index'},
+                      legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
+                  }
+              });
+            </script>
+	    </div> -->
+
+
+
+
+
         <div class="card-body p-0">
           <div class="table-responsive">
             <table class="table table-bordered table-striped">
@@ -643,6 +722,34 @@ session_start();
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
           </div>	
           <canvas id="linegraph"></canvas>
+          <div class="container">	
+            <h1>USE CHART.JS WITH MYSQL DATASETS</h1>       
+            <canvas id="chart" style="width: 100%; height: 65vh; background: #222; border: 1px solid #555652; margin-top: 10px;"></canvas>
+
+            <script>
+              var ctx = document.getElementById("chart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                      datasets: 
+                      [{
+                          label: 'Temperature',
+                          data: [<?php echo $temperature; ?>],
+                          backgroundColor: 'transparent',
+                          borderColor:'rgba(255,99,132)',
+                          borderWidth: 3
+                      }]
+                  },
+              
+                  options: {
+                      scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
+                      tooltips:{mode: 'index'},
+                      legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
+                  }
+              });
+            </script>
+	    </div>
         </div>
       </div>
     </div>
@@ -654,6 +761,36 @@ session_start();
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
           </div>	
           <canvas id="linegraph1"></canvas>
+          <div class="container">	
+            <h1>USE CHART.JS WITH MYSQL DATASETS</h1>       
+            <canvas id="chart1" style="width: 100%; height: 65vh; background: #222; border: 1px solid #555652; margin-top: 10px;"></canvas>
+
+            <script>
+              var ctx = document.getElementById("chart1").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                      datasets: 
+                      [
+
+                      {
+                        label: 'Heart Rate',
+                          data: [<?php echo $heartrate; ?>],
+                          backgroundColor: 'transparent',
+                          borderColor:'rgba(0,255,255)',
+                          borderWidth: 3	
+                      }]
+                  },
+              
+                  options: {
+                      scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
+                      tooltips:{mode: 'index'},
+                      legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
+                  }
+              });
+            </script>
+	    </div>
         </div>
       </div>
     </div>
@@ -665,6 +802,36 @@ session_start();
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
           </div>	
           <canvas id="linegraph2"></canvas>
+          <div class="container">	
+            <h1>USE CHART.JS WITH MYSQL DATASETS</h1>       
+            <canvas id="chart2" style="width: 100%; height: 65vh; background: #222; border: 1px solid #555652; margin-top: 10px;"></canvas>
+
+            <script>
+              var ctx = document.getElementById("chart2").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                      datasets: 
+                      [
+
+                      {
+                        label: 'Oxygen',
+                          data: [<?php echo $oxygen; ?>],
+                          backgroundColor: 'transparent',
+                          borderColor:'rgba(0,255,255)',
+                          borderWidth: 3	
+                      }]
+                  },
+              
+                  options: {
+                      scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
+                      tooltips:{mode: 'index'},
+                      legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
+                  }
+              });
+            </script>
+	    </div>
         </div>
       </div>
     </div>
