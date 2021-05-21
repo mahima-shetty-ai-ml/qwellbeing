@@ -1,7 +1,7 @@
 <?php
-
+    session_start();
     $exists=false;
-        
+    
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         
         include 'connect.php ';
@@ -30,7 +30,9 @@
         } 
         else{
             
-        
+            
+            
+            
         
             $sql = "Select * from patients where email_address='$email_address'";
             
@@ -59,13 +61,26 @@
                     //     window.location.href='./register.php';
                     // </script>";
                     // }
-            
+                    $_SESSION["emailaddress"] = $email_address;
                     if ($result) {
                     
                         echo "<script>
                             alert('You have been sucessfully registered');
-                            window.location.href='./p_dashboard.html';
+                            // window.location.href='./p_dashboard.php';
                         </script>";
+
+                        $_SESSION['emailaddress'] = $email_address;
+                        $getid = "Select id from patients where email_address='{$_SESSION['emailaddress']}'";
+                        $result = $conn->query($getid);
+
+
+                        $row = $result->fetch_array(MYSQLI_ASSOC);
+                        $_SESSION['id'] = $row["id"];
+
+                        echo "<script>
+                                        window.location.href='./p_dashboard.php';
+                            </script>";
+
                     }
                 } //end if password
                 else { 

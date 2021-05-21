@@ -1,6 +1,6 @@
 <?php
    
-   define('DB_HOST','localhost');
+   define('DB_HOST','localhost: 3307');
    define('DB_NAME','qwellbeing');
    define('DB_USERNAME','root');
    define('DB_PASSWORD','root');
@@ -8,7 +8,7 @@
    
     //to check db connection
     if($conn) {
-        // echo "DB successfully connected"; 
+        echo "DB successfully connected"; 
     } 
     else {
         die("Error in DB connection ". mysqli_connect_error()); 

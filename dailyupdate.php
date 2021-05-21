@@ -1,3 +1,115 @@
+<?php
+    session_start();
+    $exists=false;
+    // echo "Welcome, ".$_SESSION['emailaddress'];    
+    // if($_SERVER["REQUEST_METHOD"] == "POST") {
+        
+    //     include 'connect.php ';
+        
+    //     $temperature = $_POST["temperature"]; 
+    //     $oxygen = $_POST["oxygen"]; 
+    //     $heartrate =   $_POST["heartrate"]; 
+        
+
+    //     $checkbox1=$_POST['severesymptoms'];  
+    //     $severesymptoms="";  
+    //     foreach($checkbox1 as $chk1)  
+    //     {  
+    //         $severesymptoms .= $chk1.",";  
+    //     } 
+
+    //     $checkbox2=$_POST['moderatesymptoms'];  
+    //     $moderatesymptoms="";  
+    //     foreach($checkbox2 as $chk1)  
+    //     {  
+    //         $moderatesymptoms .= $chk1.",";  
+    //     } 
+
+
+    //     $checkbox3=$_POST['commonsymptoms'];  
+    //     $commonsymptoms="";  
+    //     foreach($checkbox3 as $chk1)  
+    //         {  
+    //             $commonsymptoms .= $chk1.",";  
+    //         }
+                
+    //     // $uppercase = preg_match('@[A-Z]@', $password);
+    //     // $lowercase = preg_match('@[a-z]@', $password);
+    //     // $number    = preg_match('@[0-9]@', $password);
+    //     // $specialChars = preg_match('@[^\w]@', $password);
+
+    //     //password criteria is not satisfied
+    //     if($temperature) {
+           
+            
+        
+        
+    //         $getid = "Select id from patients where email_address='{$_SESSION['emailaddress']}'";
+            
+    //         $id = mysqli_query($conn, $getid);
+            
+
+
+    //         $num = mysqli_num_rows($id); 
+            
+    //         //new user
+    //         if($num == 1) {
+    //             //passord matches
+    //             if($exists==false) {
+            
+                     
+
+
+
+    //                 $sql = "INSERT INTO `dailyupdate` ( `id`,`temperature`, `oxygen`, `heartrate`, `severesymptoms`, `moderatesymptoms`, `commonsymptoms`, `date`) VALUES ('$id', '$temperature' ,'$oxygen','$heartrate','$severesymptoms','$moderatesymptoms','$commonsymptoms', current_timestamp())";
+            
+                    
+    //                 $result = mysqli_query($conn, $sql);
+                    
+    //                 // if(!$result){
+    //                 //     echo "<script>
+    //                 //     alert('error in gender  $gender');
+
+    //                 //     window.location.href='./register.php';
+    //                 // </script>";
+    //                 // }
+            
+    //                 if ($result) {
+                    
+    //                     echo "<script>
+    //                         alert('Your data have been sucessfully uploaded');
+    //                         window.location.href='./p_dashboard.php';
+    //                     </script>";
+    //                 }
+    //             } //end if password
+    //             else { 
+                    
+    //                 echo "<script>
+    //                     alert('Sorry, your data have not been uploaded! Please try again');
+    //                     window.location.href='./register.php';
+    //                 </script>"; 
+    //             }      
+    //         }// end if num==0
+            
+    //         //user with same emailid already exists
+    //         // if($num>0) 
+    //         // {
+                
+    //         //     echo "<script>
+    //         //         alert('User with same emailid already exists');
+    //         //         window.location.href='./register.php';
+    //         //     </script>"; 
+    //         // } 
+            
+    //     }//end else 
+    // }//end if
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,93 +147,110 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-md-12">
-            <form action="#" method="POST">
+            <form action="./dailyupdate.php" method="POST">
               <div class="form-group row">
-                <label for="fname" class="col-md-4 col-form-label text-md-right">Temperature: </label>
+                <label for="temperature" class="col-md-4 col-form-label text-md-right">Temperature: </label>
                 <div class="col-md-6">
-                  <input type="text" id="fname" class="form-control" name="fname" required autofocus>
+                  <input type="text" id="temperature" class="form-control" name="temperature" required autofocus>
                 </div>
               </div><br>
               <div class="form-group row">
-                <label for="fname" class="col-md-4 col-form-label text-md-right">Oxygen level: </label>
+                <label for="oxygen" class="col-md-4 col-form-label text-md-right">Oxygen level: </label>
                 <div class="col-md-6">
-                  <input type="text" id="fname" class="form-control" name="fname" required autofocus>
+                  <input type="text" id="oxygen" class="form-control" name="oxygen" required autofocus>
                 </div>
               </div><br>
               <div class="form-group row">
-                <label for="fname" class="col-md-4 col-form-label text-md-right">Heart rate: </label>
+                <label for="heartrate" class="col-md-4 col-form-label text-md-right">Heart rate: </label>
                 <div class="col-md-6">
-                  <input type="text" id="fname" class="form-control" name="fname" required autofocus>
+                  <input type="text" id="heartrate" class="form-control" name="heartrate" required autofocus>
                 </div>
               </div><br>
 
 
 <div class="form-group row">
-  <label for="fname" class="col-md-4 col-form-label text-md-right">Symptoms: </label>
+  <label for="symptoms" class="col-md-4 col-form-label text-md-right">Symptoms: </label>
   <div class="col-md-6">
-    <label>Major symptoms</label><br>
+    <label>Severe symptoms</label><br>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Dry cough
+      <input class="form-check-input" type="checkbox" value="Yes" id="severesymptoms" name="breathingproblem">
+      <label class="form-check-label" for="severesymptoms">
+        Breathing problem
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Fever
+      <input class="form-check-input" type="checkbox" value="Yes" id="severesymptoms" name="speakingproblem">
+      <label class="form-check-label" for="severesymptoms">
+        Speaking problem
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Breathlessness
+      <input class="form-check-input" type="checkbox" value="Yes" id="severesymptoms" name="chestpain">
+      <label class="form-check-label" for="severesymptoms">
+        Chest pain
       </label>
     </div>
-    <label>Minor symptoms</label><br>
+    <label>Moderate Severe symptoms</label><br>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
+      <input class="form-check-input" type="checkbox" value="Yes" id="moderatesymptoms" name="sorethroat">
+      <label class="form-check-label" for="moderatesymptoms">
         Sore throat
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Headache
+      <input class="form-check-input" type="checkbox" value="Yes" id="moderatesymptoms" name="lossoftasteandsmell">
+      <label class="form-check-label" for="moderatesymptoms">
+        Loss of taste and smell
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Body pain
+      <input class="form-check-input" type="checkbox" value="Yes" id="moderatesymptoms" name="conjunctivitis">
+      <label class="form-check-label" for="moderatesymptoms">
+      Conjunctivitis
       </label>
     </div><div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Diarrhea
+      <input class="form-check-input" type="checkbox" value="Yes" id="moderatesymptoms" name="discolourationoffingers">
+      <label class="form-check-label" for="moderatesymptoms">
+        Discolouration of Fingers
+      </label>
+    </div>
+    <label>Common symptoms</label><br>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="Yes" id="commonsymptoms" name="fever">
+      <label class="form-check-label" for="commonsymptoms">
+        Fever
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Nausea/vomiting
+      <input class="form-check-input" type="checkbox" value="Yes" id="commonsymptoms" name="drycough">
+      <label class="form-check-label" for="commonsymptoms">
+        Dry Cough
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Irritability/confusion
+      <input class="form-check-input" type="checkbox" value="Yes" id="commonsymptoms" name="tiredness">
+      <label class="form-check-label" for="commonsymptoms">
+      Tiredness
       </label>
+    
     </div>
+    
+
   </div>
-</div><br>
+</div>
+
+
+<br>
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
   <button type="Submit" class="btn btn-primary">Submit</button>
 </div>
 </div>
 </form>
+
+
+
+
 </div>
 </div>
 </div>
@@ -129,6 +258,197 @@
 </div>
 </div>
 </div>
+<?php
+    
+    // session_start();
+    echo "Welcome, ".$_SESSION['emailaddress'];
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        
+        include 'connect.php ';
+        
+        $temperature = $_POST["temperature"]; 
+        $oxygen = $_POST["oxygen"]; 
+        $heartrate =   $_POST["heartrate"]; 
+        $BreathingProblem = "";
+        $SpeakingProblem = "";
+        $ChestPain = "";
+        $SoreThroat = "";
+        $Conjunctivitis = "";
+        $LossOfTasteAndSmell = "";
+        $DiscolourationOfFingers = "";
+        $Fever = "";
+        $DryCough = "";
+        $Tiredness = "";
+
+
+
+      if (isset($_POST['breathingproblem']) && ($_POST['breathingproblem'] == "Yes")) {
+        $BreathingProblem = "Yes";
+        } else {
+        $BreathingProblem = "No";
+        }
+
+        if (isset($_POST['speakingproblem']) && ($_POST['speakingproblem'] == "Yes")) {
+          $SpeakingProblem = "Yes";
+          } else {
+          $SpeakingProblem = "No";
+          }
+
+        if (isset($_POST['chestpain']) && ($_POST['chestpain'] == "Yes")) {
+          $ChestPain = "Yes";
+          } else {
+          $ChestPain = "No";
+          }
+        
+          
+        if (isset($_POST['sorethroat']) && ($_POST['sorethroat'] == "Yes")) {
+          $SoreThroat = "Yes";
+          } else {
+          $SoreThroat = "No";
+          }
+        
+        if (isset($_POST['lossoftasteandsmell']) && ($_POST['lossoftasteandsmell'] == "Yes")) {
+          $LossOfTasteAndSmell = "Yes";
+          } else {
+          $LossOfTasteAndSmell = "No";
+          }
+
+        if (isset($_POST['conjunctivitis']) && ($_POST['conjunctivitis'] == "Yes")) {
+          $Conjunctivitis = "Yes";
+          } else {
+          $Conjunctivitis = "No";
+          }
+      
+        if (isset($_POST['discolourationoffingers']) && ($_POST['discolourationoffingers'] == "Yes")) {
+          $DiscolourationOfFingers = "Yes";
+          } else {
+          $DiscolourationOfFingers = "No";
+          }
+
+        if (isset($_POST['fever']) && ($_POST['fever'] == "Yes")) {
+          $Fever = "Yes";
+          } else {
+          $Fever = "No";
+          }
+
+
+          
+        if (isset($_POST['drycough']) && ($_POST['drycough'] == "Yes")) {
+          $DryCough = "Yes";
+          } else {
+          $DryCough = "No";
+          }
+        
+        if (isset($_POST['tiredness']) && ($_POST['tiredness'] == "Yes")) {
+          $Tiredness = "Yes";
+          } else {
+          $Tiredness = "No";
+          }
+        
+                
+        // $uppercase = preg_match('@[A-Z]@', $password);
+        // $lowercase = preg_match('@[a-z]@', $password);
+        // $number    = preg_match('@[0-9]@', $password);
+        // $specialChars = preg_match('@[^\w]@', $password);
+
+        //password criteria is not satisfied
+        if($temperature) {
+           
+            
+        
+            echo "reached here";
+
+            
+            
+
+             
+            
+            //new user
+            if($temperature) {
+                //passord matches
+                if($exists==false) {
+            
+                     
+
+
+                    echo "reached sql dailyupdate";
+                    echo "      ";
+                    
+                    $id = ($_SESSION['id']) ;
+                    // echo $id;
+                    // INSERT INTO `dailyupdate` (`id`, `temperature`, `oxygen`, `heartrate`, `BreathingProblem`, `SpeakingProblem`, `ChestPain`, `SoreThroat`, `LossOfTasteAndSmell`, `Conjunctivitis`, `DiscolourationOfFingers`, `Fever`, `DryCough`, `Tiredness`, `date`) VALUES ('17', '95', '100', '85', 'Yes', 'No', 'No', 'Yes', 'No', 'No', 'No', 'Yes', 'No', 'No', 'current_timestamp()');
+                    $sql = "INSERT INTO `dailyupdate` ( `id`,`temperature`, `oxygen`, `heartrate`, `BreathingProblem`, `SpeakingProblem`, `ChestPain`, `SoreThroat`, `LossOfTasteAndSmell`, `Conjunctivitis`, `DiscolourationOfFingers`, `Fever`, `DryCough`, `Tiredness`, `date`) 
+                    VALUES ('$id', '$temperature' ,'$oxygen','$heartrate','$BreathingProblem','$SpeakingProblem','$ChestPain', '$SoreThroat', '$LossOfTasteAndSmell','$Conjunctivitis','$DiscolourationOfFingers','$Fever','$DryCough','$Tiredness', current_timestamp());";
+                    echo $sql;
+                    $result=mysqli_query($conn,$sql);
+                    
+                    if(!$result){
+                          die("QUERY FAILED.".mysqli_error($conn));
+                      }
+                    echo "hih";
+                    echo $result;
+                    echo "shabash god";
+                    
+                    if ($result) {
+                      echo "Successfully added!";
+                      echo "<script>
+                          alert('Your data have been sucessfully uploaded');
+                          window.location.href='./p_dashboard.php';
+                      </script>";
+                        }
+                    } //end if password
+                    else { 
+                        echo "Not added";
+                        echo "<script>
+                            alert('Sorry, your data have not been uploaded! Please try again');
+                            window.location.href='./register.php';
+                        </script>"; 
+                    }
+                    
+                    $conn->close();
+                    // $resultAll = mysqli_query($conn, $sql);
+                    // if(!$resultAll){
+                    //     die(mysqli_error($conn));
+                    // }
+
+                    // if (mysqli_num_rows($resultAll) > 0) {
+                    //     while($rowData = mysqli_fetch_array($resultAll)){
+                    //         echo $rowData["id"].'<br>';
+                    //     }
+                    // }
+                    
+                    // $result = mysqli_query($conn, $sql);
+                    // $result = mysqli_fetch_assoc($result);
+                    // if(!$result){
+                    //     echo "<script>
+                    //     alert('error in gender  $gender');
+
+                    //     window.location.href='./register.php';
+                    // </script>";
+                    // }
+            
+                          
+            }// end if num==0
+            
+            //user with same emailid already exists
+            // if($num>0) 
+            // {
+                
+            //     echo "<script>
+            //         alert('User with same emailid already exists');
+            //         window.location.href='./register.php';
+            //     </script>"; 
+            // } 
+            
+        }//end else 
+    }//end if
+    ?>
+
+
+
+
+
+
 <!--end of daily tracker modal-->
 
 <!--login moadal-->

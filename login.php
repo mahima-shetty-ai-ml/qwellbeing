@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         include 'connect.php ';
@@ -17,13 +17,36 @@
         if($count == 1 && password_verify($password,$row['password'])){  
             echo "<script>
                             alert('Login successful');
-                            window.location.href='./p_dashboard.html';
-                </script>";  
+                            // window.location.href='./p_dashboard.php';
+                </script>";
+            
+            $_SESSION['emailaddress'] = $email_address;
+            $getid = "Select id from patients where email_address='{$_SESSION['emailaddress']}'";
+            $result = $conn->query($getid);
+
+
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+            $_SESSION['id'] = $row["id"];
+
+            echo "<script>
+                            window.location.href='./p_dashboard.php';
+                </script>";
         }  
         else{  
             echo "<h5> Login failed. Invalid username or password.</h5>";  
         }      
 
+        // $getid = "Select id from patients where email_address='{$_SESSION['emailaddress']}'";
+        // $result = $conn->query($getid);
+
+
+        // $row = $result->fetch_array(MYSQLI_ASSOC);
+        // printf("%s\n", $row["id"]);
+        // $id = mysqli_result($result, 0, "id");
+        // $_SESSION['id'] = $id;
+        
+        
+        
 
     }
 
