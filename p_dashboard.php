@@ -419,7 +419,7 @@
                         ?>
                   </td>
                   <?php
-                    }//end of while
+                     }//end of while
                         // } end of if post
                   ?>
                   
@@ -427,6 +427,8 @@
                 <tr>
                   <th scope="row">Speaking Problem</th>
                   <?php
+                  
+                  $result4 = mysqli_query($conn, $sql4);
 
                     while ($row = mysqli_fetch_assoc($result4)) {
                   ?>
@@ -442,7 +444,7 @@
                 <tr>
                   <th scope="row">Chest Pain</th>
                   <?php
-
+                      $result4 = mysqli_query($conn, $sql4);
                     while ($row = mysqli_fetch_assoc($result4)) {
                   ?>
                   <td> <?php
@@ -457,6 +459,7 @@
                 <tr>
                   <th scope="row">Sore throat</th>
                   <?php
+                  $result4 = mysqli_query($conn, $sql4);
 
                     while ($row = mysqli_fetch_assoc($result4)) {
                   ?>
@@ -472,7 +475,7 @@
                 <tr>
                   <th scope="row">Loss of Taste and smell</th>
                   <?php
-
+                    $result4 = mysqli_query($conn, $sql4);
                     while ($row = mysqli_fetch_assoc($result4)) {
                   ?>
                   <td> <?php
@@ -487,6 +490,7 @@
                 <tr>
                   <th scope="row">Conjunctivitis</th>
                   <?php
+                  $result4 = mysqli_query($conn, $sql4);
 
                     while ($row = mysqli_fetch_assoc($result4)) {
                   ?>
@@ -502,6 +506,7 @@
                 <tr>
                   <th scope="row">Discolouration of Fingers</th>
                   <?php
+                  $result4 = mysqli_query($conn, $sql4);
 
                     while ($row = mysqli_fetch_assoc($result4)) {
                   ?>
@@ -517,6 +522,7 @@
                 <tr>
                   <th scope="row">Fever</th>
                   <?php
+                  $result4 = mysqli_query($conn, $sql4);
 
                     while ($row = mysqli_fetch_assoc($result4)) {
                   ?>
@@ -532,6 +538,7 @@
                 <tr>
                   <th scope="row">Dry Cough</th>
                   <?php
+                   $result4 = mysqli_query($conn, $sql4);
 
                     while ($row = mysqli_fetch_assoc($result4)) {
                   ?>
@@ -547,6 +554,7 @@
                 <tr>
                   <th scope="row">Tiredness</th>
                   <?php
+                  $result4 = mysqli_query($conn, $sql4);
 
                     while ($row = mysqli_fetch_assoc($result4)) {
                   ?>
