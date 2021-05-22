@@ -1,24 +1,26 @@
+<!-- data visualisation php code -->
 <?php 
-session_start();
-include 'connect.php';
+  session_start();
+  include 'connect.php';
+
   $temperature = '';
-	$heartrate = '';
+  $heartrate = '';
   $oxygen = '';
 
-	//query to get data from the table
-	$sql = "SELECT * FROM `dailyupdate` where id = 20 ";
+  //query to get data from the table
+  $sql = "SELECT * FROM `dailyupdate` where id = 20 ";
     $result = mysqli_query($conn, $sql);
 
-	//loop through the returned data
-	while ($row = mysqli_fetch_array($result)) {
+  //loop through the returned data
+  while ($row = mysqli_fetch_array($result)) {
 
-		$temperature = $temperature . '"'. $row['temperature'].'",';
-		$heartrate = $heartrate . '"'. $row['heartrate'] .'",';
+    $temperature = $temperature . '"'. $row['temperature'].'",';
+    $heartrate = $heartrate . '"'. $row['heartrate'] .'",';
     $oxygen = $oxygen . '"'. $row['oxygen'] .'",';
-	}
+  }
 
-	$temperature = trim($temperature,",");
-	$heartrate = trim($heartrate,",");
+  $temperature = trim($temperature,",");
+  $heartrate = trim($heartrate,",");
   $oxygen = trim($oxygen,",");
 ?>
 
@@ -186,7 +188,7 @@ include 'connect.php';
 </div>
 </div>
 
-
+<!-- extra code to crete neew entry -->
 <?php
     
     // session_start();
@@ -371,7 +373,7 @@ include 'connect.php';
             
         }//end else 
     }//end if
-    ?>
+?>
 <!--end of daily tracker modal-->
 
 <!--login moadal-->

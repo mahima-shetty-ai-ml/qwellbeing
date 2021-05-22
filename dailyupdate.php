@@ -346,39 +346,54 @@
           }
         
                 
-        // $uppercase = preg_match('@[A-Z]@', $password);
-        // $lowercase = preg_match('@[a-z]@', $password);
-        // $number    = preg_match('@[0-9]@', $password);
-        // $specialChars = preg_match('@[^\w]@', $password);
-
-        //password criteria is not satisfied
-        if($temperature) {
+     
+        // if($temperature) {
            
             
         
-            echo "reached here";
+        //     echo "<script>
+        //     alert('Reached here');
+        //     window.location.href='./p_dashboard.php';
+        // </script>";
 
             
-            $sql1 = "SELECT COUNT(*) FROM `dailyupdate`
-                              WHERE EXISTS(SELECT * FROM `dailyupdate` 
-                              WHERE id = 17 AND date = '2021-05-22' )";
-
+            // $sql1 = "SELECT COUNT(*) FROM `dailyupdate`
+            //                   WHERE EXISTS(SELECT * FROM `dailyupdate` 
+            //                   WHERE id = 20 AND date = '2021-05-22' )";
+            
+            // echo $rows;
+            $id = ($_SESSION['id']) ;
+            $sql1 = "SELECT * FROM `dailyupdate` 
+                              WHERE id = $id AND date = '2021-05-22' ";
              
-            
+            $result=mysqli_query($conn,$sql1);
+            $no_of_rows = mysqli_num_rows($result);
+            //  $rows = mysqli_num_rows($sql1);
+             echo "<script>
+                    alert('$no_of_rows');
+                    window.location.href='./p_dashboard.php';
+                </script>";
             //new user
-            if($temperature) {
+            if($no_of_rows==0) 
+            {
                 //passord matches
                 if($exists==false) {
             
                      
 
 
-                    echo "reached sql dailyupdate";
-                    echo "      ";
+                //     echo "<script>
+                //     alert('exist is false here');
+                //     window.location.href='./p_dashboard.php';
+                // </script>";
+                //     echo "      ";
                     
                     $id = ($_SESSION['id']) ;
                     // echo $id;
                     // INSERT INTO `dailyupdate` (`id`, `temperature`, `oxygen`, `heartrate`, `BreathingProblem`, `SpeakingProblem`, `ChestPain`, `SoreThroat`, `LossOfTasteAndSmell`, `Conjunctivitis`, `DiscolourationOfFingers`, `Fever`, `DryCough`, `Tiredness`, `date`) VALUES ('17', '95', '100', '85', 'Yes', 'No', 'No', 'Yes', 'No', 'No', 'No', 'Yes', 'No', 'No', 'current_timestamp()');
+
+                    // if($no_of_rows==0) { heree
+
                     $sql = "INSERT INTO `dailyupdate` ( `id`,`temperature`, `oxygen`, `heartrate`, `BreathingProblem`, `SpeakingProblem`, `ChestPain`, `SoreThroat`, `LossOfTasteAndSmell`, `Conjunctivitis`, `DiscolourationOfFingers`, `Fever`, `DryCough`, `Tiredness`, `date`) 
                     VALUES ('$id', '$temperature' ,'$oxygen','$heartrate','$BreathingProblem','$SpeakingProblem','$ChestPain', '$SoreThroat', '$LossOfTasteAndSmell','$Conjunctivitis','$DiscolourationOfFingers','$Fever','$DryCough','$Tiredness', current_timestamp());";
                     echo $sql;
@@ -387,9 +402,7 @@
                     if(!$result){
                           die("QUERY FAILED.".mysqli_error($conn));
                       }
-                    echo "hih";
-                    echo $result;
-                    echo "shabash god";
+                    
                     
                     if ($result) {
                       echo "Successfully added!";
@@ -406,7 +419,7 @@
                             window.location.href='./register.php';
                         </script>"; 
                     }
-                    
+                  
                     $conn->close();
                     // $resultAll = mysqli_query($conn, $sql);
                     // if(!$resultAll){
@@ -430,9 +443,10 @@
                     // }
             
                           
-            }// end if num==0
+            }// end if num==0                         
             else{
-              $sql2 = "UPDATE `dailyupdate` SET temperature = $temperature, oxygen = $oxygen, heartrate = $heartrate, BreathingProblem ='$BreathingProblem', SpeakingProblem = '$SpeakingProblem', ChestPain = '$ChestPain', SoreThroat = '$SoreThroat', LossOfTasteAndSmell = '$LossOfTasteAndSmell', Conjunctivitis = '$Conjunctivitis', DiscolourationOfFingers = '$DiscolourationOfFingers', Fever = '$Fever', DryCough = '$DryCough', Tiredness = '$Tiredness' WHERE id = 20 AND date = '2021-05-22' ";
+              $id = ($_SESSION['id']) ;
+              $sql2 = "UPDATE `dailyupdate` SET temperature = $temperature, oxygen = $oxygen, heartrate = $heartrate, BreathingProblem ='$BreathingProblem', SpeakingProblem = '$SpeakingProblem', ChestPain = '$ChestPain', SoreThroat = '$SoreThroat', LossOfTasteAndSmell = '$LossOfTasteAndSmell', Conjunctivitis = '$Conjunctivitis', DiscolourationOfFingers = '$DiscolourationOfFingers', Fever = '$Fever', DryCough = '$DryCough', Tiredness = '$Tiredness' WHERE id = '$id' AND date = '2021-05-22' ";
               // echo $sql;
               $result=mysqli_query($conn,$sql2);
               
@@ -452,7 +466,7 @@
             //     </script>"; 
             // } 
             
-        }//end else 
+        // }//end of if temp
     }//end if
     ?>
 
