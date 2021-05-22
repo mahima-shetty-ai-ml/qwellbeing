@@ -6,11 +6,14 @@
         
         include 'connect.php ';
         
-        $first_name = $_POST["fname"]; 
-        $last_name = $_POST["lname"]; 
+        // $first_name = $_POST["fname"]; 
+        $first_name = mysqli_real_escape_string($conn,strip_tags($_POST["fname"]));
+        // $last_name = $_POST["lname"]; 
+        $last_name = mysqli_real_escape_string($conn, strip_tags($_POST["lname"]));
         $age =   $_POST["age"]; 
         $gender = $_POST["gender"]; 
-        $email_address = $_POST["email-address"]; 
+        // $email_address = $_POST["email-address"]; 
+        $email_address = mysqli_real_escape_string($conn, strip_tags($_POST["email-address"]));
         $password = $_POST["password"]; 
         $conpassword = $_POST["conpassword"];
                 
@@ -66,7 +69,7 @@
                     //     window.location.href='./register.php';
                     // </script>";
                     // }
-                    $_SESSION["emailaddress"] = $email_address;
+                    
                     if ($result) {
                     
                         echo "<script>
@@ -74,13 +77,16 @@
                             // window.location.href='./p_dashboard.php';
                         </script>";
 
-                        $_SESSION['emailaddress'] = $email_address;
-                        $getid = "Select id from patients where email_address='{$_SESSION['emailaddress']}'";
+                        $_SESSION["emailaddress"] = $email_address;
+                        
+                        $getid = "Select id, first_name, last_name from patients where email_address='{$_SESSION['emailaddress']}'";
                         $result = $conn->query($getid);
 
 
                         $row = $result->fetch_array(MYSQLI_ASSOC);
                         $_SESSION['id'] = $row["id"];
+                        $_SESSION['fname'] = $row["first_name"];
+                        $_SESSION["lname"] = $row["last_name"];
 
                         echo "<script>
                                         window.location.href='./p_dashboard.php';

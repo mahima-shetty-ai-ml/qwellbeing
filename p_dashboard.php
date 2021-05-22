@@ -23,6 +23,13 @@
   $temperature = trim($temperature,",");
   $heartrate = trim($heartrate,",");
   $oxygen = trim($oxygen,",");
+
+
+//irst name and last name
+  $fname = ($_SESSION["fname"]);
+  $lname = ($_SESSION["lname"]);
+
+
 ?>
 
 
@@ -293,7 +300,7 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Covid Tracker - Update</a></li>
                   <li><a class="dropdown-item" href="#">Profile settings</a></li>
-                  <li><a class="dropdown-item" href="./p_dashboard.php" >Logout</a></li>
+                  <li><a class="dropdown-item" href="./logout.php" >Logout</a></li>
                 </ul>
               </li>
             </ul>
@@ -312,7 +319,8 @@
     <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
       <div class="card" id="card1">
         <div class="card-header" >
-          <h4 class="card-title d-inline-block">Symptoms</h4> 
+        <h4><?php  echo "Welcome, ".$fname." ".$lname."!" ?></h4>
+          
         </div>
 
         <!-- <div class="container">	
@@ -358,7 +366,6 @@
         $exists=false;
         $id = ($_SESSION['id']) ;
         // session_start();
-        echo "Welcome, ".$_SESSION['emailaddress'];
         // if($_SERVER["REQUEST_METHOD"] == "POST") {
             
         // include 'connect.php ';

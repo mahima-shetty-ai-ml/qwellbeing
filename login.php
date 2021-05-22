@@ -21,12 +21,16 @@
                 </script>";
             
             $_SESSION['emailaddress'] = $email_address;
-            $getid = "Select id from patients where email_address='{$_SESSION['emailaddress']}'";
+            
+            $getid = "Select id,first_name, last_name from patients where email_address='{$_SESSION['emailaddress']}'";
             $result = $conn->query($getid);
 
 
             $row = $result->fetch_array(MYSQLI_ASSOC);
             $_SESSION['id'] = $row["id"];
+
+            $_SESSION["fname"] = $row["first_name"];
+            $_SESSION["lname"] = $row["last_name"];
 
             echo "<script>
                             window.location.href='./p_dashboard.php';
