@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: May 22, 2021 at 05:12 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.5
+-- Host: 127.0.0.1
+-- Generation Time: May 22, 2021 at 07:56 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,6 +66,36 @@ INSERT INTO `dailyupdate` (`id`, `temperature`, `oxygen`, `heartrate`, `Breathin
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `password_reset_tempdb`
+--
+
+CREATE TABLE `password_reset_tempdb` (
+  `id` int(11) NOT NULL,
+  `email_address` varchar(255) NOT NULL,
+  `key` varchar(255) NOT NULL,
+  `expDate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `password_reset_tempdb`
+--
+
+INSERT INTO `password_reset_tempdb` (`id`, `email_address`, `key`, `expDate`) VALUES
+(1, 'sanjaydutt@gmail.com', '3787ee75c34d7728cc92adb3559e7b8d59718eb7c0', '2021-05-23 19:44:48'),
+(2, 'sanjaydutt@gmail.com', '82ab0ac6d2abbbefcd67c21d244774934603f1f42b', '2021-05-23 19:48:02'),
+(3, 'sanjaydutt@gmail.com', 'b41321f462326e09410bafcba7345b466ef9f78141', '2021-05-23 19:48:08'),
+(4, 'sanjaydutt@gmail.com', 'f3e9145ee15b71e609664f45599c0624570d0d2114', '2021-05-23 19:48:23'),
+(5, 'sanjaydutt@gmail.com', '26d42a67ef7406c72d0c3adc50599067838ae6bbc6', '2021-05-23 19:48:28'),
+(6, 'sanjaydutt@gmail.com', '79bf73cce16779b7d966b5563938d1f487d503abae', '2021-05-23 19:49:23'),
+(7, 'sanjaydutt@gmail.com', '061b26eda09a719d7abd23d01ae055de15974a9cf1', '2021-05-23 19:49:28'),
+(8, 'sanjaydutt@gmail.com', '42985b46a19f16f6bdc3b004f1d76657b638d4ad1b', '2021-05-23 19:52:56'),
+(9, 'sanjaydutt@gmail.com', '8eae05b43ca8b4fae0a8c00838a412c083916f2a17', '2021-05-23 19:53:01'),
+(10, 'sanjaydutt@gmail.com', '1504749f762bdbad673922679f57c839c266b0b11b', '2021-05-23 19:54:43'),
+(11, 'sanjaydutt@gmail.com', '77198d1e932419665af7d28eb441cec1e91e46d64f', '2021-05-23 19:54:52');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `patients`
 --
 
@@ -111,6 +141,12 @@ INSERT INTO `patients` (`id`, `first_name`, `last_name`, `email_address`, `passw
 --
 
 --
+-- Indexes for table `password_reset_tempdb`
+--
+ALTER TABLE `password_reset_tempdb`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `patients`
 --
 ALTER TABLE `patients`
@@ -119,6 +155,12 @@ ALTER TABLE `patients`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `password_reset_tempdb`
+--
+ALTER TABLE `password_reset_tempdb`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `patients`
