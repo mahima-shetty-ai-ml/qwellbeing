@@ -347,7 +347,42 @@
 	    </div> -->
 
 
+        <?php
+        // session_start();
+        $exists=false;
+        $id = ($_SESSION['id']) ;
+        // session_start();
+        echo "Welcome, ".$_SESSION['emailaddress'];
+        // if($_SERVER["REQUEST_METHOD"] == "POST") {
+            
+        // include 'connect.php ';
+        // $temperature = $_POST["temperature"]; 
+        // $oxygen = $_POST["oxygen"]; 
+        // $heartrate =   $_POST["heartrate"]; 
+        // $BreathingProblem =  $_POST["BreathingProblem"];
+        // $SpeakingProblem =  $_POST["SpeakingProblem"];
+        // $ChestPain =  $_POST["ChestPain"];
+        // $SoreThroat =  $_POST["SoreThroat"];
+        // $Conjunctivitis =  $_POST["Conjunctivitis"];
+        // $LossOfTasteAndSmell =  $_POST["LossOfTasteAndSmell"];
+        // $DiscolourationOfFingers =  $_POST["DiscolourationOfFingers"];
+        // $Fever =  $_POST["Fever"];
+        // $DryCough =  $_POST["DryCough"];
+        // $Tiredness =  $_POST["Tiredness"];
 
+        
+        $sql4 = "SELECT * FROM `dailyupdate`  WHERE id = $id  ";
+        $result4 = mysqli_query($conn, $sql4);
+        if(!$result4){
+          // die("QUERY FAILED UPDATE.".mysqli_error($conn));
+          echo "sql error";
+        } 
+        else{
+          echo "sql query executed";
+        }
+        
+        
+        ?>
 
 
         <div class="card-body p-0">
@@ -374,157 +409,155 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">Dry Cough</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Breathing Problem</th>
+                  <?php
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['BreathingProblem'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
+                  
                 </tr>
                 <tr>
-                  <th scope="row">Fever</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Speaking Problem</th>
+                  <?php
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['SpeakingProblem'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Breathlessness</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Chest Pain</th>
+                  <?php
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['ChestPain'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
                   <th scope="row">Sore throat</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <?php
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['SoreThroat'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Headache</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Loss of Taste and smell</th>
+                  <?php
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['LossOfTasteAndSmell'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Body pain</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Conjunctivitis</th>
+                  <?php
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['Conjunctivitis'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Diarrhea</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Discolouration of Fingers</th>
+                  <?php
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['DiscolourationOfFingers'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Nausea/vomiting</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Fever</th>
+                  <?php
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['Fever'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Irritability/confusion</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Dry Cough</th>
+                  <?php
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['DryCough'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
+                </tr>
+                <tr>
+                  <th scope="row">Tiredness</th>
+                  <?php
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['Tiredness'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
               </tbody>
             </table>

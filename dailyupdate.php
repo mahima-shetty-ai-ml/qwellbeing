@@ -124,7 +124,7 @@
             //  $rows = mysqli_num_rows($sql1);
              echo "<script>
                     alert('$no_of_rows, $date_input, $gettype ');
-                    window.location.href='./dailyupdate.php';
+                    window.location.href='./p_dashboard.php';
                 </script>";
             //new user
             if($no_of_rows==0) 
