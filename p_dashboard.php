@@ -1,6 +1,7 @@
 <!-- data visualisation php code -->
 <?php 
   session_start();
+  $id = ($_SESSION['id']) ;
   include 'connect.php';
 
   $temperature = '';
@@ -8,7 +9,7 @@
   $oxygen = '';
 
   //query to get data from the table
-  $sql = "SELECT * FROM `dailyupdate` where id = 20 ";
+  $sql = "SELECT * FROM `dailyupdate` where id = $id ";
     $result = mysqli_query($conn, $sql);
 
   //loop through the returned data
@@ -188,192 +189,8 @@
 </div>
 </div>
 
-<!-- extra code to crete neew entry -->
-<?php
-    
-    // session_start();
-    echo "Welcome, ".$_SESSION['emailaddress'];
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
-        
-        include 'connect.php ';
-        
-        $temperature = $_POST["temperature"]; 
-        $oxygen = $_POST["oxygen"]; 
-        $heartrate =   $_POST["heartrate"]; 
-        $BreathingProblem = "";
-        $SpeakingProblem = "";
-        $ChestPain = "";
-        $SoreThroat = "";
-        $Conjunctivitis = "";
-        $LossOfTasteAndSmell = "";
-        $DiscolourationOfFingers = "";
-        $Fever = "";
-        $DryCough = "";
-        $Tiredness = "";
+<!-- extra code to crete neew enr -->
 
-
-
-      if (isset($_POST['breathingproblem']) && ($_POST['breathingproblem'] == "Yes")) {
-        $BreathingProblem = "Yes";
-        } else {
-        $BreathingProblem = "No";
-        }
-
-        if (isset($_POST['speakingproblem']) && ($_POST['speakingproblem'] == "Yes")) {
-          $SpeakingProblem = "Yes";
-          } else {
-          $SpeakingProblem = "No";
-          }
-
-        if (isset($_POST['chestpain']) && ($_POST['chestpain'] == "Yes")) {
-          $ChestPain = "Yes";
-          } else {
-          $ChestPain = "No";
-          }
-        
-          
-        if (isset($_POST['sorethroat']) && ($_POST['sorethroat'] == "Yes")) {
-          $SoreThroat = "Yes";
-          } else {
-          $SoreThroat = "No";
-          }
-        
-        if (isset($_POST['lossoftasteandsmell']) && ($_POST['lossoftasteandsmell'] == "Yes")) {
-          $LossOfTasteAndSmell = "Yes";
-          } else {
-          $LossOfTasteAndSmell = "No";
-          }
-
-        if (isset($_POST['conjunctivitis']) && ($_POST['conjunctivitis'] == "Yes")) {
-          $Conjunctivitis = "Yes";
-          } else {
-          $Conjunctivitis = "No";
-          }
-      
-        if (isset($_POST['discolourationoffingers']) && ($_POST['discolourationoffingers'] == "Yes")) {
-          $DiscolourationOfFingers = "Yes";
-          } else {
-          $DiscolourationOfFingers = "No";
-          }
-
-        if (isset($_POST['fever']) && ($_POST['fever'] == "Yes")) {
-          $Fever = "Yes";
-          } else {
-          $Fever = "No";
-          }
-
-
-          
-        if (isset($_POST['drycough']) && ($_POST['drycough'] == "Yes")) {
-          $DryCough = "Yes";
-          } else {
-          $DryCough = "No";
-          }
-        
-        if (isset($_POST['tiredness']) && ($_POST['tiredness'] == "Yes")) {
-          $Tiredness = "Yes";
-          } else {
-          $Tiredness = "No";
-          }
-        
-                
-        // $uppercase = preg_match('@[A-Z]@', $password);
-        // $lowercase = preg_match('@[a-z]@', $password);
-        // $number    = preg_match('@[0-9]@', $password);
-        // $specialChars = preg_match('@[^\w]@', $password);
-
-        //password criteria is not satisfied
-        if($temperature) {
-           
-            
-        
-            echo "reached here";
-
-            
-            
-
-             
-            
-            //new user
-            if($temperature) {
-                //passord matches
-                if($exists==false) {
-            
-                     
-
-
-                    echo "reached sql dailyupdate";
-                    echo "      ";
-                    
-                    $id = ($_SESSION['id']) ;
-                    // echo $id;
-                    // INSERT INTO `dailyupdate` (`id`, `temperature`, `oxygen`, `heartrate`, `BreathingProblem`, `SpeakingProblem`, `ChestPain`, `SoreThroat`, `LossOfTasteAndSmell`, `Conjunctivitis`, `DiscolourationOfFingers`, `Fever`, `DryCough`, `Tiredness`, `date`) VALUES ('17', '95', '100', '85', 'Yes', 'No', 'No', 'Yes', 'No', 'No', 'No', 'Yes', 'No', 'No', 'current_timestamp()');
-                    $sql = "INSERT INTO `dailyupdate` ( `id`,`temperature`, `oxygen`, `heartrate`, `BreathingProblem`, `SpeakingProblem`, `ChestPain`, `SoreThroat`, `LossOfTasteAndSmell`, `Conjunctivitis`, `DiscolourationOfFingers`, `Fever`, `DryCough`, `Tiredness`, `date`) 
-                    VALUES ('$id', '$temperature' ,'$oxygen','$heartrate','$BreathingProblem','$SpeakingProblem','$ChestPain', '$SoreThroat', '$LossOfTasteAndSmell','$Conjunctivitis','$DiscolourationOfFingers','$Fever','$DryCough','$Tiredness', current_timestamp());";
-                    echo $sql;
-                    $result=mysqli_query($conn,$sql);
-                    
-                    if(!$result){
-                          die("QUERY FAILED.".mysqli_error($conn));
-                      }
-                    
-                    echo $result;
-                    
-                    
-                    if ($result) {
-                      echo "Successfully added!";
-                      echo "<script>
-                          alert('Your data have been sucessfully uploaded');
-                          window.location.href='./p_dashboard.php';
-                      </script>";
-                        }
-                    } //end if password
-                    else { 
-                        echo "Not added";
-                        echo "<script>
-                            alert('Sorry, your data have not been uploaded! Please try again');
-                            window.location.href='./register.php';
-                        </script>"; 
-                    }
-                    
-                    $conn->close();
-                    // $resultAll = mysqli_query($conn, $sql);
-                    // if(!$resultAll){
-                    //     die(mysqli_error($conn));
-                    // }
-
-                    // if (mysqli_num_rows($resultAll) > 0) {
-                    //     while($rowData = mysqli_fetch_array($resultAll)){
-                    //         echo $rowData["id"].'<br>';
-                    //     }
-                    // }
-                    
-                    // $result = mysqli_query($conn, $sql);
-                    // $result = mysqli_fetch_assoc($result);
-                    // if(!$result){
-                    //     echo "<script>
-                    //     alert('error in gender  $gender');
-
-                    //     window.location.href='./register.php';
-                    // </script>";
-                    // }
-            
-                          
-            }// end if num==0
-            
-            //user with same emailid already exists
-            // if($num>0) 
-            // {
-                
-            //     echo "<script>
-            //         alert('User with same emailid already exists');
-            //         window.location.href='./register.php';
-            //     </script>"; 
-            // } 
-            
-        }//end else 
-    }//end if
-?>
 <!--end of daily tracker modal-->
 
 <!--login moadal-->
@@ -898,7 +715,7 @@
   <script src="src/js/app.js"></script>
 
 
-  <!--Checklish-->
+  <!--Checklist-->
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
