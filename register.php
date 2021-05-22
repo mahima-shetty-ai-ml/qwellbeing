@@ -1,6 +1,7 @@
 <?php
     session_start();
     $exists=false;
+    define("Login&Register",true);
     
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         

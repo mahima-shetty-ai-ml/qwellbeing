@@ -1,5 +1,9 @@
 <?php
     session_start();
+    define("Login&Register",true);
+    
+    
+
     if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         include 'connect.php ';

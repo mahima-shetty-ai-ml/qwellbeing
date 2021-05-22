@@ -1,6 +1,11 @@
 <!-- data visualisation php code -->
 <?php 
   session_start();
+  if(!defined('Login&Register'))
+    {
+        header('location:login.php');
+        die();
+    }
   $id = ($_SESSION['id']) ;
   include 'connect.php';
 
