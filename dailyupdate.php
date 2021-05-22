@@ -105,17 +105,26 @@
             //                   WHERE EXISTS(SELECT * FROM `dailyupdate` 
             //                   WHERE id = 20 AND date = '2021-05-22' )";
             
-            // echo $rows;
+
+
             $id = ($_SESSION['id']) ;
+            echo "Welcome, ". $_SESSION['emailaddress'];
+            // echo $rows;
+
+            
+            
+
+
+
             $sql1 = "SELECT * FROM `dailyupdate` 
-                              WHERE id = $id AND date = '2021-05-22' ";
+                              WHERE id = $id AND date = CURDATE() ";
              
             $result=mysqli_query($conn,$sql1);
             $no_of_rows = mysqli_num_rows($result);
             //  $rows = mysqli_num_rows($sql1);
              echo "<script>
-                    alert('$no_of_rows');
-                    window.location.href='./p_dashboard.php';
+                    alert('$no_of_rows, $date_input, $gettype ');
+                    window.location.href='./dailyupdate.php';
                 </script>";
             //new user
             if($no_of_rows==0) 
