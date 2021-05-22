@@ -308,7 +308,7 @@
             <div class="col-md-12 text-right mb-3">
                 <button class="btn btn-primary" id="download"> Download your report </button>
             </div>
-  <div class = "report">
+  <div id = "report">
     <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
       <div class="card">
         <div class="card-header" >
