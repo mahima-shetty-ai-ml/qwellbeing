@@ -359,7 +359,9 @@
             echo "reached here";
 
             
-            
+            $sql1 = "SELECT COUNT(*) FROM `dailyupdate`
+                              WHERE EXISTS(SELECT * FROM `dailyupdate` 
+                              WHERE id = 17 AND date = '2021-05-22' )";
 
              
             
@@ -392,7 +394,7 @@
                     if ($result) {
                       echo "Successfully added!";
                       echo "<script>
-                          alert('Your data have been sucessfully uploaded');
+                          alert('Your health data have been sucessfully uploaded');
                           window.location.href='./p_dashboard.php';
                       </script>";
                         }
@@ -429,6 +431,16 @@
             
                           
             }// end if num==0
+            else{
+              $sql2 = "UPDATE `dailyupdate` SET temperature = $temperature, oxygen = $oxygen, heartrate = $heartrate, BreathingProblem ='$BreathingProblem', SpeakingProblem = '$SpeakingProblem', ChestPain = '$ChestPain', SoreThroat = '$SoreThroat', LossOfTasteAndSmell = '$LossOfTasteAndSmell', Conjunctivitis = '$Conjunctivitis', DiscolourationOfFingers = '$DiscolourationOfFingers', Fever = '$Fever', DryCough = '$DryCough', Tiredness = '$Tiredness' WHERE id = 20 AND date = '2021-05-22' ";
+              // echo $sql;
+              $result=mysqli_query($conn,$sql2);
+              
+              if(!$result){
+                    die("QUERY FAILED.".mysqli_error($conn));
+                }
+
+            }
             
             //user with same emailid already exists
             // if($num>0) 

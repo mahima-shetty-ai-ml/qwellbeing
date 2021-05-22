@@ -6,7 +6,7 @@ include 'connect.php';
   $oxygen = '';
 
 	//query to get data from the table
-	$sql = "SELECT * FROM `dailyupdate` where id = 16 ";
+	$sql = "SELECT * FROM `dailyupdate` where id = 20 ";
     $result = mysqli_query($conn, $sql);
 
 	//loop through the returned data
@@ -723,20 +723,20 @@ include 'connect.php';
           </div>	
           <canvas id="linegraph"></canvas>
           <div class="container">	
-            <h1>USE CHART.JS WITH MYSQL DATASETS</h1>       
-            <canvas id="chart" style="width: 100%; height: 65vh; background: #222; border: 1px solid #555652; margin-top: 10px;"></canvas>
+            <h4>Temperature</h4>       
+            <canvas id="chart" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #555652; margin-top: 10px;"></canvas>
 
             <script>
               var ctx = document.getElementById("chart").getContext('2d');
                 var myChart = new Chart(ctx, {
                   type: 'line',
                   data: {
-                      labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                      labels: ['Day1','Day2','Day3','Day4','Day5','Day6','Day7','Day8','Day9','Day10','Day11','Day12','Day13','Day14'],
                       datasets: 
                       [{
                           label: 'Temperature',
                           data: [<?php echo $temperature; ?>],
-                          backgroundColor: 'transparent',
+                          backgroundColor: 'rgba(255,99,132,0.1)',
                           borderColor:'rgba(255,99,132)',
                           borderWidth: 3
                       }]
@@ -745,7 +745,7 @@ include 'connect.php';
                   options: {
                       scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
                       tooltips:{mode: 'index'},
-                      legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
+                      legend:{display: false, position: 'top', labels: {fontColor: 'rgb(0,0,0)', fontSize: 16}}
                   }
               });
             </script>
@@ -762,22 +762,22 @@ include 'connect.php';
           </div>	
           <canvas id="linegraph1"></canvas>
           <div class="container">	
-            <h1>USE CHART.JS WITH MYSQL DATASETS</h1>       
-            <canvas id="chart1" style="width: 100%; height: 65vh; background: #222; border: 1px solid #555652; margin-top: 10px;"></canvas>
+            <h4>Heart Rate</h4>       
+            <canvas id="chart1" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #555652; margin-top: 10px;"></canvas>
 
             <script>
               var ctx = document.getElementById("chart1").getContext('2d');
                 var myChart = new Chart(ctx, {
                   type: 'line',
                   data: {
-                      labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                      labels: ['Day1','Day2','Day3','Day4','Day5','Day6','Day7','Day8','Day9','Day10','Day11','Day12','Day13','Day14'],
                       datasets: 
                       [
 
                       {
                         label: 'Heart Rate',
                           data: [<?php echo $heartrate; ?>],
-                          backgroundColor: 'transparent',
+                          backgroundColor: 'rgba(0,255,255,0.1)',
                           borderColor:'rgba(0,255,255)',
                           borderWidth: 3	
                       }]
@@ -786,7 +786,7 @@ include 'connect.php';
                   options: {
                       scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
                       tooltips:{mode: 'index'},
-                      legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
+                      legend:{display: false, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
                   }
               });
             </script>
@@ -803,22 +803,22 @@ include 'connect.php';
           </div>	
           <canvas id="linegraph2"></canvas>
           <div class="container">	
-            <h1>USE CHART.JS WITH MYSQL DATASETS</h1>       
-            <canvas id="chart2" style="width: 100%; height: 65vh; background: #222; border: 1px solid #555652; margin-top: 10px;"></canvas>
+            <h4>Oxygen</h4>       
+            <canvas id="chart2" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #555652; margin-top: 10px;"></canvas>
 
             <script>
               var ctx = document.getElementById("chart2").getContext('2d');
                 var myChart = new Chart(ctx, {
                   type: 'line',
                   data: {
-                      labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                      labels: ['Day1','Day2','Day3','Day4','Day5','Day6','Day7','Day8','Day9','Day10','Day11','Day12','Day13','Day14'],
                       datasets: 
                       [
 
                       {
                         label: 'Oxygen',
                           data: [<?php echo $oxygen; ?>],
-                          backgroundColor: 'transparent',
+                          backgroundColor: 'rgba(0,255,255,0.1)',
                           borderColor:'rgba(0,255,255)',
                           borderWidth: 3	
                       }]
@@ -827,7 +827,7 @@ include 'connect.php';
                   options: {
                       scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
                       tooltips:{mode: 'index'},
-                      legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
+                      legend:{display: false, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
                   }
               });
             </script>
