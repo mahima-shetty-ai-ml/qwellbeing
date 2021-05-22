@@ -21,7 +21,12 @@
 
         //password criteria is not satisfied
         if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 6) {
-            echo "Password should be at least 6 characters in length and should include at least one upper case letter, one number, and one special character.";
+            echo "<script>
+            alert('Password should be at least 6 characters in length and should include at least one upper case letter, one number, and one special character.');
+            window.location.href='./register.php';
+        </script>";
+            
+            // echo "Password should be at least 6 characters in length and should include at least one upper case letter, one number, and one special character.";
         }
 
         //invalid email format
