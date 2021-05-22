@@ -310,7 +310,7 @@
             </div>
   <div id = "report">
     <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
-      <div class="card">
+      <div class="card" id="card1">
         <div class="card-header" >
           <h4 class="card-title d-inline-block">Symptoms</h4> 
         </div>
@@ -383,9 +383,6 @@
           // die("QUERY FAILED UPDATE.".mysqli_error($conn));
           echo "sql error";
         } 
-        else{
-          echo "sql query executed";
-        }
         
         
         ?>
@@ -581,7 +578,7 @@
     </div>
 
     <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
-      <div class="card">
+      <div class="card" id="card2">
         <div class="card-body" style="margin: 0px; padding: 5%;">
           <div class="chart-title">
             <h4>Oxygen level</h4>
@@ -620,7 +617,7 @@
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
-      <div class="card">
+      <div class="card" id="card3">
         <div class="card-body" style="margin: 0px; padding: 5%;">
           <div class="chart-title">
             <h4>Temperature</h4>
@@ -661,7 +658,7 @@
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
-      <div class="card">
+      <div class="card" id="card4">
         <div class="card-body" style="margin: 0px; padding: 5%;">
           <div class="chart-title">
             <h4>Heart Rate</h4>
