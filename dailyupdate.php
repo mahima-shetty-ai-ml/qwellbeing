@@ -1,265 +1,9 @@
+
+
+
 <?php
     session_start();
     $exists=false;
-    // echo "Welcome, ".$_SESSION['emailaddress'];    
-    // if($_SERVER["REQUEST_METHOD"] == "POST") {
-        
-    //     include 'connect.php ';
-        
-    //     $temperature = $_POST["temperature"]; 
-    //     $oxygen = $_POST["oxygen"]; 
-    //     $heartrate =   $_POST["heartrate"]; 
-        
-
-    //     $checkbox1=$_POST['severesymptoms'];  
-    //     $severesymptoms="";  
-    //     foreach($checkbox1 as $chk1)  
-    //     {  
-    //         $severesymptoms .= $chk1.",";  
-    //     } 
-
-    //     $checkbox2=$_POST['moderatesymptoms'];  
-    //     $moderatesymptoms="";  
-    //     foreach($checkbox2 as $chk1)  
-    //     {  
-    //         $moderatesymptoms .= $chk1.",";  
-    //     } 
-
-
-    //     $checkbox3=$_POST['commonsymptoms'];  
-    //     $commonsymptoms="";  
-    //     foreach($checkbox3 as $chk1)  
-    //         {  
-    //             $commonsymptoms .= $chk1.",";  
-    //         }
-                
-    //     // $uppercase = preg_match('@[A-Z]@', $password);
-    //     // $lowercase = preg_match('@[a-z]@', $password);
-    //     // $number    = preg_match('@[0-9]@', $password);
-    //     // $specialChars = preg_match('@[^\w]@', $password);
-
-    //     //password criteria is not satisfied
-    //     if($temperature) {
-           
-            
-        
-        
-    //         $getid = "Select id from patients where email_address='{$_SESSION['emailaddress']}'";
-            
-    //         $id = mysqli_query($conn, $getid);
-            
-
-
-    //         $num = mysqli_num_rows($id); 
-            
-    //         //new user
-    //         if($num == 1) {
-    //             //passord matches
-    //             if($exists==false) {
-            
-                     
-
-
-
-    //                 $sql = "INSERT INTO `dailyupdate` ( `id`,`temperature`, `oxygen`, `heartrate`, `severesymptoms`, `moderatesymptoms`, `commonsymptoms`, `date`) VALUES ('$id', '$temperature' ,'$oxygen','$heartrate','$severesymptoms','$moderatesymptoms','$commonsymptoms', current_timestamp())";
-            
-                    
-    //                 $result = mysqli_query($conn, $sql);
-                    
-    //                 // if(!$result){
-    //                 //     echo "<script>
-    //                 //     alert('error in gender  $gender');
-
-    //                 //     window.location.href='./register.php';
-    //                 // </script>";
-    //                 // }
-            
-    //                 if ($result) {
-                    
-    //                     echo "<script>
-    //                         alert('Your data have been sucessfully uploaded');
-    //                         window.location.href='./p_dashboard.php';
-    //                     </script>";
-    //                 }
-    //             } //end if password
-    //             else { 
-                    
-    //                 echo "<script>
-    //                     alert('Sorry, your data have not been uploaded! Please try again');
-    //                     window.location.href='./register.php';
-    //                 </script>"; 
-    //             }      
-    //         }// end if num==0
-            
-    //         //user with same emailid already exists
-    //         // if($num>0) 
-    //         // {
-                
-    //         //     echo "<script>
-    //         //         alert('User with same emailid already exists');
-    //         //         window.location.href='./register.php';
-    //         //     </script>"; 
-    //         // } 
-            
-    //     }//end else 
-    // }//end if
-
-
-
-?>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Patient dashboard</title>
-	<!-- Load Bootstrap -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
-
-  <!--Jquery, CSS, JS-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-
-  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-
- 
-</head>
-<body>
-
-
-
-
-<!--Daily tracker Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Covid tracker - Daily Update</h5>
-        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-12">
-            <form action="./dailyupdate.php" method="POST">
-              <div class="form-group row">
-                <label for="temperature" class="col-md-4 col-form-label text-md-right">Temperature: </label>
-                <div class="col-md-6">
-                  <input type="text" id="temperature" class="form-control" name="temperature" required autofocus>
-                </div>
-              </div><br>
-              <div class="form-group row">
-                <label for="oxygen" class="col-md-4 col-form-label text-md-right">Oxygen level: </label>
-                <div class="col-md-6">
-                  <input type="text" id="oxygen" class="form-control" name="oxygen" required autofocus>
-                </div>
-              </div><br>
-              <div class="form-group row">
-                <label for="heartrate" class="col-md-4 col-form-label text-md-right">Heart rate: </label>
-                <div class="col-md-6">
-                  <input type="text" id="heartrate" class="form-control" name="heartrate" required autofocus>
-                </div>
-              </div><br>
-
-
-<div class="form-group row">
-  <label for="symptoms" class="col-md-4 col-form-label text-md-right">Symptoms: </label>
-  <div class="col-md-6">
-    <label>Severe symptoms</label><br>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Yes" id="severesymptoms" name="breathingproblem">
-      <label class="form-check-label" for="severesymptoms">
-        Breathing problem
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Yes" id="severesymptoms" name="speakingproblem">
-      <label class="form-check-label" for="severesymptoms">
-        Speaking problem
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Yes" id="severesymptoms" name="chestpain">
-      <label class="form-check-label" for="severesymptoms">
-        Chest pain
-      </label>
-    </div>
-    <label>Moderate Severe symptoms</label><br>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Yes" id="moderatesymptoms" name="sorethroat">
-      <label class="form-check-label" for="moderatesymptoms">
-        Sore throat
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Yes" id="moderatesymptoms" name="lossoftasteandsmell">
-      <label class="form-check-label" for="moderatesymptoms">
-        Loss of taste and smell
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Yes" id="moderatesymptoms" name="conjunctivitis">
-      <label class="form-check-label" for="moderatesymptoms">
-      Conjunctivitis
-      </label>
-    </div><div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Yes" id="moderatesymptoms" name="discolourationoffingers">
-      <label class="form-check-label" for="moderatesymptoms">
-        Discolouration of Fingers
-      </label>
-    </div>
-    <label>Common symptoms</label><br>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Yes" id="commonsymptoms" name="fever">
-      <label class="form-check-label" for="commonsymptoms">
-        Fever
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Yes" id="commonsymptoms" name="drycough">
-      <label class="form-check-label" for="commonsymptoms">
-        Dry Cough
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Yes" id="commonsymptoms" name="tiredness">
-      <label class="form-check-label" for="commonsymptoms">
-      Tiredness
-      </label>
-    
-    </div>
-    
-
-  </div>
-</div>
-
-
-<br>
-<div class="modal-footer">
-  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-  <button type="Submit" class="btn btn-primary">Submit</button>
-</div>
-</div>
-</form>
-
-
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<?php
-    
     // session_start();
     echo "Welcome, ".$_SESSION['emailaddress'];
     if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -346,37 +90,63 @@
           }
         
                 
-        // $uppercase = preg_match('@[A-Z]@', $password);
-        // $lowercase = preg_match('@[a-z]@', $password);
-        // $number    = preg_match('@[0-9]@', $password);
-        // $specialChars = preg_match('@[^\w]@', $password);
-
-        //password criteria is not satisfied
-        if($temperature) {
+     
+        // if($temperature) {
            
             
         
-            echo "reached here";
+        //     echo "<script>
+        //     alert('Reached here');
+        //     window.location.href='./p_dashboard.php';
+        // </script>";
+
+            
+            // $sql1 = "SELECT COUNT(*) FROM `dailyupdate`
+            //                   WHERE EXISTS(SELECT * FROM `dailyupdate` 
+            //                   WHERE id = 20 AND date = '2021-05-22' )";
+            
+
+
+            $id = ($_SESSION['id']) ;
+            echo "Welcome, ". $_SESSION['emailaddress'];
+            // echo $rows;
 
             
             
 
+
+
+            $sql1 = "SELECT * FROM `dailyupdate` 
+                              WHERE id = $id AND date = CURDATE() ";
              
-            
+            $result=mysqli_query($conn,$sql1);
+            $no_of_rows = mysqli_num_rows($result);
+            //  $rows = mysqli_num_rows($sql1);
+             echo "<script>
+                    alert('$no_of_rows, $date_input, $gettype ');
+                    window.location.href='./p_dashboard.php';
+                </script>";
             //new user
-            if($temperature) {
+            if($no_of_rows==0) 
+            {
                 //passord matches
                 if($exists==false) {
             
                      
 
 
-                    echo "reached sql dailyupdate";
-                    echo "      ";
+                //     echo "<script>
+                //     alert('exist is false here');
+                //     window.location.href='./p_dashboard.php';
+                // </script>";
+                //     echo "      ";
                     
                     $id = ($_SESSION['id']) ;
                     // echo $id;
                     // INSERT INTO `dailyupdate` (`id`, `temperature`, `oxygen`, `heartrate`, `BreathingProblem`, `SpeakingProblem`, `ChestPain`, `SoreThroat`, `LossOfTasteAndSmell`, `Conjunctivitis`, `DiscolourationOfFingers`, `Fever`, `DryCough`, `Tiredness`, `date`) VALUES ('17', '95', '100', '85', 'Yes', 'No', 'No', 'Yes', 'No', 'No', 'No', 'Yes', 'No', 'No', 'current_timestamp()');
+
+                    // if($no_of_rows==0) { heree
+
                     $sql = "INSERT INTO `dailyupdate` ( `id`,`temperature`, `oxygen`, `heartrate`, `BreathingProblem`, `SpeakingProblem`, `ChestPain`, `SoreThroat`, `LossOfTasteAndSmell`, `Conjunctivitis`, `DiscolourationOfFingers`, `Fever`, `DryCough`, `Tiredness`, `date`) 
                     VALUES ('$id', '$temperature' ,'$oxygen','$heartrate','$BreathingProblem','$SpeakingProblem','$ChestPain', '$SoreThroat', '$LossOfTasteAndSmell','$Conjunctivitis','$DiscolourationOfFingers','$Fever','$DryCough','$Tiredness', current_timestamp());";
                     echo $sql;
@@ -385,14 +155,12 @@
                     if(!$result){
                           die("QUERY FAILED.".mysqli_error($conn));
                       }
-                    echo "hih";
-                    echo $result;
-                    echo "shabash god";
+                    
                     
                     if ($result) {
                       echo "Successfully added!";
                       echo "<script>
-                          alert('Your data have been sucessfully uploaded');
+                          alert('Your health data have been sucessfully uploaded');
                           window.location.href='./p_dashboard.php';
                       </script>";
                         }
@@ -404,7 +172,7 @@
                             window.location.href='./register.php';
                         </script>"; 
                     }
-                    
+                  
                     $conn->close();
                     // $resultAll = mysqli_query($conn, $sql);
                     // if(!$resultAll){
@@ -428,7 +196,18 @@
                     // }
             
                           
-            }// end if num==0
+            }// end if num==0                         
+            else{
+              $id = ($_SESSION['id']) ;
+              $sql2 = "UPDATE `dailyupdate` SET temperature = $temperature, oxygen = $oxygen, heartrate = $heartrate, BreathingProblem ='$BreathingProblem', SpeakingProblem = '$SpeakingProblem', ChestPain = '$ChestPain', SoreThroat = '$SoreThroat', LossOfTasteAndSmell = '$LossOfTasteAndSmell', Conjunctivitis = '$Conjunctivitis', DiscolourationOfFingers = '$DiscolourationOfFingers', Fever = '$Fever', DryCough = '$DryCough', Tiredness = '$Tiredness' WHERE id = '$id' AND date = '2021-05-22' ";
+              // echo $sql;
+              $result=mysqli_query($conn,$sql2);
+              
+              if(!$result){
+                    die("QUERY FAILED.".mysqli_error($conn));
+                }
+
+            }
             
             //user with same emailid already exists
             // if($num>0) 
@@ -440,7 +219,7 @@
             //     </script>"; 
             // } 
             
-        }//end else 
+        // }//end of if temp
     }//end if
     ?>
 
@@ -451,468 +230,3 @@
 
 <!--end of daily tracker modal-->
 
-<!--login moadal-->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Covid tracker - Daily Update</h5>
-        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-12">
-            <form action="login.php" method="POST">
-              <div class="form-group row">
-                  <label for="email_address" class="col-md-4 col-form-label text-md-right">E-mail address: </label>
-                  <div class="col-md-6">
-                      <input type="text" id="email_address" class="form-control" name="email-address" required autofocus>
-                  </div>
-              </div>
-
-          <br>
-
-              <div class="form-group row">
-                  <label for="password" class="col-md-4 col-form-label text-md-right">Password: </label>
-                  <div class="col-md-6">
-                      <input type="password" id="password" class="form-control" name="password" required>
-                  </div>
-              </div><br>
-
-              <div class="form-group row">
-                  <div class="col-md-6 offset-md-4">
-                      <div class="checkbox">
-                          <label>
-                              Don't have an account? <a href="register.php">Register</a>
-                          </label>
-                      </div>
-                  </div>
-              </div><br>
-
-              <div class="col-md-6 offset-md-4">
-                  <button type="submit" class="btn btn-primary">
-                      Login
-                  </button>
-                  <a href="#" class="btn btn-link">
-                      Forgot Your Password?
-                  </a>
-              </div>
-      </div>
-      </form>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-<!--Navbar-->
-<header id="header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                
-                <a class="navbar-brand" href="index.html">Q-<span style="color:#007AF3 ;">WELLBEING</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Guide</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="virtual_chatbot.html">Virtual Chatbot</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Emergency
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="https://covidrelief.glideapp.io/">Resources</a></li>
-                  <li><a class="dropdown-item" href="https://covidrelief.glideapp.io/dl/ewAiAHQAIgA6ADAALAAiAHMAIgA6ACIAbQBlAG4AdQAtADAAOABhADAAOQA1ADUAYwAtADMAMwAyADUALQA0ADIAMgAwAC0AOAA4AGMAOAAtADEANgA0ADcAMgBlADEAMAA3ADcAYQAwAC0ANAAwADQAYwBjADIAOABkADAAMgAxADEAZQA4AGMAYQBkADUAMwBhAGMAMgA3ADgAZAAzADgAZgBiAGMAMQAxACIALAAiAHIAIgA6ACIAMABuAHYAegBEAGUAVgB3AFQAaABPADcAVgBuADMAMQA4AFAANgAxAHYAZwAiACwAIgBuACIAOgAiAFMAdABhAHQAZQB3AGkAcwBlACAAQwBvAHYAaQBkACAASABlAGwAcABsAGkAbgBlAHMAIgB9AA%3D%3D">Contact numbers</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Profile
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Covid Tracker - Update</a></li>
-                  <li><a class="dropdown-item" href="#">Profile settings</a></li>
-                  <li><a class="dropdown-item" href="#" >Logout</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-</header>    
-<!--end of Navbar-->
-<!--dashboard-->
-<section style="margin: 20px;">
-  <div class="row">
-    <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
-      <div class="card">
-        <div class="card-header">
-          <h4 class="card-title d-inline-block">Symptoms</h4> 
-        </div>
-        <div class="card-body p-0">
-          <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Symptom/Days</th>
-                  <th scope="col">1</th>
-                  <th scope="col">2</th>
-                  <th scope="col">3</th>
-                  <th scope="col">4</th>
-                  <th scope="col">5</th>
-                  <th scope="col">6</th>
-                  <th scope="col">7</th>
-                  <th scope="col">8</th>
-                  <th scope="col">9</th>
-                  <th scope="col">10</th>
-                  <th scope="col">11</th>
-                  <th scope="col">12</th>
-                  <th scope="col">13</th>
-                  <th scope="col">14</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Dry Cough</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                </tr>
-                <tr>
-                  <th scope="row">Fever</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                </tr>
-                <tr>
-                  <th scope="row">Breathlessness</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                </tr>
-                <tr>
-                  <th scope="row">Sore throat</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                </tr>
-                <tr>
-                  <th scope="row">Headache</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                </tr>
-                <tr>
-                  <th scope="row">Body pain</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                </tr>
-                <tr>
-                  <th scope="row">Diarrhea</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                </tr>
-                <tr>
-                  <th scope="row">Nausea/vomiting</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                </tr>
-                <tr>
-                  <th scope="row">Irritability/confusion</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
-      <div class="card">
-        <div class="card-body" style="margin: 0px; padding: 5%;">
-          <div class="chart-title">
-            <h4>Oxygen level</h4>
-            <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
-          </div>	
-          <canvas id="linegraph"></canvas>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
-      <div class="card">
-        <div class="card-body" style="margin: 0px; padding: 5%;">
-          <div class="chart-title">
-            <h4>Temperature</h4>
-            <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
-          </div>	
-          <canvas id="linegraph1"></canvas>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
-      <div class="card">
-        <div class="card-body" style="margin: 0px; padding: 5%;">
-          <div class="chart-title">
-            <h4>Heart Rate</h4>
-            <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
-          </div>	
-          <canvas id="linegraph2"></canvas>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div  style="text-align: center;" class="col-md-2">
-            <svg xmlns="http://www.w3.org/2000/svg"   width="80px" height="150px"  fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-            </svg>
-          </div>
-          <div class="col-md-10">
-            <div class="card-body">
-              <h5 class="card-title">Prevention for caretakers</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a style="margin-bottom: 20px;" href="qw.html" class="btn btn-primary float-right">Read more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div style="text-align: center;" class="col-md-2">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="100px" height="150px" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-              <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
-            </svg>          </div>
-          <div class="col-md-10">
-            <div class="card-body">
-              <h5 class="card-title">Home Quarantine Guidelines</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a style="margin-bottom: 20px;" href="qw.html" class="btn btn-primary float-right">Read more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div  style="text-align: center;" class="col-md-2">
-            <svg xmlns="http://www.w3.org/2000/svg"  width="100px" height="150px" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-            </svg>
-          </div>
-          <div class="col-md-10">
-            <div class="card-body">
-              <h5 class="card-title">Daily Checklist</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a style="margin-bottom: 20px;" class="btn btn-primary float-right" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Check the list!</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-
-  </div></div>
-</section>
-<script src="src/js/jquery-3.2.1.min.js"></script>
-<script src="src/js/popper.min.js"></script>
-  <script src="src/js/jquery.slimscroll.js"></script>
-  <script src="src/js/Chart.bundle.js"></script>
-  <script src="src/js/chart.js"></script>
-  <script src="src/js/app.js"></script>
-
-
-  <!--Checklish-->
-
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Checklist for Covid Warriors!</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="row">
-        <div class="col-md-12">
-          <form action="#" method="POST">
-<div class="form-group row">
-  <div style="text-align: center;">
-    <img style="width: 150px;" src="images/checklist.png"/>
-  </div>
-<div class="col-md-6">
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Dry cough
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Fever
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Breathlessness
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Sore throat
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Headache
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Body pain
-    </label>
-  </div><div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Diarrhea
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Nausea/vomiting
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Irritability/confusion
-    </label>
-  </div>
-    </div>
-  </div>
-</body>
-</html>

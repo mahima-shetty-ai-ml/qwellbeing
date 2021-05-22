@@ -1,6 +1,28 @@
+<!-- data visualisation php code -->
 <?php 
-session_start();
+  session_start();
+  $id = ($_SESSION['id']) ;
+  include 'connect.php';
 
+  $temperature = '';
+  $heartrate = '';
+  $oxygen = '';
+
+  //query to get data from the table
+  $sql = "SELECT * FROM `dailyupdate` where id = $id ";
+    $result = mysqli_query($conn, $sql);
+
+  //loop through the returned data
+  while ($row = mysqli_fetch_array($result)) {
+
+    $temperature = $temperature . '"'. $row['temperature'].'",';
+    $heartrate = $heartrate . '"'. $row['heartrate'] .'",';
+    $oxygen = $oxygen . '"'. $row['oxygen'] .'",';
+  }
+
+  $temperature = trim($temperature,",");
+  $heartrate = trim($heartrate,",");
+  $oxygen = trim($oxygen,",");
 ?>
 
 
@@ -22,8 +44,28 @@ session_start();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+	<script src = "pdf.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>	
+  
+  <!-- <style type="text/css">			
+			body{
+				font-family: Arial;
+			    margin: 80px 100px 10px 100px;
+			    padding: 0;
+			    color: white;
+			    text-align: center;
+			    background: #555652;
+			}
 
- 
+			.container {
+				color: #E8E9EB;
+				background: #222;
+				border: #555652 1px solid;
+				padding: 10px;
+			}
+		</style> -->
+
 </head>
 <body>
 
@@ -149,192 +191,8 @@ session_start();
 </div>
 </div>
 
+<!-- extra code to crete neew enr -->
 
-<?php
-    
-    // session_start();
-    echo "Welcome, ".$_SESSION['emailaddress'];
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
-        
-        include 'connect.php ';
-        
-        $temperature = $_POST["temperature"]; 
-        $oxygen = $_POST["oxygen"]; 
-        $heartrate =   $_POST["heartrate"]; 
-        $BreathingProblem = "";
-        $SpeakingProblem = "";
-        $ChestPain = "";
-        $SoreThroat = "";
-        $Conjunctivitis = "";
-        $LossOfTasteAndSmell = "";
-        $DiscolourationOfFingers = "";
-        $Fever = "";
-        $DryCough = "";
-        $Tiredness = "";
-
-
-
-      if (isset($_POST['breathingproblem']) && ($_POST['breathingproblem'] == "Yes")) {
-        $BreathingProblem = "Yes";
-        } else {
-        $BreathingProblem = "No";
-        }
-
-        if (isset($_POST['speakingproblem']) && ($_POST['speakingproblem'] == "Yes")) {
-          $SpeakingProblem = "Yes";
-          } else {
-          $SpeakingProblem = "No";
-          }
-
-        if (isset($_POST['chestpain']) && ($_POST['chestpain'] == "Yes")) {
-          $ChestPain = "Yes";
-          } else {
-          $ChestPain = "No";
-          }
-        
-          
-        if (isset($_POST['sorethroat']) && ($_POST['sorethroat'] == "Yes")) {
-          $SoreThroat = "Yes";
-          } else {
-          $SoreThroat = "No";
-          }
-        
-        if (isset($_POST['lossoftasteandsmell']) && ($_POST['lossoftasteandsmell'] == "Yes")) {
-          $LossOfTasteAndSmell = "Yes";
-          } else {
-          $LossOfTasteAndSmell = "No";
-          }
-
-        if (isset($_POST['conjunctivitis']) && ($_POST['conjunctivitis'] == "Yes")) {
-          $Conjunctivitis = "Yes";
-          } else {
-          $Conjunctivitis = "No";
-          }
-      
-        if (isset($_POST['discolourationoffingers']) && ($_POST['discolourationoffingers'] == "Yes")) {
-          $DiscolourationOfFingers = "Yes";
-          } else {
-          $DiscolourationOfFingers = "No";
-          }
-
-        if (isset($_POST['fever']) && ($_POST['fever'] == "Yes")) {
-          $Fever = "Yes";
-          } else {
-          $Fever = "No";
-          }
-
-
-          
-        if (isset($_POST['drycough']) && ($_POST['drycough'] == "Yes")) {
-          $DryCough = "Yes";
-          } else {
-          $DryCough = "No";
-          }
-        
-        if (isset($_POST['tiredness']) && ($_POST['tiredness'] == "Yes")) {
-          $Tiredness = "Yes";
-          } else {
-          $Tiredness = "No";
-          }
-        
-                
-        // $uppercase = preg_match('@[A-Z]@', $password);
-        // $lowercase = preg_match('@[a-z]@', $password);
-        // $number    = preg_match('@[0-9]@', $password);
-        // $specialChars = preg_match('@[^\w]@', $password);
-
-        //password criteria is not satisfied
-        if($temperature) {
-           
-            
-        
-            echo "reached here";
-
-            
-            
-
-             
-            
-            //new user
-            if($temperature) {
-                //passord matches
-                if($exists==false) {
-            
-                     
-
-
-                    echo "reached sql dailyupdate";
-                    echo "      ";
-                    
-                    $id = ($_SESSION['id']) ;
-                    // echo $id;
-                    // INSERT INTO `dailyupdate` (`id`, `temperature`, `oxygen`, `heartrate`, `BreathingProblem`, `SpeakingProblem`, `ChestPain`, `SoreThroat`, `LossOfTasteAndSmell`, `Conjunctivitis`, `DiscolourationOfFingers`, `Fever`, `DryCough`, `Tiredness`, `date`) VALUES ('17', '95', '100', '85', 'Yes', 'No', 'No', 'Yes', 'No', 'No', 'No', 'Yes', 'No', 'No', 'current_timestamp()');
-                    $sql = "INSERT INTO `dailyupdate` ( `id`,`temperature`, `oxygen`, `heartrate`, `BreathingProblem`, `SpeakingProblem`, `ChestPain`, `SoreThroat`, `LossOfTasteAndSmell`, `Conjunctivitis`, `DiscolourationOfFingers`, `Fever`, `DryCough`, `Tiredness`, `date`) 
-                    VALUES ('$id', '$temperature' ,'$oxygen','$heartrate','$BreathingProblem','$SpeakingProblem','$ChestPain', '$SoreThroat', '$LossOfTasteAndSmell','$Conjunctivitis','$DiscolourationOfFingers','$Fever','$DryCough','$Tiredness', current_timestamp());";
-                    echo $sql;
-                    $result=mysqli_query($conn,$sql);
-                    
-                    if(!$result){
-                          die("QUERY FAILED.".mysqli_error($conn));
-                      }
-                    echo "hih";
-                    echo $result;
-                    echo "shabash god";
-                    
-                    if ($result) {
-                      echo "Successfully added!";
-                      echo "<script>
-                          alert('Your data have been sucessfully uploaded');
-                          window.location.href='./p_dashboard.php';
-                      </script>";
-                        }
-                    } //end if password
-                    else { 
-                        echo "Not added";
-                        echo "<script>
-                            alert('Sorry, your data have not been uploaded! Please try again');
-                            window.location.href='./register.php';
-                        </script>"; 
-                    }
-                    
-                    $conn->close();
-                    // $resultAll = mysqli_query($conn, $sql);
-                    // if(!$resultAll){
-                    //     die(mysqli_error($conn));
-                    // }
-
-                    // if (mysqli_num_rows($resultAll) > 0) {
-                    //     while($rowData = mysqli_fetch_array($resultAll)){
-                    //         echo $rowData["id"].'<br>';
-                    //     }
-                    // }
-                    
-                    // $result = mysqli_query($conn, $sql);
-                    // $result = mysqli_fetch_assoc($result);
-                    // if(!$result){
-                    //     echo "<script>
-                    //     alert('error in gender  $gender');
-
-                    //     window.location.href='./register.php';
-                    // </script>";
-                    // }
-            
-                          
-            }// end if num==0
-            
-            //user with same emailid already exists
-            // if($num>0) 
-            // {
-                
-            //     echo "<script>
-            //         alert('User with same emailid already exists');
-            //         window.location.href='./register.php';
-            //     </script>"; 
-            // } 
-            
-        }//end else 
-    }//end if
-    ?>
 <!--end of daily tracker modal-->
 
 <!--login moadal-->
@@ -435,7 +293,7 @@ session_start();
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Covid Tracker - Update</a></li>
                   <li><a class="dropdown-item" href="#">Profile settings</a></li>
-                  <li><a class="dropdown-item" href="#" >Logout</a></li>
+                  <li><a class="dropdown-item" href="./p_dashboard.php" >Logout</a></li>
                 </ul>
               </li>
             </ul>
@@ -446,12 +304,90 @@ session_start();
 <!--end of Navbar-->
 <!--dashboard-->
 <section style="margin: 20px;">
-  <div class="row">
+  <div class="row" >
+            <div class="col-md-12 text-right mb-3">
+                <button class="btn btn-primary" id="download"> Download your report </button>
+            </div>
+  <div id = "report">
     <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
-      <div class="card">
-        <div class="card-header">
+      <div class="card" id="card1">
+        <div class="card-header" >
           <h4 class="card-title d-inline-block">Symptoms</h4> 
         </div>
+
+        <!-- <div class="container">	
+            <h1>USE CHART.JS WITH MYSQL DATASETS</h1>       
+            <canvas id="chart" style="width: 100%; height: 65vh; background: #222; border: 1px solid #555652; margin-top: 10px;"></canvas>
+
+            <script>
+              var ctx = document.getElementById("chart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+                      datasets: 
+                      [{
+                          label: 'Temperature',
+                          data: [<?php echo $temperature; ?>],
+                          backgroundColor: 'transparent',
+                          borderColor:'rgba(255,99,132)',
+                          borderWidth: 3
+                      },
+
+                      {
+                        label: 'Heart Rate',
+                          data: [<?php echo $heartrate; ?>],
+                          backgroundColor: 'transparent',
+                          borderColor:'rgba(0,255,255)',
+                          borderWidth: 3	
+                      }]
+                  },
+              
+                  options: {
+                      scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
+                      tooltips:{mode: 'index'},
+                      legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
+                  }
+              });
+            </script>
+	    </div> -->
+
+
+        <?php
+        // session_start();
+        $exists=false;
+        $id = ($_SESSION['id']) ;
+        // session_start();
+        echo "Welcome, ".$_SESSION['emailaddress'];
+        // if($_SERVER["REQUEST_METHOD"] == "POST") {
+            
+        // include 'connect.php ';
+        // $temperature = $_POST["temperature"]; 
+        // $oxygen = $_POST["oxygen"]; 
+        // $heartrate =   $_POST["heartrate"]; 
+        // $BreathingProblem =  $_POST["BreathingProblem"];
+        // $SpeakingProblem =  $_POST["SpeakingProblem"];
+        // $ChestPain =  $_POST["ChestPain"];
+        // $SoreThroat =  $_POST["SoreThroat"];
+        // $Conjunctivitis =  $_POST["Conjunctivitis"];
+        // $LossOfTasteAndSmell =  $_POST["LossOfTasteAndSmell"];
+        // $DiscolourationOfFingers =  $_POST["DiscolourationOfFingers"];
+        // $Fever =  $_POST["Fever"];
+        // $DryCough =  $_POST["DryCough"];
+        // $Tiredness =  $_POST["Tiredness"];
+
+        
+        $sql4 = "SELECT * FROM `dailyupdate`  WHERE id = $id  ";
+        $result4 = mysqli_query($conn, $sql4);
+        if(!$result4){
+          // die("QUERY FAILED UPDATE.".mysqli_error($conn));
+          echo "sql error";
+        } 
+        
+        
+        ?>
+
+
         <div class="card-body p-0">
           <div class="table-responsive">
             <table class="table table-bordered table-striped">
@@ -476,157 +412,163 @@ session_start();
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">Dry Cough</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Breathing Problem</th>
+                  <?php
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['BreathingProblem'];
+                        ?>
+                  </td>
+                  <?php
+                     }//end of while
+                        // } end of if post
+                  ?>
+                  
                 </tr>
                 <tr>
-                  <th scope="row">Fever</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Speaking Problem</th>
+                  <?php
+                  
+                  $result4 = mysqli_query($conn, $sql4);
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['SpeakingProblem'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Breathlessness</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Chest Pain</th>
+                  <?php
+                      $result4 = mysqli_query($conn, $sql4);
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['ChestPain'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
                   <th scope="row">Sore throat</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <?php
+                  $result4 = mysqli_query($conn, $sql4);
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['SoreThroat'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Headache</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Loss of Taste and smell</th>
+                  <?php
+                    $result4 = mysqli_query($conn, $sql4);
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['LossOfTasteAndSmell'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Body pain</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Conjunctivitis</th>
+                  <?php
+                  $result4 = mysqli_query($conn, $sql4);
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['Conjunctivitis'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Diarrhea</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Discolouration of Fingers</th>
+                  <?php
+                  $result4 = mysqli_query($conn, $sql4);
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['DiscolourationOfFingers'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Nausea/vomiting</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Fever</th>
+                  <?php
+                  $result4 = mysqli_query($conn, $sql4);
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['Fever'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
                 <tr>
-                  <th scope="row">Irritability/confusion</th>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>Yes</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
-                  <td>No</td>
+                  <th scope="row">Dry Cough</th>
+                  <?php
+                   $result4 = mysqli_query($conn, $sql4);
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['DryCough'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
+                </tr>
+                <tr>
+                  <th scope="row">Tiredness</th>
+                  <?php
+                  $result4 = mysqli_query($conn, $sql4);
+
+                    while ($row = mysqli_fetch_assoc($result4)) {
+                  ?>
+                  <td> <?php
+                                    echo $row['Tiredness'];
+                        ?>
+                  </td>
+                  <?php
+                    }//end of while
+                        // } end of if post
+                  ?>
                 </tr>
               </tbody>
             </table>
@@ -636,35 +578,123 @@ session_start();
     </div>
 
     <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
-      <div class="card">
+      <div class="card" id="card2">
         <div class="card-body" style="margin: 0px; padding: 5%;">
           <div class="chart-title">
             <h4>Oxygen level</h4>
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
           </div>	
           <canvas id="linegraph"></canvas>
+          <div class="container">	
+            <h4>Temperature</h4>       
+            <canvas id="chart" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #555652; margin-top: 10px;"></canvas>
+
+            <script>
+              var ctx = document.getElementById("chart").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels: ['Day1','Day2','Day3','Day4','Day5','Day6','Day7','Day8','Day9','Day10','Day11','Day12','Day13','Day14'],
+                      datasets: 
+                      [{
+                          label: 'Temperature',
+                          data: [<?php echo $temperature; ?>],
+                          backgroundColor: 'rgba(255,99,132,0.1)',
+                          borderColor:'rgba(255,99,132)',
+                          borderWidth: 3
+                      }]
+                  },
+              
+                  options: {
+                      scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
+                      tooltips:{mode: 'index'},
+                      legend:{display: false, position: 'top', labels: {fontColor: 'rgb(0,0,0)', fontSize: 16}}
+                  }
+              });
+            </script>
+	    </div>
         </div>
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
-      <div class="card">
+      <div class="card" id="card3">
         <div class="card-body" style="margin: 0px; padding: 5%;">
           <div class="chart-title">
             <h4>Temperature</h4>
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
           </div>	
           <canvas id="linegraph1"></canvas>
+          <div class="container">	
+            <h4>Heart Rate</h4>       
+            <canvas id="chart1" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #555652; margin-top: 10px;"></canvas>
+
+            <script>
+              var ctx = document.getElementById("chart1").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels: ['Day1','Day2','Day3','Day4','Day5','Day6','Day7','Day8','Day9','Day10','Day11','Day12','Day13','Day14'],
+                      datasets: 
+                      [
+
+                      {
+                        label: 'Heart Rate',
+                          data: [<?php echo $heartrate; ?>],
+                          backgroundColor: 'rgba(0,255,255,0.1)',
+                          borderColor:'rgba(0,255,255)',
+                          borderWidth: 3	
+                      }]
+                  },
+              
+                  options: {
+                      scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
+                      tooltips:{mode: 'index'},
+                      legend:{display: false, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
+                  }
+              });
+            </script>
+	    </div>
         </div>
       </div>
     </div>
     <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
-      <div class="card">
+      <div class="card" id="card4">
         <div class="card-body" style="margin: 0px; padding: 5%;">
           <div class="chart-title">
             <h4>Heart Rate</h4>
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
           </div>	
           <canvas id="linegraph2"></canvas>
+          <div class="container">	
+            <h4>Oxygen</h4>       
+            <canvas id="chart2" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #555652; margin-top: 10px;"></canvas>
+
+            <script>
+              var ctx = document.getElementById("chart2").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'line',
+                  data: {
+                      labels: ['Day1','Day2','Day3','Day4','Day5','Day6','Day7','Day8','Day9','Day10','Day11','Day12','Day13','Day14'],
+                      datasets: 
+                      [
+
+                      {
+                        label: 'Oxygen',
+                          data: [<?php echo $oxygen; ?>],
+                          backgroundColor: 'rgba(0,255,255,0.1)',
+                          borderColor:'rgba(0,255,255)',
+                          borderWidth: 3	
+                      }]
+                  },
+              
+                  options: {
+                      scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
+                      tooltips:{mode: 'index'},
+                      legend:{display: false, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
+                  }
+              });
+            </script>
+	    </div>
         </div>
       </div>
     </div>
@@ -718,7 +748,7 @@ session_start();
       </div>
     </div>
   
-
+  </div>
   </div></div>
 </section>
 <script src="src/js/jquery-3.2.1.min.js"></script>
@@ -729,7 +759,7 @@ session_start();
   <script src="src/js/app.js"></script>
 
 
-  <!--Checklish-->
+  <!--Checklist-->
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
