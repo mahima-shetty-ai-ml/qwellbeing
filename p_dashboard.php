@@ -45,7 +45,9 @@
 
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-		
+	<script src = "pdf.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>	
+  
   <!-- <style type="text/css">			
 			body{
 				font-family: Arial;
@@ -302,10 +304,14 @@
 <!--end of Navbar-->
 <!--dashboard-->
 <section style="margin: 20px;">
-  <div class="row">
+  <div class="row" >
+            <div class="col-md-12 text-right mb-3">
+                <button class="btn btn-primary" id="download"> Download your report </button>
+            </div>
+  <div class = "report">
     <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header" >
           <h4 class="card-title d-inline-block">Symptoms</h4> 
         </div>
 
@@ -745,7 +751,7 @@
       </div>
     </div>
   
-
+  </div>
   </div></div>
 </section>
 <script src="src/js/jquery-3.2.1.min.js"></script>
