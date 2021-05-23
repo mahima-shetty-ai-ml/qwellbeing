@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<!-- Load Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<style>
+  body {
+    padding-top: 0px;
+    margin-top: 0px;
+    /* background-image: linear-gradient(to bottom,#effca9,#b7e4c7,#95d5b2,#74c69d,#52b788,#40916c);  */
+    /* background-color: #fff1e6; */
+    
+  }
+</style>
+</head>
+<body>
+
+
+
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Launch demo modal</button> -->
+
+<!--Navbar-->
+<header id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                
+                <a class="navbar-brand" href="#">Quarantine WellBeing</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Virtual Chatbot</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Emergency
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="https://covidrelief.glideapp.io/">Resources</a></li>
+                  <li><a class="dropdown-item" href="https://covidrelief.glideapp.io/dl/ewAiAHQAIgA6ADAALAAiAHMAIgA6ACIAbQBlAG4AdQAtADAAOABhADAAOQA1ADUAYwAtADMAMwAyADUALQA0ADIAMgAwAC0AOAA4AGMAOAAtADEANgA0ADcAMgBlADEAMAA3ADcAYQAwAC0ANAAwADQAYwBjADIAOABkADAAMgAxADEAZQA4AGMAYQBkADUAMwBhAGMAMgA3ADgAZAAzADgAZgBiAGMAMQAxACIALAAiAHIAIgA6ACIAMABuAHYAegBEAGUAVgB3AFQAaABPADcAVgBuADMAMQA4AFAANgAxAHYAZwAiACwAIgBuACIAOgAiAFMAdABhAHQAZQB3AGkAcwBlACAAQwBvAHYAaQBkACAASABlAGwAcABsAGkAbgBlAHMAIgB9AA%3D%3D">Contact numbers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  More
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="login.html">Covid Tracker</a></li>
+                  <li><a class="dropdown-item" href="login.html" >Login</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#homeq">Home Quarantine guide</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#prevention">Prevention</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header>    
+<!--end of Navbar-->
+
+
+<!--login modal
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="form col-md-12 center-block">
+                <div class="form-group">
+                  <input class="form-control input-lg" placeholder="Email" type="text">
+                </div>
+                <div class="form-group">
+                  <input class="form-control input-lg" placeholder="Password" type="password">
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary btn-lg btn-block">Login</button>
+                  <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>  -->
+
+   <!-- content -->
+<section class="blank1"><section class="square"></section></section>
+
+<section class="firstsection">
+  <div> 
+    <section>
+    <div class="row" style="margin: 50px; ">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6" style="padding-top: 60px;">
+        <div>
+          <h1><span style="color:#deaaff";><span style="font-size:2em">Q</span></span><span style="color:#48bfe3">-W</span><span style="color:#4ea8de">e</span><span style="color:#5390d9">l</span><span style="color:#5e60ce">l</span><span style="color:#6930c3">Bei</span><span style="color:#7400b8">ng</span></h1>
+          <h2><span style="color:#003049">Your Quarantine Partner</span></h2>
+    
+    
+          <div>
+            <br><br><br>
+            <button type="button" class="btn btn-primary btn-lg" style="border-radius: 30px; margin: 10px;background-color:#d8bbff; border:#d8bbff;color:black"> Go To Covid Tracker </button>
+            <button type="button" class="btn btn-primary btn-lg" style="border-radius: 30px; margin: 10px;background-color:#003049;border:#003049;">Emergency contacts</button>
+            
+            
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div>
+          <img style="width: 100%;" src="images/work-life_balance_tips-01.jpg"alt="">
+    
+        </div>
+    
+      </div>
+      <section class="square3"></section>
+    </section>
+    </div>
+   
+</section>
+
+<style>
+ 
+  .firstsection{
+    position:static;
+    background-color: #dfe7fd;
+    border: 50px solid white;
+
+  }
+
+  .blank1{
+    background-color: white;
+    height: 50px;
+    width:50px;
+  }
+  .square{
+    background-color:#757bc8;
+    width:190px;
+    height:190px;
+    position:absolute;
+    right:0;
+    
+  }
+   .square3{
+    background-color:#02c39a;
+    width:100px;
+    height:90px;
+    left: 5px;
+    bottom:200px;
+    position:absolute;
+    
+    /* transform: skew(45deg);
+    transform-origin: 0 50%; */
+    
+  } 
+  
+</style>
+<!--OUR FEATURE-->
+<section class="secondsec">
+  <!-- <section class="square3"></section> -->
+
+<section style="margin: 50px;">
+<h1 style="text-align: center; color:black;">Our Features</h1>
+<div class="row">
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; border-radius: 10px; z-index: 2px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/2.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px; text-align: center;">
+        <h4>Virtual Chatbot</h4>
+        <img src="./images/chatbot.png" alt="chatbot" id="img1">
+        <style>
+          #img1{
+          
+            width:150px;
+            height:150px;
+          }
+        </style>
+      
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; ">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/2.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px; text-align: center;">
+        <h4 style="color:black">Guides for COVID Warriors</h4>
+        <img src="./images/nurse.png" alt="" srcset="" id="img2">
+
+       <style>
+          #img2{
+          width:150px;
+          height:150px;
+        }
+       </style>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; border-radius: 10px;">
+      
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/2.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px; text-align: center;">
+        <h4>Covid Tracker</h4>
+        <img src="./images/worldwide.png" alt="" id="img3">
+        <style>
+          #img3{
+          width:150px;
+          height:150px;
+        }
+       </style>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</section>
+<style>
+  .secondsec{
+    background-color:#757bc8 ;
+    border: 50px solid white;
+  }
+</style>
+<!--END OF OUR FEATURES-->
+<div id="homeq" style="padding-top: 40px;"></div>
+<section style="margin: 50px;">
+<h1>Basic Guidelines for Home Quarantine</h1><br>
+<div class="row">
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #dfe7fd; border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/2.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>5 STEPS FOR CLEANER HANDS</h4>
+        <p><ul>
+          <li>Wet your hands with clean, running water (warm or cold), turn off the tap, and apply soap.</li>
+          <li>Lather your hands by rubbing them together with the soap. Lather the backs of your hands, between your fingers, and under your nails.</li>
+          <li>Scrub your hands for at least 20 seconds. Need a timer? Hum the “Happy Birthday” song from beginning to end twice.</li>
+          <li>Rinse your hands well under clean, running water.</li>
+          <li>Dry your hands using a clean towel or air dry them.</li>
+        </ul></p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #dfe7fd; border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/3.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>MAINTAING A SAFE DISTANCE</h4>
+        <p><ul>
+          <li><strong>stay at least 6 feet (about 2 arm lengths) from people who are not from your household in both indoor and outdoor spaces</strong></li>
+          <li><strong>Know your surroundings well</strong>before venturing out. </li>
+          <li><strong>Consider social distancing options to travel</strong> safely when running errands or commuting to and from work.</li>
+          <li><strong>Limit Contact When Running Errands</strong> only visit stores selling household essentials when you absolutely need to</li>
+          <li><strong>Choose Safe Social Activities</strong> for being socially connect via social media</li>
+        </ul></p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #757bc8; border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/4.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Yoga a day keeps health issues away</h4>
+        <p><li><strong>Anulom Vilom Pranayam or Alternate Nostril Breathing Technique of Yoga</strong><p>This breathing technique has a number of benefits like improving immune system, boosting your memory, improving respiratory and cardiovascular health and regulating blood pressure. This Yoga asana also improves sleep and helps to de-stress</p></li>
+        <li><strong>Vrikshasana or tree pose of Yoga</strong><p>This asana helps to bring balance to your mind and body. It makes your legs stronger and is a great hip opener as assists it the body in establishing pelvic stability and strengthens the bones of the hips and legs.</p></li>
+        <li><strong> Bhujangasana or Cobra pose of Yoga</strong><p>The reclining back-bending asana of Yoga called Bhujangasana or Cobra pose strengthens the spine, butt, butt muscles, chest, abdomen, shoulders, lungs and improves blood circulation while also releasing the stress in one’s body.</p></li>
+        <li><strong>Matsyasana or the Fish Pose of Yoga</strong><p> This exercise has multiple benefits. From stretching the chest, abs, hip flexors and neck to stimulating two important areas of the body.</p></li></p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #757bc8; border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/5.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>INDIAN WHOLESOME MEAL PREP IDEAS</h4>
+        <p><ul><li> Start the day by consuming soaked almonds and raisins. Almonds are a rich source of protein and raisins provide a good amount of iron.</li><br>
+        <li>For breakfast, ragi dosa or a bowl of porridge is the best option.</li><br>
+        <li>Jaggery and ghee recommended during or post lunch or have this nutritious combination along with roti.</li><br>
+        <li>For dinner, have a simple khichdi as it includes all the essential nutrients, is light on the gut, and helps with good sleep.</li><br>
+        <li>It is important to stay hydrated. Apart from water, you must include homemade lime juice and buttermilk in your daily routine.</li><br>
+      <li><strong><a href="https://mytastycurry.com/15-day-indian-meal-plan" target="_blank" style="color: white;"></strong>Best Meal Prep Plans</a> Read more from this awesome website</li></ul>
+    </p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #dfe7fd; border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/6.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>STAYING OPTIMISTIC </h4>
+        <p><ul><li><strong>Limit media intake</strong>
+          Sure we still need to take in the appropriate government guidance regarding what steps to take next but it’s seriously damaging to our mental health and mood to be absorbing unnecessary amounts of negative and low energy conversation</li>
+        <li><strong>Self care</strong>Our day-to-day distractions have mostly now been removed (self quarantine life) and we are being encouraged to look a little closer to home to keep ourselves afloat, mentally and emotionally
+        </li>
+        <li><strong>Have therapeutic convos with peers</strong>Let’s focus on the positives as much as we can. Share posts, captions and comments that are positive. Positive attracts positive. </li>
+        <li><strong>Be grateful about past</strong>Acknowledge what god gave us prior to this pandemic and reshape your present and future based on those fundamentals</li>
+        <li><strong>Words will speak louder</strong></li>After a long night of introspection and ovethinking share all that is engraved within by expressing to your loved one's</ul></p>
+      </div>
+    </div>
+  </div>
+  <!--Card1-->
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #dfe7fd; border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/7.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Get a daily dose of News Updates</h4>
+        <p><li><strong>Watching daily news</strong> News provides overall review of what is happening around.
+        </li>
+        <li><strong>Do not blindly accept studies</strong> Many sponsered researches keep flashing avoid those as much as you can</li>
+        <li><strong>Say a big no no to whatsapp forwards</strong> These are fabricated and convincing which can actually affect your mental health</li>
+        <li><strong>Follow renowned media sources</strong> A lot have basis which is a trap</li>
+        <li><strong>Read Newspapers</strong>For those who have no access to an actual one can opt for e-papers which are eco-friendly and cost-efficient</li>
+      <li><strong>NEWS AGGREGATIONS ONE CAN FOLLOW FOR GLOBAL UPDATES!</strong>
+      <ol><li>News on coronavirus disease 2019 (COVID-19)(CDC)</li>
+      <li>Coronavirus (Science)</li>
+      <li>Coronavirus (Stat)</li>
+      <li>Coronavirus (New York Times)</li>
+      <li>Coronavirus (South China Morning Post)</li>
+    <li>Coronavirus (National Resource Center for Refugees, Immigrants and Migrants at the University of Minnesota)</li></ol></li></p>
+      </div>
+    </div>
+  </div>
+
+  <!--Card1-->
+  <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #c0fdff; border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/8.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div> -->
+  <!--Card1-->
+  <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #F3FAFD; border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/9.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div> -->
+  <!--Card1-->
+  <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+    <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #F3FAFD; border-radius: 10px;">
+      <div style="text-align: center;">
+        <img class="image-fluid" src="images/10.png" alt="" style="width: 8rem; height: auto;">   
+      </div>
+      <div style="padding: 10px;">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </div>
+  </div> -->
+</div>
+</section>
+</div>
+<!--PREVENTION-->
+<div id="prevention" style="padding-top: 40px;"></div>
+<section style="margin: 50px;">
+  <h1>Prevention for the caretakers</h1><br>
+  <div class="row">
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #18c29d; border-radius: 10px;">
+        <div style="text-align: center;">
+          <!-- <img class="image-fluid" src="images/11.png" alt="" style="width: 8rem; height: auto;">    -->
+        </div>
+        <div style="padding: 10px;">
+          <h4>Help cover basic needs</h4>
+          <p>Help the person who is sick follow their doctor’s instructions for care and medicine. <br>
+            For most people, symptoms last a few days, and people usually feel better after a week.
+            See if over-the-counter medicines for fever help the person feel better. <br>
+            Make sure the person who is sick drinks a lot of fluids and rests.
+            Help them with grocery shopping, filling prescriptions, and getting other items they may need. <br> Consider having the items delivered through a delivery service, if possible.
+            Take care of their pet(s), and limit contact between the person who is sick and their pet(s) when possible.</p>
+        </div>
+      </div>
+    </div>
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #6e74ca; border-radius: 10px;">
+        <div style="text-align: center;">
+          <!-- <img class="image-fluid" src="images/12.png" alt="" style="width: 8rem; height: auto;">    -->
+        </div>
+        <div style="padding: 10px;">
+          <h4>Watch for warning signs</h4>
+          <p>Have their doctor’s phone number on hand. <br>
+            <a href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html" target="_blank" style="color:purple">Use CDC’s self-checker tool </a> to help you make decisions about seeking appropriate medical care.
+            Call their doctor if the person keeps getting sicker. <br> For medical emergencies, call 911 and tell the dispatcher that the person has or might have COVID-19. <br>
+            When to seek emergency medical attention
+            Look for emergency warning signs* for COVID-19. If someone is showing any of these signs, seek emergency medical care immediately:
+            <br>
+            Trouble breathing <br>
+            Persistent pain or pressure in the chest <br>
+            Inability to wake or stay awake <br>
+            Pale, gray, or blue-colored skin, lips, or nail beds, depending on skin tone
+            </p>
+        </div>
+      </div>
+    </div>
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #8287ca; border-radius: 10px;">
+        <div style="text-align: center;">
+          <!-- <img class="image-fluid" src="images/2.png" alt="" style="width: 8rem; height: auto;">    -->
+        </div>
+        <div style="padding: 10px;">
+          <h4>Limit contact</h4>
+          <p><strong>The person who is sick should isolate</strong>
+          <ul><li>If possible, have the person who is sick use a separate bedroom and bathroom. If possible, have the person who is sick stay in their own “sick room” or area and away from others. Try to stay at least 6 feet away from the sick person.</li>
+          <li>Shared space: If you have to share space, make sure the room has good air flow.
+            Open the window to increase air circulation.
+            Improving ventilation helps remove respiratory droplets from the air.</li>
+          <li>Avoid having visitors. Avoid having any unnecessary visitors, especially visits by people who are at higher risk for severe illness.</li>
+        <li>Caregivers should quarantine
+
+          Caregivers and anyone who has been in close contact with someone who has COVID-19 should stay home, except in limited circumstances</li></ul></p>
+        </div>
+      </div>
+    </div>
+    <!--Card1-->
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #02c39a; border-radius: 10px;">
+        <div style="text-align: center;">
+          <!-- <img class="image-fluid" src="images/3.png" alt="" style="width: 8rem; height: auto;">    -->
+        </div>
+        <div style="padding: 10px;">
+          <h4>When and how to clean surfaces and objects</h4>
+          <p>Cleaning with a household cleaner that contains soap or detergent reduces the amount of germs on surfaces and objects and decreases risk of infection from surfaces. In most situations, cleaning alone removes most virus particles on surfaces. <br><ul><li>Clean high-touch surfaces and objects regularly (for example, daily or after each use) and after you have visitors in your home.</li>
+          <li>Focus on high-touch surfaces and objects (doorknobs, tables, handles, light switches, phones, remote controls, and countertops).</li>
+          <li>Clean other surfaces in your home when they are visibly dirty or as needed. Clean them more frequently if people in your household are more likely to get very sick from COVID-19. Disinfect if certain conditions apply.</li>
+          <li>Clean surfaces using a product suitable for each surface, following instructions on the product label.</li></ul></p>
+        </div>
+      </div>
+    </div>
+    <!--Card1-->
+    <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #F3FAFD; border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/4.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div> -->
+    <!--Card1-->
+    <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #F3FAFD; border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/5.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div> -->
+    <!--Card1-->
+    <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #F3FAFD; border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/6.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div> -->
+    <!--Card1-->
+    <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-xl-6 curvedbox">
+      <div style="padding: 20px; margin-bottom : 10px; margin-top: 10px; background-color: #F3FAFD; border-radius: 10px;">
+        <div style="text-align: center;">
+          <img class="image-fluid" src="images/7.png" alt="" style="width: 8rem; height: auto;">   
+        </div>
+        <div style="padding: 10px;">
+          <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  </section>
+
+<!-- Table Start --> 
+<section class="footer1">
+  <footer>
+
+    <table class="Tbl" >
+        <tr >
+          <th>WHO</th>
+          <th>CORONAVIRUS OUTBREAK</th> 
+          <th>Novel Coronavirus Situation</th>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://www.who.int"  target="blank"> 
+            <img src="https://devpolicy.org/wp-content/uploads/2015/02/image13.png" alt="world health organization" style="width:100px" >
+            </a>
+              </td>
+          <td>
+            <a href="https://www.worldometers.info/coronavirus/" target="blank"> 
+            <img src="https://www.worldometers.info/img/worldometers-logo.gif" >
+            </a>
+            </td>
+          <td>
+            <a href="https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd" target="blank"> 
+            <img src="https://experience.arcgis.com/site/widgets/landing/dist/runtime/assets/exb-logo.png" style="width:100px" ></a>
+            </td>
+        </tr>
+      </table>
+    </footer>
+</section>
+ <style>
+   .footer1{
+     background-color:#02c39a ;
+   }
+   /*Table Style*/
+ .Tbl{
+/* background-color:#003049 ; */
+/* width:100%; */
+position:relative;
+ width:50%;
+ margin-top:200px;
+ margin-left: auto;
+ margin-right: auto;
+ text-align:center;
+ font-size:10px;  
+ 
+ }
+ </style>
+ <style>
+   @media screen and (min-width:370px){
+   /*Table Container Style*/
+ #TblCon{
+   background:#efefef;
+ }
+ 
+ /*Table Style*/
+ .Tbl{
+
+/* background-color:#003049 ; */
+ width:70%;
+ margin-left: auto;
+ margin-right: auto;
+ text-align:center;
+ font-size:10px;  
+ }
+ }
+ </style>
+<!--footer-->
+
+<!-- <section style="background-color: rgb(56, 56, 56);">
+   <div style="text-align: center;"><br>
+    <h4 style="color: white;">Copyright @2021</h4>
+   </div>>
+</section> -->
+<!--end of footer-->
+
+<!-- Working Modal -->
+<div class="modal fade" id="exampleModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Modal title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+			GeeksforGeeks
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"> Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+</body>
+</html>
