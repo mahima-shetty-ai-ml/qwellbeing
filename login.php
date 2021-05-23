@@ -1,6 +1,5 @@
 <?php
     session_start();
-    define("Login&Register",true);
     
     
 

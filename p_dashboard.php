@@ -1,11 +1,15 @@
 <!-- data visualisation php code -->
 <?php 
   session_start();
-  if(!defined('Login&Register'))
-    {
-        header('location:login.php');
-        die();
-    }
+  // if(!defined('Login&Register'))
+  //   {
+  //       header('location:login.php');
+  //       die();
+  //   }
+  if(empty($_SESSION['emailaddress']))
+  {
+      header('location: login.php');
+  }
   $id = ($_SESSION['id']) ;
   include 'connect.php';
 

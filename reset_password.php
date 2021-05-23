@@ -1,5 +1,6 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\SMTP;
 require './vendor/autoload.php';
 ?>
 <html>
@@ -52,7 +53,7 @@ require './vendor/autoload.php';
 
                             $output.='<p>Please click on the following link to reset your password.</p>';
                             //replace the site url
-                            $output.='<p><a href="http://localhost/qwellbeing/new_password.php?key=' . $key . '&email_address=' . $email . '&action=reset" target="_blank">http://localhost/qwellbeing/new_password.php?key=' . $key . '&email_address=' . $email . '&action=reset</a></p>';
+                            $output.='<p><a href="http://localhost:3307/qwellbeing/new_password.php?key=' . $key . '&email_address=' . $email . '&action=reset" target="_blank">http://localhost/qwellbeing/new_password.php?key=' . $key . '&email_address=' . $email . '&action=reset</a></p>';
                             $body = $output;
                             $subject = "Password Recovery";
 
@@ -63,15 +64,17 @@ require './vendor/autoload.php';
                             require("vendor/autoload.php");
                             $mail = new PHPMailer();
                             $mail->IsSMTP();
-                            $mail->Host = "localhost"; // Enter your host here???????
+                            $mail->Host = "smtp.gmail.com"; // Enter your host here???????
                             $mail->SMTPAuth = true;
-                            $mail->Username = "qwellbeingIndia@gmail.com"; // Enter your email here
+                            $mail->Username = "qwellbeingindia@gmail.com"; // Enter your email here
                             $mail->Password = "Qwellbeing@123"; //Enter your passwrod here
-                            $mail->Port = 3306;
-                            $mail->SMTPSecure = 'ssl';
-                            // $mail->IsHTML(true);
-                            $mail->From = "qwellbeingIndia@gmail.com";
-                            $mail->FromName = "QwellBeing";
+                            $mail->Port = 587;
+                            $mail->SMTPSecure = 'tls';
+                            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                            $mail->IsHTML(true);
+                            $mail->SMTPDebug = 1;
+                            $mail->From = "qwellbeingindia@gmail.com";
+                            $mail->FromName = "qwellbeing4 creators";
 
                             $mail->Subject = $subject;
                             $mail->Body = $body;
