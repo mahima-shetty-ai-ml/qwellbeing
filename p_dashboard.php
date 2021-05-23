@@ -308,7 +308,6 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Covid Tracker - Update</a></li>
-                  <li><a class="dropdown-item" href="#">Profile settings</a></li>
                   <li><a class="dropdown-item" href="./logout.php" >Logout</a></li>
                 </ul>
               </li>
