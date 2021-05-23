@@ -320,8 +320,9 @@
 <!--dashboard-->
 <section style="margin: 20px;">
   <div class="row" >
-    <div class="col-md-12 text-right mb-3">
-      <button class="btn btn-primary" id="download"> Download your report </button>
+  <div class="col-md-12 text-right mb-3" style="float: right;">
+  <button style="margin:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactDoc">Contact a Doctor</button>
+  <button style="margin:10px;"  class="btn btn-primary" id="download"> Download your report </button>
     </div>
     <div id = "report">
       <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
@@ -533,7 +534,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div class="card" id="card2">
-        <div class="card-body" style="margin: 0px; padding: 5%;">
+        <div class="card-body" style="margin: 0px; padding: 3%;">
           <!-- <div class="chart-title">
             <h4>Oxygen level</h4>
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
@@ -572,7 +573,7 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div class="card" id="card3">
-        <div class="card-body" style="margin: 0px; padding: 5%;">
+        <div class="card-body" style="margin: 0px; padding: 3%;">
           <!-- <div class="chart-title">
             <h4>Temperature</h4>
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
@@ -595,7 +596,7 @@
                         label: 'Heart Rate',
                           data: [<?php echo $heartrate; ?>],
                           backgroundColor: 'rgba(0,255,255,0.1)',
-                          borderColor:'rgba(0,255,255)',
+                          borderColor:'rgba(0,0,255)',
                           borderWidth: 3	
                       }]
                   },
@@ -613,7 +614,7 @@
     </div>
     <div class="col-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div class="card" id="card4">
-        <div class="card-body" style="margin: 0px; padding: 5%;">
+        <div class="card-body" style="margin: 0px; padding: 3%;">
           <!-- <div class="chart-title">
             <h4>Heart Rate</h4>
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
@@ -635,8 +636,8 @@
                       {
                         label: 'Oxygen',
                           data: [<?php echo $oxygen; ?>],
-                          backgroundColor: 'rgba(0,255,255,0.1)',
-                          borderColor:'rgba(0,255,255)',
+                          backgroundColor: 'rgba(255,255,0,0.1)',
+                          borderColor:'rgba(255,255,0)',
                           borderWidth: 3	
                       }]
                   },
@@ -698,77 +699,36 @@
   <script src="src/js/chart.js"></script>
   <script src="src/js/app.js"></script>
 
+<!--contact docs-->
+<div class="modal fade" id="contactDoc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">How to contact a Doctor?</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col-xl-12 col-xs-12 colsm-12">
+            <p>For consulting a doctor, you need to follow these steps:</p>
+            <ol>
+              <li>Download your report</li>
+              <li>Find a doctor from <a href="doctors.html">this list</a></li>
+              <li>Send your report to the doctor through E-mail/WhatsApp.</li>
+            </ol>
+            <p>Guide for downloading report:</p>
+            <img src="images/downloadreport.png" width="100%" alt="guide">
+<br>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-  <!--Checklist-->
 
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Checklist for Covid Warriors!</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="row">
-        <div class="col-md-12">
-          <form action="#" method="POST">
-<div class="form-group row">
-  <div style="text-align: center;">
-    <img style="width: 150px;" src="images/checklist.png"/>
-  </div>
-<div class="col-md-6">
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Dry cough
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Fever
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Breathlessness
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Sore throat
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Headache
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Body pain
-    </label>
-  </div><div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Diarrhea
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Nausea/vomiting
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Irritability/confusion
-    </label>
-  </div>
-    </div>
-  </div>
 </body>
 </html>

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Quarantine Well Being</title>
+    <link rel="stylesheet" href="src/css/main.css">
+   
+</head>
+<body>
+<header>
+ <!-- navbar section -->
+
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="./index.html">Q-<span>WELLBEING</span></a>
+            <img  class="mobile-menu" id="mobile-cta" src="images/menu.svg" alt="Navigation">     
+            <!-- navbar -->
+            <nav>
+                <img class="mobile-menu" id="mobile-exit" src="images/exit.svg" alt="exit">
+                <ul class="primary-nav">
+                    <li class="current"  id="home"><a href="./index.html">HOME</a></li>
+                    <li><a href="./qw.html" id="wellbeing" target="blank">Q-WELLBEING</a></li>
+                    <li id="chat" id="chatbot"><a href="./virtual_chatbot.html">NEED A FRIEND?</a></li>
+                </ul>
+
+                <ul class="sec-now">
+                    <li><a href="./contact.html" target="blank">CONTACT</a></li>
+                    <li><a href="/about.html" target="blank"> ABOUT US</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- content -->
+    <section class="hero">
+        <div class="container">
+            <div class="left-col">
+                <p class="sub-head">YOUR QUARANTINE PARTNER</p>
+                <h1>Quarantine Well Being</h1>
+
+                <div class="hero-cta">
+                    <a href="#" class="primary-cta">
+                        Go To Covid Tracker
+                    </a>
+
+                    <a href="#" class="sec-cta">
+                        Emergency contacts
+                    </a>
+                </div>
+            </div>
+            <img src="images/undraw_social_distancing_2g0u.svg" class="hero-img" alt="">
+        </div>
+    </section>
+    
+<section class="features-section">
+    <div class="container">
+        <ul class="features-list">
+            <li>Personal Chatbot</a</li>
+            <li>At home Covid Measures</li>
+            <li>Ayurvedic Recipes</li>
+            <li>Yoga to fight against covid</li>
+            <li>Set a routine</li>
+        </ul>
+
+        <img src="images/undraw_medical_research_qg4d.png" alt="">
+    </div>
+</section>
+    
+<section class="testtimonials-section">
+    <div class="container">
+        <ul>
+            <!-- car items -->
+            <li>
+                <img src="images/person.jpg" alt="person">
+                <blockquote>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat repudiandae eum quas quia ipsam repellendus?</blockquote>
+                <cite>-anon</cite>
+            </li>
+
+            <li>
+                <img src="images/person.jpg" alt="person">
+                <blockquote>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat repudiandae eum quas quia ipsam repellendus?</blockquote>
+                <cite>-anon</cite>
+            </li>
+
+            <li>
+                <img src="images/person.jpg" alt="person">
+                <blockquote>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat repudiandae eum quas quia ipsam repellendus?</blockquote>
+                <cite>-anon</cite>
+            </li>
+          
+        </ul>
+
+    </div>
+</section>
+
+<!-- contact section -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-left">
+            <h2>
+                contact
+            </h2>
+            <form id = "contact" action="backend.php">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            
+           
+                <label for="EMAIL">Email</label>
+                <input type="email" id="EMAIL" name="EMAIL">
+
+                           
+                <label for="feedback">Feedback</label>
+               <textarea name="message" id="feedback" cols="30" rows="10"></textarea>
+
+               <input type="submit" class="send-message-cta" value="send message">
+
+
+            </form>
+
+
+
+        </div>
+        <div class="contact-right">
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d30170.37223636946!2d72.8909272!3d19.0506958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1620551210672!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>  
+
+        </div>
+    </div>
+</section>
+<script>
+    const mobileBtn = document.getElementById('mobile-cta')
+nav=document.querySelector('nav');
+// query selector
+mobileBtnExit=document.getElementById('mobile-exit');
+
+mobileBtn.addEventListener('click',()=>{
+    nav.classList.add('mobile-cta');
+})
+
+mobileBtnExit.addEventListener('click',()=>{
+    nav.classList.remove('mobile-cta');
+})
+</script>
+</body>
+
