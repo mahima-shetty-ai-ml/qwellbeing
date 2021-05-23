@@ -5,7 +5,7 @@
     session_start();
     $exists=false;
     // session_start();
-    echo "Welcome, ".$_SESSION['emailaddress'];
+    // echo "Welcome, ".$_SESSION['emailaddress'];
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         
         include 'connect.php ';
@@ -108,7 +108,7 @@
 
 
             $id = ($_SESSION['id']) ;
-            echo "Welcome, ". $_SESSION['emailaddress'];
+            // echo "Welcome, ". $_SESSION['emailaddress']
             // echo $rows;
 
             
@@ -123,7 +123,7 @@
             $no_of_rows = mysqli_num_rows($result);
             //  $rows = mysqli_num_rows($sql1);
              echo "<script>
-                    alert('$no_of_rows, $date_input, $gettype ');
+                    alert('Updated Successfully');
                     window.location.href='./p_dashboard.php';
                 </script>";
             //new user
@@ -149,7 +149,7 @@
 
                     $sql = "INSERT INTO `dailyupdate` ( `id`,`temperature`, `oxygen`, `heartrate`, `BreathingProblem`, `SpeakingProblem`, `ChestPain`, `SoreThroat`, `LossOfTasteAndSmell`, `Conjunctivitis`, `DiscolourationOfFingers`, `Fever`, `DryCough`, `Tiredness`, `date`) 
                     VALUES ('$id', '$temperature' ,'$oxygen','$heartrate','$BreathingProblem','$SpeakingProblem','$ChestPain', '$SoreThroat', '$LossOfTasteAndSmell','$Conjunctivitis','$DiscolourationOfFingers','$Fever','$DryCough','$Tiredness', current_timestamp());";
-                    echo $sql;
+                    // echo $sql;
                     $result=mysqli_query($conn,$sql);
                     
                     if(!$result){
@@ -158,7 +158,7 @@
                     
                     
                     if ($result) {
-                      echo "Successfully added!";
+                      // echo "Successfully added!";
                       echo "<script>
                           alert('Your health data have been sucessfully uploaded');
                           window.location.href='./p_dashboard.php';
@@ -166,7 +166,7 @@
                         }
                     } //end if password
                     else { 
-                        echo "Not added";
+                        // echo "Not added";
                         echo "<script>
                             alert('Sorry, your data have not been uploaded! Please try again');
                             window.location.href='./register.php';

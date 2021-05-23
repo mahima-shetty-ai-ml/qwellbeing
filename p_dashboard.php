@@ -308,6 +308,10 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Covid Tracker - Update</a></li>
+<<<<<<< HEAD
+=======
+                  <!-- <li><a class="dropdown-item" href="#">Profile settings</a></li> -->
+>>>>>>> 48c5376437bcec95c30808ee6d3bbf897a085ab9
                   <li><a class="dropdown-item" href="./logout.php" >Logout</a></li>
                 </ul>
               </li>
@@ -596,10 +600,10 @@
       <div class="card" id="card2">
         <div class="card-body" style="margin: 0px; padding: 5%;">
           <div class="chart-title">
-            <h4>Oxygen level</h4>
+            <!-- <h4>Oxygen level</h4>
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
           </div>	
-          <canvas id="linegraph"></canvas>
+          <canvas id="linegraph"></canvas> -->
           <div class="container">	
             <h4>Temperature</h4>       
             <canvas id="chart" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #555652; margin-top: 10px;"></canvas>
