@@ -256,16 +256,6 @@
                                     </div>
                                 </div><br>
                                 
-    
-                                <div class="form-group row">
-                                    <label for="role" class="col-md-4 col-form-label text-md-right">Register as: </label>
-                                    <div class="col-md-6">
-                                        <select class="form-control" id="select">
-                                            <option>Patient</option>
-                                            <option>Doctor</option>
-                                          </select>
-                                    </div>
-                                </div><br>
 
                                 <div class="form-group row">
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password: </label>
