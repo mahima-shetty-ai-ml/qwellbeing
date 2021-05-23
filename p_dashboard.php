@@ -308,10 +308,6 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">Covid Tracker - Update</a></li>
-<<<<<<< HEAD
-=======
-                  <!-- <li><a class="dropdown-item" href="#">Profile settings</a></li> -->
->>>>>>> 48c5376437bcec95c30808ee6d3bbf897a085ab9
                   <li><a class="dropdown-item" href="./logout.php" >Logout</a></li>
                 </ul>
               </li>
@@ -324,183 +320,122 @@
 <!--dashboard-->
 <section style="margin: 20px;">
   <div class="row" >
-            <div class="col-md-12 text-right mb-3">
-                <button class="btn btn-primary" id="download"> Download your report </button>
-            </div>
-  <div id = "report">
-    <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
-      <div class="card" id="card1">
-        <div class="card-header" >
-        <h4><?php  echo "Welcome, ".$fname." ".$lname."!" ?></h4>
-          
-        </div>
-
-        <!-- <div class="container">	
-            <h1>USE CHART.JS WITH MYSQL DATASETS</h1>       
-            <canvas id="chart" style="width: 100%; height: 65vh; background: #222; border: 1px solid #555652; margin-top: 10px;"></canvas>
-
-            <script>
-              var ctx = document.getElementById("chart").getContext('2d');
-                var myChart = new Chart(ctx, {
-                  type: 'line',
-                  data: {
-                      labels: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-                      datasets: 
-                      [{
-                          label: 'Temperature',
-                          data: [<?php echo $temperature; ?>],
-                          backgroundColor: 'transparent',
-                          borderColor:'rgba(255,99,132)',
-                          borderWidth: 3
-                      },
-
-                      {
-                        label: 'Heart Rate',
-                          data: [<?php echo $heartrate; ?>],
-                          backgroundColor: 'transparent',
-                          borderColor:'rgba(0,255,255)',
-                          borderWidth: 3	
-                      }]
-                  },
-              
-                  options: {
-                      scales: {scales:{yAxes: [{beginAtZero: false}], xAxes: [{autoskip: true, maxTicketsLimit: 100}]}},
-                      tooltips:{mode: 'index'},
-                      legend:{display: true, position: 'top', labels: {fontColor: 'rgb(255,255,255)', fontSize: 16}}
-                  }
-              });
-            </script>
-	    </div> -->
+    <div class="col-md-12 text-right mb-3">
+      <button class="btn btn-primary" id="download"> Download your report </button>
+    </div>
+    <div id = "report">
+      <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
+        <div class="card" id="card1">
+          <div class="card-header" >
+            <h4><?php  echo "Welcome, ".$fname." ".$lname."!" ?></h4>  
+          </div>
+            <?php
+            // session_start();
+            $exists=false;
+            $id = ($_SESSION['id']) ;
+            $sql4 = "SELECT * FROM `dailyupdate`  WHERE id = $id  ";
+            $result4 = mysqli_query($conn, $sql4);
+            if(!$result4){
+            // die("QUERY FAILED UPDATE.".mysqli_error($conn));
+              echo "sql error";
+            } 
+            ?>
 
 
-        <?php
-        // session_start();
-        $exists=false;
-        $id = ($_SESSION['id']) ;
-        // session_start();
-        // if($_SERVER["REQUEST_METHOD"] == "POST") {
-            
-        // include 'connect.php ';
-        // $temperature = $_POST["temperature"]; 
-        // $oxygen = $_POST["oxygen"]; 
-        // $heartrate =   $_POST["heartrate"]; 
-        // $BreathingProblem =  $_POST["BreathingProblem"];
-        // $SpeakingProblem =  $_POST["SpeakingProblem"];
-        // $ChestPain =  $_POST["ChestPain"];
-        // $SoreThroat =  $_POST["SoreThroat"];
-        // $Conjunctivitis =  $_POST["Conjunctivitis"];
-        // $LossOfTasteAndSmell =  $_POST["LossOfTasteAndSmell"];
-        // $DiscolourationOfFingers =  $_POST["DiscolourationOfFingers"];
-        // $Fever =  $_POST["Fever"];
-        // $DryCough =  $_POST["DryCough"];
-        // $Tiredness =  $_POST["Tiredness"];
-
-        
-        $sql4 = "SELECT * FROM `dailyupdate`  WHERE id = $id  ";
-        $result4 = mysqli_query($conn, $sql4);
-        if(!$result4){
-          // die("QUERY FAILED UPDATE.".mysqli_error($conn));
-          echo "sql error";
-        } 
-        
-        
-        ?>
-
-
-        <div class="card-body p-0">
-          <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Symptom/Days</th>
-                  <th scope="col">1</th>
-                  <th scope="col">2</th>
-                  <th scope="col">3</th>
-                  <th scope="col">4</th>
-                  <th scope="col">5</th>
-                  <th scope="col">6</th>
-                  <th scope="col">7</th>
-                  <th scope="col">8</th>
-                  <th scope="col">9</th>
-                  <th scope="col">10</th>
-                  <th scope="col">11</th>
-                  <th scope="col">12</th>
-                  <th scope="col">13</th>
-                  <th scope="col">14</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Breathing Problem</th>
-                  <?php
-
-                    while ($row = mysqli_fetch_assoc($result4)) {
-                  ?>
-                  <td> <?php
-                                    echo $row['BreathingProblem'];
-                        ?>
-                  </td>
-                  <?php
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Symptom/Days</th>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                    <th scope="col">3</th>
+                    <th scope="col">4</th>
+                    <th scope="col">5</th>
+                    <th scope="col">6</th>
+                    <th scope="col">7</th>
+                    <th scope="col">8</th>
+                    <th scope="col">9</th>
+                    <th scope="col">10</th>
+                    <th scope="col">11</th>
+                    <th scope="col">12</th>
+                    <th scope="col">13</th>
+                    <th scope="col">14</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Breathing Problem</th>
+                    <?php
+                      while ($row = mysqli_fetch_assoc($result4)) {
+                    ?>
+                    <td> 
+                      <?php
+                        echo $row['BreathingProblem'];
+                      ?>
+                    </td>
+                    <?php
                      }//end of while
                         // } end of if post
-                  ?>
-                  
-                </tr>
-                <tr>
-                  <th scope="row">Speaking Problem</th>
-                  <?php
-                  
-                  $result4 = mysqli_query($conn, $sql4);
-
-                    while ($row = mysqli_fetch_assoc($result4)) {
-                  ?>
-                  <td> <?php
-                                    echo $row['SpeakingProblem'];
+                    ?>
+                  </tr>
+                  <tr>
+                    <th scope="row">Speaking Problem</th>
+                      <?php
+                        $result4 = mysqli_query($conn, $sql4);
+                        while ($row = mysqli_fetch_assoc($result4)) {
+                      ?>
+                      <td> 
+                        <?php
+                          echo $row['SpeakingProblem'];
                         ?>
-                  </td>
-                  <?php
-                    }//end of while
+                      </td>
+                      <?php
+                        }//end of while
                         // } end of if post
-                  ?>
-                </tr>
-                <tr>
-                  <th scope="row">Chest Pain</th>
-                  <?php
+                      ?>
+                  </tr>
+                  <tr>
+                    <th scope="row">Chest Pain</th>
+                      <?php
+                        $result4 = mysqli_query($conn, $sql4);
+                        while ($row = mysqli_fetch_assoc($result4)) {
+                      ?>
+                      <td> 
+                        <?php
+                          echo $row['ChestPain'];
+                        ?>
+                      </td>
+                      <?php
+                        }//end of while
+                        // } end of if post
+                      ?>
+                  </tr>
+                  <tr>
+                    <th scope="row">Sore throat</th>
+                    <?php
                       $result4 = mysqli_query($conn, $sql4);
-                    while ($row = mysqli_fetch_assoc($result4)) {
-                  ?>
-                  <td> <?php
-                                    echo $row['ChestPain'];
-                        ?>
-                  </td>
-                  <?php
+                      while ($row = mysqli_fetch_assoc($result4)) {
+                    ?>
+                    <td> 
+                      <?php
+                        echo $row['SoreThroat'];
+                      ?>
+                    </td>
+                    <?php
                     }//end of while
                         // } end of if post
-                  ?>
-                </tr>
-                <tr>
-                  <th scope="row">Sore throat</th>
-                  <?php
-                  $result4 = mysqli_query($conn, $sql4);
-
-                    while ($row = mysqli_fetch_assoc($result4)) {
-                  ?>
-                  <td> <?php
-                                    echo $row['SoreThroat'];
-                        ?>
-                  </td>
-                  <?php
-                    }//end of while
-                        // } end of if post
-                  ?>
-                </tr>
-                <tr>
-                  <th scope="row">Loss of Taste and smell</th>
-                  <?php
-                    $result4 = mysqli_query($conn, $sql4);
-                    while ($row = mysqli_fetch_assoc($result4)) {
-                  ?>
-                  <td> <?php
+                    ?>
+                  </tr>
+                  <tr>
+                    <th scope="row">Loss of Taste and smell</th>
+                    <?php
+                      $result4 = mysqli_query($conn, $sql4);
+                      while ($row = mysqli_fetch_assoc($result4)) {
+                    ?>
+                      <td> 
+                        <?php
                                     echo $row['LossOfTasteAndSmell'];
                         ?>
                   </td>
@@ -594,19 +529,19 @@
           </div>
         </div>
       </div>
-    </div>
+                  </div></div>
 
-    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div class="card" id="card2">
         <div class="card-body" style="margin: 0px; padding: 5%;">
-          <div class="chart-title">
-            <!-- <h4>Oxygen level</h4>
+          <!-- <div class="chart-title">
+            <h4>Oxygen level</h4>
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
           </div>	
           <canvas id="linegraph"></canvas> -->
           <div class="container">	
             <h4>Temperature</h4>       
-            <canvas id="chart" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #555652; margin-top: 10px;"></canvas>
+            <canvas id="chart" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #E6E6E6; border-radius:3px; padding:10px;  margin-top: 10px;"></canvas>
 
             <script>
               var ctx = document.getElementById("chart").getContext('2d');
@@ -631,21 +566,21 @@
                   }
               });
             </script>
-	    </div>
+	       </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div class="card" id="card3">
         <div class="card-body" style="margin: 0px; padding: 5%;">
-          <div class="chart-title">
+          <!-- <div class="chart-title">
             <h4>Temperature</h4>
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
           </div>	
-          <canvas id="linegraph1"></canvas>
+          <canvas id="linegraph1"></canvas> -->
           <div class="container">	
             <h4>Heart Rate</h4>       
-            <canvas id="chart1" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #555652; margin-top: 10px;"></canvas>
+            <canvas id="chart1" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #E6E6E6; border-radius:3px; padding:10px;  margin-top: 10px;"></canvas>
 
             <script>
               var ctx = document.getElementById("chart1").getContext('2d');
@@ -676,17 +611,17 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
+    <div class="col-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div class="card" id="card4">
         <div class="card-body" style="margin: 0px; padding: 5%;">
-          <div class="chart-title">
+          <!-- <div class="chart-title">
             <h4>Heart Rate</h4>
             <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
           </div>	
-          <canvas id="linegraph2"></canvas>
+          <canvas id="linegraph2"></canvas> -->
           <div class="container">	
             <h4>Oxygen</h4>       
-            <canvas id="chart2" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #555652; margin-top: 10px;"></canvas>
+            <canvas id="chart2" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #E6E6E6; border-radius:3px; padding:10px; margin-top: 10px;"></canvas>
 
             <script>
               var ctx = document.getElementById("chart2").getContext('2d');
@@ -717,7 +652,8 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="padding: 10px;">
+    <div class="col-sm-12 col-xs-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
+      <div  class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12" >
       <div class="card mb-3">
         <div class="row g-0">
           <div  style="text-align: center;" class="col-md-2">
@@ -733,7 +669,8 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></div>
+      <div  class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12" >
       <div class="card mb-3">
         <div class="row g-0">
           <div style="text-align: center;" class="col-md-2">
@@ -748,23 +685,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div  style="text-align: center;" class="col-md-2">
-            <svg xmlns="http://www.w3.org/2000/svg"  width="100px" height="150px" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-            </svg>
-          </div>
-          <div class="col-md-10">
-            <div class="card-body">
-              <h5 class="card-title">Daily Checklist</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a style="margin-bottom: 20px;" class="btn btn-primary float-right" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Check the list!</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div></div>
     </div>
   
   </div>
