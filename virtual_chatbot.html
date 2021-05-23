@@ -142,8 +142,37 @@
 
                                         </div>
 
+                                        <div data-conv-case="none">
+                                            <select name="oximeter[]" data-conv-question="What is your Oximeter pulse rating?" >
+                                                <option value="below90">Below 90</option>
+                                                <option value="90-94">90 - 94</option>
+                                                <option value="95">95</option>
+                                                <option value="96above">96 - above</option>
+                                                <option value="none">I don't have an oximeter</option>
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div data-conv-fork="doctor_consultancy">
+                                        <div data-conv-case="no">
+                                            <select name="oximeter[]" data-conv-question="What is your Oximeter pulse rating?" >
+                                                <option value="below90">Below 90</option>
+                                                <option value="90-94">90 - 94</option>
+                                                <option value="95">95</option>
+                                                <option value="96above">96 - above</option>
+                                                <option value="none">I don't have an oximeter</option>
+
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+
                                         <!-- asking oximeter -->
-                                    <div data-conv-fork="first-question">
+                                    <!-- <div data-conv-fork="first-question">
                                         <div data-conv-case="yes">
                                             <select name="oximeter[]" data-conv-question="What is your Oximeter pulse rating?" >
                                                 <option value="below90">Below 90</option>
@@ -160,11 +189,11 @@
 		                                    	
                                             </select>
 
-                                            <!-- <input type="text" data-conv-question="Okay. Have a look at this precautionary measures to protect yourself from coronavirus." > -->
-                                            <!-- data-no-answer="true" -->
+                                            <input type="text" data-conv-question="Okay. Have a look at this precautionary measures to protect yourself from coronavirus." >
+                                            data-no-answer="true"
                                             
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <!-- response to oximeter -->
                                     <div data-conv-fork="oximeter[]">
@@ -234,7 +263,7 @@
                                                 
                                             </select>
                                         </div>
-
+                                        
 
 
 
@@ -254,6 +283,25 @@
                                         </div>
                                         
                                     </div>
+
+
+                                    <div data-conv-fork="doctor_consultancy">
+                                        <div data-conv-case="no">
+                                          
+                                            <select name="less_common[]" data-conv-question="Did you faced any of the following problem?" >
+                                                <option value="sore throat">sore throat</option>
+                                                <option value="loss of taste or smell">loss of taste or smell</option>
+                                                <option value="conjunctivitis">conjunctivitis</option>
+                                                <option value="discolouration of fingers">discolouration of fingers</option>
+                                                <option value="none">None</option>
+                                                
+                                                
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    
+
 
                                     <!-- response to less common symptoms -->
                                     <div data-conv-fork="less_common[]">
@@ -306,7 +354,21 @@
                                             
                                         </div>
                                     </div>
-                                    
+
+                                    <div data-conv-fork="doctor_consultancy">
+                                        <div data-conv-case="no">
+                                            <select name="most_common[]" data-conv-question="Did you faced any of the following problem?" >
+                                                <option value="fever">fever</option>
+                                                <option value="dry cough">dry cough</option>
+                                                <option value="tiredness">tiredness</option>
+                                                <option value="none">None</option>
+                                                
+                                                
+                                            </select>
+
+                                        </div>
+
+                                    </div>
 
                                     <!-- response to most comon symptoms -->
                                     <div data-conv-fork="most_common[]">
