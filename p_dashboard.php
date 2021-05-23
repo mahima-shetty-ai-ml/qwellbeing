@@ -48,7 +48,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Patient dashboard</title>
+    <title>Q-Wellbeing | Patient dashboard</title>
 	<!-- Load Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
@@ -288,10 +288,10 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Guide</a>
+                <a class="nav-link" href="./index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="virtual_chatbot.html">Virtual Chatbot</a>
+                <a class="nav-link" href="./virtual_chatbot.html">Virtual Chatbot</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -666,7 +666,7 @@
             <div class="card-body">
               <h5 class="card-title">Prevention for caretakers</h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a style="margin-bottom: 20px;" href="qw.html" class="btn btn-primary float-right">Read more</a>
+              <a style="margin-bottom: 20px;" href="index.html#prevention" class="btn btn-primary float-right">Read more</a>
             </div>
           </div>
         </div>
@@ -682,7 +682,7 @@
             <div class="card-body">
               <h5 class="card-title">Home Quarantine Guidelines</h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <a style="margin-bottom: 20px;" href="qw.html" class="btn btn-primary float-right">Read more</a>
+              <a style="margin-bottom: 20px;" href="index.html#homeq" class="btn btn-primary float-right">Read more</a>
             </div>
           </div>
         </div>
