@@ -100,7 +100,7 @@
         <tbody>
           <tr>
             <th style="padding: 20px;"  scope="row">Dr. Avinash Chaudhary</th>
-            <td style="padding: 20px;" >Cardiolodist</td>
+            <td style="padding: 20px;" >Cardiologist</td>
             <td style="padding: 20px;" ><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=avinash@gmail.com">avinash@gmail.com</a></td>
             <td style="padding: 20px;" >8888899999</td>
           </tr>
@@ -125,13 +125,13 @@
           </tr>
           <tr>
             <th  style="padding: 20px;" scope="row">Dr. John Doe</th>
-            <td style="padding: 20px;" >Covid spelcialist</td>
+            <td style="padding: 20px;" >Covid specialist</td>
             <td style="padding: 20px;" ><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=john@gmail.com">john@gmail.com</a></td>
             <td style="padding: 20px;" >8099980999</td>
           </tr>
           <tr>
             <th  style="padding: 20px;" scope="row">Dr. Drake Ramoray</th>
-            <td style="padding: 20px;" >Covid spelcialist</td>
+            <td style="padding: 20px;" >Covid specialist</td>
             <td style="padding: 20px;" ><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=drake@gmail.com">drake@gmail.com</a></td>
             <td style="padding: 20px;" >9999988888</td>
           </tr>
