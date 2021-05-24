@@ -75,7 +75,7 @@
 
                                     <input type="text" data-conv-question="Hello! Welcome to qwellbeing chatbot." data-no-answer="true">
 
-                                    <select data-conv-question="would you like to take covid symptoms checkup?" name="first-question">
+                                    <select data-conv-question="Would you like to take covid symptoms checkup?" name="first-question">
 	                                    <option value="yes">Yes</option>
 	                                    <option value="no">No</option>
 	                                </select>
@@ -83,7 +83,7 @@
                                     <!-- asking serious symptoms -->
                                     <div data-conv-fork="first-question">
                                         <div data-conv-case="yes">
-                                            <select name="serious_symptoms[]" data-conv-question="select the problems you faced recently" >
+                                            <select name="serious_symptoms[]" data-conv-question="Select the problems you faced recently" >
                                                 <option value="Breathing problem">Breathing problem</option>
                                                 <option value="Speaking problem">Speaking problem</option>
                                                 <option value="Chest pain">Chest pain</option>
@@ -107,7 +107,8 @@
 
                                         <div data-conv-case="Breathing problem">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
-                                            <select name="doctor_consultancy_extreme" data-conv-question="Would you like to consult doctor?" >
+                                            <input type="text" data-conv-question="You need to have an account for doctor consultancy" data-no-answer="true">
+                                            <select name="doctor_consultancy_extreme" data-conv-question="Would you like to create an account ?" >
                                                 <option value="yes" data-callback="DoctorContact">Yes</option>
 	                                            <option value="no">No</option>
                                             </select>
@@ -115,7 +116,8 @@
                                         </div>
                                         <div data-conv-case="Speaking problem">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
-                                            <select name="doctor_consultancy_extreme" data-conv-question="Would you like to consult doctor?" >
+                                            <input type="text" data-conv-question="You need to have an account for doctor consultancy" data-no-answer="true">
+                                            <select name="doctor_consultancy_extreme" data-conv-question="Would you like to create an account ?" >
                                                 <option value="yes" data-callback="DoctorContact">Yes</option>
 	                                            <option value="no">No</option>
                                             </select>
@@ -123,7 +125,8 @@
                                         </div>
                                         <div data-conv-case="Chest pain">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
-                                            <select name="doctor_consultancy_extreme" data-conv-question="Would you like to consult doctor?" >
+                                            <input type="text" data-conv-question="You need to have an account for doctor consultancy" data-no-answer="true">
+                                            <select name="doctor_consultancy_extreme" data-conv-question="Would you like to create an account ?" >
                                                 <option value="yes" data-callback="DoctorContact">Yes</option>
 	                                            <option value="no">No</option>
                                             </select>
@@ -167,7 +170,8 @@
 
                                         <div data-conv-case="below90">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
-                                            <select name="doctor_consultancy" data-conv-question="Would you like to consult doctor?" >
+                                            <input type="text" data-conv-question="You need to have an account for doctor consultancy" data-no-answer="true">
+                                            <select name="doctor_consultancy_extreme" data-conv-question="Would you like to create an account ?" >
                                                 <option value="yes" data-callback="DoctorContact">Yes</option>
 	                                            <option value="no">No</option>
                                             </select>
@@ -175,7 +179,8 @@
                                         </div>
                                         <div data-conv-case="90-94">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
-                                            <select name="doctor_consultancy" data-conv-question="Would you like to consult doctor?" >
+                                            <input type="text" data-conv-question="You need to have an account for doctor consultancy" data-no-answer="true">
+                                            <select name="doctor_consultancy_extreme" data-conv-question="Would you like to create an account ?" >
                                                 <option value="yes" data-callback="DoctorContact">Yes</option>
 	                                            <option value="no">No</option>
                                             </select>

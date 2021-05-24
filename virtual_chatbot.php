@@ -420,7 +420,7 @@ $no_of_symptoms=0;
 			ready();
 		}
         function DoctorContact(stateWrapper, ready) {
-			window.open("doctors.html");
+			window.open("doctors.php");
 			ready();
 		}
         

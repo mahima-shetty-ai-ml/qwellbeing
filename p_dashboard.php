@@ -856,7 +856,7 @@
             <p>For consulting a doctor, you need to follow these steps:</p>
             <ol>
               <li>Download your report</li>
-              <li>Find a doctor from <a href="doctors.html">this list</a></li>
+              <li>Find a doctor from <a href="doctors.php">this list</a></li>
               <li>Send your report to the doctor through E-mail/WhatsApp.</li>
             </ol>
             <p>Guide for downloading report:</p>
