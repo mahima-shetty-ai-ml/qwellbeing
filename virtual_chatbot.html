@@ -74,11 +74,43 @@
 	                            <form action="" method="GET" class="hidden">
 
                                     <input type="text" data-conv-question="Hello! Welcome to qwellbeing chatbot." data-no-answer="true">
-
-                                    <select data-conv-question="Would you like to take covid symptoms checkup?" name="first-question">
-	                                    <option value="yes">Yes</option>
-	                                    <option value="no">No</option>
+                                    <select data-conv-question="Are u tested positive for COVID test?" name="covid-question">
+	                                    <option value="yes"  >Yes</option>
+	                                    <!-- data-callback="login" -->
+                                        <option value="no">No</option>
+                                        <option value="idk">I don't know</option>
 	                                </select>
+                                    <div data-conv-fork="covid-question">
+                                        <div data-conv-case="yes">
+                                            <input type="text" data-conv-question="Create an account to keep track of your health. You can also check the Home quarantine guide and track your symptoms in COVID Tracker" data-no-answer="true">
+                                            <select data-conv-question="We will now redirect you to our login page" name="first-question">
+                                                <option value="yes" data-callback="login" >Ok</option>
+                                                <!-- <option value="no">No</option> -->
+                                            </select>
+
+                                        </div>
+                                        <div data-conv-case="no">
+                                            <!-- <input type="text" data-conv-question="Hello! Welcome to qwellbeing chatbot." data-no-answer="true"> -->
+                                            <select data-conv-question="Would you like to take covid symptoms checkup?" name="first-question">
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+
+                                        </div>
+                                        <div data-conv-case="idk">
+                                            <!-- <input type="text" data-conv-question="Hello! Welcome to qwellbeing chatbot." data-no-answer="true"> -->
+                                            <select data-conv-question="Would you like to take covid symptoms checkup?" name="first-question">
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <!-- ------------------------------------------- -->
+                                   
 
                                     <!-- asking serious symptoms -->
                                     <div data-conv-fork="first-question">
@@ -106,6 +138,7 @@
                                     <div data-conv-fork="serious_symptoms[]">
 
                                         <div data-conv-case="Breathing problem">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
                                             <input type="text" data-conv-question="You need to have an account for doctor consultancy" data-no-answer="true">
                                             <select name="doctor_consultancy_extreme" data-conv-question="Would you like to create an account ?" >
@@ -115,6 +148,7 @@
 
                                         </div>
                                         <div data-conv-case="Speaking problem">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
                                             <input type="text" data-conv-question="You need to have an account for doctor consultancy" data-no-answer="true">
                                             <select name="doctor_consultancy_extreme" data-conv-question="Would you like to create an account ?" >
@@ -124,6 +158,7 @@
 
                                         </div>
                                         <div data-conv-case="Chest pain">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
                                             <input type="text" data-conv-question="You need to have an account for doctor consultancy" data-no-answer="true">
                                             <select name="doctor_consultancy_extreme" data-conv-question="Would you like to create an account ?" >
@@ -169,6 +204,7 @@
                                     <div data-conv-fork="oximeter[]">
 
                                         <div data-conv-case="below90">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
                                             <input type="text" data-conv-question="You need to have an account for doctor consultancy" data-no-answer="true">
                                             <select name="doctor_consultancy_oximeter" data-conv-question="Would you like to create an account ?" >
@@ -178,6 +214,7 @@
 
                                         </div>
                                         <div data-conv-case="90-94">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
                                             <input type="text" data-conv-question="You need to have an account for doctor consultancy" data-no-answer="true">
                                             <select name="doctor_consultancy_oximeter" data-conv-question="Would you like to create an account ?" >
@@ -255,6 +292,7 @@
                                     <div data-conv-fork="less_common[]">
 
                                         <div data-conv-case="sore throat">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="We would like you to login into your dashboard before  consulting  a doctor" data-no-answer="true">
                                             <select name="doctor_consultancy" data-conv-question="Would you like to login?" >
                                                 <option value="yes" data-callback="login">Yes</option>
@@ -264,6 +302,7 @@
                                         </div>
 
                                         <div data-conv-case="loss of taste or smell">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="We would like you to login into your dashboard before  consulting  a doctor" data-no-answer="true">
                                             <select name="doctor_consultancy" data-conv-question="Would you like to login?" >
                                                 <option value="yes" data-callback="login">Yes</option>
@@ -273,6 +312,7 @@
                                         </div>
 
                                         <div data-conv-case="conjunctivitis">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="We would like you to login into your dashboard before  consulting  a doctor" data-no-answer="true">
                                             <select name="doctor_consultancy" data-conv-question="Would you like to login?" >
                                                 <option value="yes" data-callback="login">Yes</option>
@@ -281,6 +321,7 @@
     
                                         </div>
                                         <div data-conv-case="discolouration of fingers">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="We would like you to login into your dashboard before  consulting  a doctor" data-no-answer="true">
                                             <select name="doctor_consultancy" data-conv-question="Would you like to login?" >
                                                 <option value="yes" data-callback="login">Yes</option>
@@ -322,6 +363,7 @@
                                     <div data-conv-fork="most_common[]">
 
                                         <div data-conv-case="fever">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="We would like you to login into your dashboard before  consulting  a doctor" data-no-answer="true">
                                             <select name="doctor_consultancy" data-conv-question="Would you like to login?" >
                                                 <option value="yes" data-callback="login">Yes</option>
@@ -331,6 +373,7 @@
                                         </div>
 
                                         <div data-conv-case="dry cough">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="We would like you to login into your dashboard before  consulting  a doctor" data-no-answer="true">
                                             <select name="doctor_consultancy" data-conv-question="Would you like to login?" >
                                                 <option value="yes" data-callback="login">Yes</option>
@@ -340,6 +383,7 @@
                                         </div>
 
                                         <div data-conv-case="tiredness">
+                                            <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="We would like you to login into your dashboard before  consulting  a doctor" data-no-answer="true">
                                             <select name="doctor_consultancy" data-conv-question="Would you like to login?" >
                                                 <option value="yes" data-callback="login">Yes</option>
