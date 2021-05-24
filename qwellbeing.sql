@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3307
--- Generation Time: May 24, 2021 at 01:13 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.5
+-- Host: 127.0.0.1
+-- Generation Time: May 24, 2021 at 01:19 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,55 +70,6 @@ INSERT INTO `dailyupdate` (`id`, `temperature`, `oxygen`, `heartrate`, `Breathin
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_reset_tempdb`
---
-
-CREATE TABLE `password_reset_tempdb` (
-  `id` int(11) NOT NULL,
-  `email_address` varchar(255) NOT NULL,
-  `key` varchar(255) NOT NULL,
-  `expDate` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `password_reset_tempdb`
---
-
-INSERT INTO `password_reset_tempdb` (`id`, `email_address`, `key`, `expDate`) VALUES
-(1, 'sanjaydutt@gmail.com', '3787ee75c34d7728cc92adb3559e7b8d59718eb7c0', '2021-05-23 19:44:48'),
-(2, 'sanjaydutt@gmail.com', '82ab0ac6d2abbbefcd67c21d244774934603f1f42b', '2021-05-23 19:48:02'),
-(3, 'sanjaydutt@gmail.com', 'b41321f462326e09410bafcba7345b466ef9f78141', '2021-05-23 19:48:08'),
-(4, 'sanjaydutt@gmail.com', 'f3e9145ee15b71e609664f45599c0624570d0d2114', '2021-05-23 19:48:23'),
-(5, 'sanjaydutt@gmail.com', '26d42a67ef7406c72d0c3adc50599067838ae6bbc6', '2021-05-23 19:48:28'),
-(6, 'sanjaydutt@gmail.com', '79bf73cce16779b7d966b5563938d1f487d503abae', '2021-05-23 19:49:23'),
-(7, 'sanjaydutt@gmail.com', '061b26eda09a719d7abd23d01ae055de15974a9cf1', '2021-05-23 19:49:28'),
-(8, 'sanjaydutt@gmail.com', '42985b46a19f16f6bdc3b004f1d76657b638d4ad1b', '2021-05-23 19:52:56'),
-(9, 'sanjaydutt@gmail.com', '8eae05b43ca8b4fae0a8c00838a412c083916f2a17', '2021-05-23 19:53:01'),
-(10, 'sanjaydutt@gmail.com', '1504749f762bdbad673922679f57c839c266b0b11b', '2021-05-23 19:54:43'),
-(11, 'sanjaydutt@gmail.com', '77198d1e932419665af7d28eb441cec1e91e46d64f', '2021-05-23 19:54:52'),
-(12, 'msshetty237@gmail.com', '5b944d8bfcfc91ee5fe9018e69a67fc2dee470f757', '2021-05-24 12:12:55'),
-(13, 'msshetty237@gmail.com', '4abd55afd4f1461479d0fecb5b7a45ae8f3978ed2b', '2021-05-24 12:13:01'),
-(14, 'msshetty237@gmail.com', 'd0b28f97132a7aa47bdbfae91e3575a58b45e99619', '2021-05-24 12:13:30'),
-(15, 'msshetty237@gmail.com', '9d05e794bc7064577ab5aff52855577df520ba4eee', '2021-05-24 12:13:36'),
-(16, 'msshetty237@gmail.com', 'a022035bc8e58c4144c6bc8056e157193ebc8a5e1e', '2021-05-24 12:14:18'),
-(17, 'msshetty237@gmail.com', '0873f30f7904ea6327d2b89170f160a533d852249b', '2021-05-24 12:15:12'),
-(18, 'msshetty237@gmail.com', 'debb880d903bfc8d7ec3f9f40304451657f4881076', '2021-05-24 12:15:48'),
-(19, 'msshetty237@gmail.com', '58f9535715514179c2df468e0e1ecfdb8fd931fdc8', '2021-05-24 12:18:43'),
-(20, 'msshetty237@gmail.com', '9921c7b0c450d8b071d063e958cd1f859f0d20c97a', '2021-05-24 12:18:50'),
-(21, 'msshetty237@gmail.com', '0aea562914426df134fc0621a3bdef59f42607dda6', '2021-05-24 12:22:00'),
-(22, 'msshetty237@gmail.com', '5b0fee4539d601ecbcfe9fafbbb5263196071d6d87', '2021-05-24 12:22:24'),
-(23, 'msshetty237@gmail.com', '66bba90c504dbd1f671aa50070641a8ee784638ad6', '2021-05-24 12:22:35'),
-(24, 'msshetty237@gmail.com', '230d481f3d7ee5a76395c2b2a6074d935b75f5421c', '2021-05-24 12:29:08'),
-(25, 'msshetty237@gmail.com', '2d0abe8782c78c0650fd7045e0c40e5ca11c925549', '2021-05-24 12:30:29'),
-(26, 'msshetty237@gmail.com', '869b124d71de0db4af7166ef783ffa606f30950009', '2021-05-24 12:30:34'),
-(27, 'msshetty237@gmail.com', '11e8af4c14776aa0755416257ed0bbcaf91d8ecfb0', '2021-05-24 12:30:38'),
-(28, 'msshetty237@gmail.com', '19dd94ce073b10acd81642676e2e69aab8255a471b', '2021-05-24 12:35:46'),
-(29, 'msshetty237@gmail.com', '542a079e3a074051defd8eeb64c21b719174fc4722', '2021-05-24 12:45:35'),
-(30, 'msshetty237@gmail.com', '9bde02a6cb246bf940191589559209e7f9913d66ea', '2021-05-24 12:45:42');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `patients`
 --
 
@@ -161,12 +112,6 @@ INSERT INTO `patients` (`id`, `first_name`, `last_name`, `email_address`, `passw
 --
 
 --
--- Indexes for table `password_reset_tempdb`
---
-ALTER TABLE `password_reset_tempdb`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `patients`
 --
 ALTER TABLE `patients`
@@ -175,12 +120,6 @@ ALTER TABLE `patients`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `password_reset_tempdb`
---
-ALTER TABLE `password_reset_tempdb`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `patients`
