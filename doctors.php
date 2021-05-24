@@ -1,3 +1,20 @@
+<?php 
+  session_start();
+  // if(!defined('Login&Register'))
+  //   {
+  //       header('location:login.php');
+  //       die();
+  //   }
+  if(empty($_SESSION['emailaddress']))
+  {
+      header('location: login.php');
+  }
+  $id = ($_SESSION['id']) ;
+  include 'connect.php';
+
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,39 +99,40 @@
         </thead>
         <tbody>
           <tr>
-            <th style="padding: 20px;"  scope="row">Dr. Neha Vishwakarma</th>
+            <th style="padding: 20px;"  scope="row">Dr. Avinash Chaudhary</th>
             <td style="padding: 20px;" >Cardiolodist</td>
-            <td style="padding: 20px;" ><a href="mailto:neha.v@gmail.com">neha.v@gmail.com</a></td>
+            <td style="padding: 20px;" ><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=avinash@gmail.com">avinash@gmail.com</a></td>
             <td style="padding: 20px;" >8888899999</td>
           </tr>
+          <!-- <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=nss.dmce@gmail.com" -->
           <tr>
-            <th  style="padding: 20px;" scope="row">Dr. Mahima Shetty</th>
-            <td style="padding: 20px;" >Covid spelcialist</td>
-            <td style="padding: 20px;" ><a href="mailto: m.shetty@gmail.com">m.shetty@gmail.com</a></td>
+            <th  style="padding: 20px;" scope="row">Dr. Nikhil Chaudhary</th>
+            <td style="padding: 20px;" >Covid specialist</td>
+            <td style="padding: 20px;" ><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=nikhil@gmail.com">nikhil@gmail.com</a></td>
             <td style="padding: 20px;" >9999977777</td>
           </tr>
           <tr>
-            <th style="padding: 20px;"  scope="row">Dr. Dixita Patil</th>
+            <th style="padding: 20px;"  scope="row">Dr. Rakesh Patil</th>
             <td style="padding: 20px;" >Pulmonologist</td>
-            <td style="padding: 20px;" ><a href="mailto: dixita.p@gmail.com">dixita.p@gmail.com</a></td>
+            <td style="padding: 20px;" ><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=rakesh@gmail.com">rakesh@gmail.com</a></td>
             <td style="padding: 20px;" >9988889999</td>
           </tr>
           <tr>
-            <th  style="padding: 20px;" scope="row">Dr. Chaitanya Keerthi</th>
-            <td style="padding: 20px;" >Covid spelcialist</td>
-            <td style="padding: 20px;" ><a href="mailto: c.k@gmail.com">c.k@gmail.com</a></td>
+            <th  style="padding: 20px;" scope="row">Dr. Seema Ghule</th>
+            <td style="padding: 20px;" >Covid specialist</td>
+            <td style="padding: 20px;" ><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=seema@gmail.com">seema@gmail.com</a></td>
             <td style="padding: 20px;" >9898989898</td>
           </tr>
           <tr>
-            <th  style="padding: 20px;" scope="row">Dr. Jhon Doe</th>
+            <th  style="padding: 20px;" scope="row">Dr. John Doe</th>
             <td style="padding: 20px;" >Covid spelcialist</td>
-            <td style="padding: 20px;" ><a href="mailto:jhondoe@gmail.com">jhondoe@gmail.com</a></td>
+            <td style="padding: 20px;" ><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=john@gmail.com">john@gmail.com</a></td>
             <td style="padding: 20px;" >8099980999</td>
           </tr>
           <tr>
             <th  style="padding: 20px;" scope="row">Dr. Drake Ramoray</th>
             <td style="padding: 20px;" >Covid spelcialist</td>
-            <td style="padding: 20px;" ><a href="mailto:ramoray@gmail.com">ramoray@gmail.com</a></td>
+            <td style="padding: 20px;" ><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=drake@gmail.com">drake@gmail.com</a></td>
             <td style="padding: 20px;" >9999988888</td>
           </tr>
           
