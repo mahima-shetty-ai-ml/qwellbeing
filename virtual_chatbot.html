@@ -16,6 +16,12 @@
 	<script src= "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #093158;
+        }
+    </style>
+
 </head>
 <body>
 <!--Navbar-->
@@ -62,17 +68,15 @@
 <!--End of navbar-->
 
 <!--Chatobt-->
-	<section id="demo" style="padding-top: -80px; margin: 0px; padding: 0px;">
+	<section id="demo" style="padding-top: -80px; margin: 0px; padding: 0px; background-color: #343A40;">
 	    <div class="vertical-align" style="padding: top -200px;">
 	        <div class="container">
 	            <div class="row">
 	                <div class=" col-lg-12 col-xl-12 col-md-12 col-sm-12 ">
 	                    <div class="card no-border">
-                            
 	                        <div id="chat" class="">
                                 <!-- conv-form-wrapper -->
 	                            <form action="" method="GET" class="hidden">
-
                                     <input type="text" data-conv-question="Hello! Welcome to qwellbeing chatbot." data-no-answer="true">
                                     <select data-conv-question="Are u tested positive for COVID test?" name="covid-question">
 	                                    <option value="yes"  >Yes</option>
@@ -106,12 +110,7 @@
 
                                         </div>
                                     </div>
-
-
-
                                     <!-- ------------------------------------------- -->
-                                   
-
                                     <!-- asking serious symptoms -->
                                     <div data-conv-fork="first-question">
                                         <div data-conv-case="yes">
@@ -190,15 +189,9 @@
                                                 <option value="95">95</option>
                                                 <option value="96above">96 - above</option>
                                                 <option value="none">I don't have an oximeter</option>
-
                                             </select>
-
                                         </div>
-
                                     </div>
-
-
-                                       
 
                                     <!-- response to oximeter -->
                                     <div data-conv-fork="oximeter[]">
@@ -221,7 +214,6 @@
                                                 <option value="yes" data-callback="DoctorContact">Yes</option>
 	                                            <option value="no">No</option>
                                             </select>
-
                                         </div>
                                        
                                             
@@ -233,26 +225,19 @@
                                                 <option value="conjunctivitis">conjunctivitis</option>
                                                 <option value="discolouration of fingers">discolouration of fingers</option>
                                                 <option value="none">None</option>
-                                                
-                                                
                                             </select>
                                         </div>
+
                                         <div data-conv-case="96above">
                                             <select name="less_common[]" data-conv-question="Did you faced any of the following problem?" >
                                                 <option value="sore throat">sore throat</option>
                                                 <option value="loss of taste or smell">loss of taste or smell</option>
                                                 <option value="conjunctivitis">conjunctivitis</option>
                                                 <option value="discolouration of fingers">discolouration of fingers</option>
-                                                <option value="none">None</option>
-                                                
-                                                
+                                                <option value="none">None</option>  
                                             </select>
                                         </div>
                                         
-
-
-
-
                                         <!-- asking for less common symptoms -->
                                         <div data-conv-case="none">
                                             <input type="text" data-conv-question="Okay, cool!" data-no-answer="true">
@@ -262,35 +247,25 @@
                                                 <option value="conjunctivitis">conjunctivitis</option>
                                                 <option value="discolouration of fingers">discolouration of fingers</option>
                                                 <option value="none">None</option>
-                                                
-                                                
                                             </select>
                                         </div>
-                                        
                                     </div>
 
 
                                     <div data-conv-fork="doctor_consultancy_oximeter">
                                         <div data-conv-case="no">
-                                          
                                             <select name="less_common[]" data-conv-question="Did you faced any of the following problem?" >
                                                 <option value="sore throat">sore throat</option>
                                                 <option value="loss of taste or smell">loss of taste or smell</option>
                                                 <option value="conjunctivitis">conjunctivitis</option>
                                                 <option value="discolouration of fingers">discolouration of fingers</option>
                                                 <option value="none">None</option>
-                                                
-                                                
                                             </select>
                                         </div>
-
                                     </div>
                                     
-
-
                                     <!-- response to less common symptoms -->
                                     <div data-conv-fork="less_common[]">
-
                                         <div data-conv-case="sore throat">
                                             <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="We would like you to login into your dashboard before  consulting  a doctor" data-no-answer="true">
@@ -298,7 +273,6 @@
                                                 <option value="yes" data-callback="login">Yes</option>
                                                 <option value="no">No</option>
                                             </select>
-    
                                         </div>
 
                                         <div data-conv-case="loss of taste or smell">
@@ -308,7 +282,6 @@
                                                 <option value="yes" data-callback="login">Yes</option>
                                                 <option value="no">No</option>
                                             </select>
-    
                                         </div>
 
                                         <div data-conv-case="conjunctivitis">
@@ -318,8 +291,8 @@
                                                 <option value="yes" data-callback="login">Yes</option>
                                                 <option value="no">No</option>
                                             </select>
-    
                                         </div>
+
                                         <div data-conv-case="discolouration of fingers">
                                             <input type="text" data-conv-question="It would be advisable to take COVID test" data-no-answer="true">
                                             <input type="text" data-conv-question="We would like you to login into your dashboard before  consulting  a doctor" data-no-answer="true">
@@ -327,7 +300,6 @@
                                                 <option value="yes" data-callback="login">Yes</option>
                                                 <option value="no">No</option>
                                             </select>
-    
                                         </div>
                                         
                                         <!-- asking for most common symptoms -->
@@ -336,11 +308,8 @@
                                                 <option value="fever">fever</option>
                                                 <option value="dry cough">dry cough</option>
                                                 <option value="tiredness">tiredness</option>
-                                                <option value="none">None</option>
-                                                
-                                                
+                                                <option value="none">None</option>   
                                             </select>
-                                            
                                         </div>
                                     </div>
 
@@ -389,7 +358,6 @@
                                                 <option value="yes" data-callback="login">Yes</option>
                                                 <option value="no">No</option>
                                             </select>
-    
                                         </div>
                                         
 
@@ -397,11 +365,8 @@
                                         <div data-conv-case="none">
                                             <!-- <input type="text" data-conv-question="Looks like you are safe from covid-19" data-no-answer="true"> -->
                                             <select name="p_measures" data-conv-question="Have a look at this precautionary measures to protect yourself." >
-                                                <option value="yes" data-callback="index_page">Ok</option>
-		                                    	
-                                            </select>
-                                            
-                                            
+                                                <option value="yes" data-callback="index_page">Ok</option>	
+                                            </select> 
                                         </div>
                                     </div>
 	                            </form>
