@@ -779,7 +779,7 @@
 	    </div>
         </div>
       </div>
-    </div></div>
+    </div>
     
     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div  class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12" >
@@ -798,7 +798,7 @@
             </div>
           </div>
         </div>
-      </div></div></div>
+      </div></div><div></div>
       <div  class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12" >
       <div class="card mb-3">
         <div class="row g-0">

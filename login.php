@@ -155,6 +155,11 @@
                                         </div>
                                     </div>
                                 </div><br>
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Login
+                                    </button>
+                                </div>
                         </div>
                         </form>
                     </div>
