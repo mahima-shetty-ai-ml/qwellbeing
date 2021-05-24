@@ -1,8 +1,11 @@
+<?php
+$no_of_symptoms=0;
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Qwellbeing - chatbot</title>
+	<title>Q-Wellbeing | Chatbot</title>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
@@ -14,21 +17,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-		<script src= "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src= "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
-	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-
-    <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function() {
-        OneSignal.init({
-        appId: "4eaf4807-a545-4c53-b99b-a1ec4b1fbfdc",
-        });
-    });
-    </script> -->
-
-  
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 </head>
 <body>
 <!--Navbar-->
@@ -36,17 +27,17 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin: 0px; border-radius: 0px; height: 10%;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="./index.html">
-                    <a class="navbar-brand" href="./index.html" style="padding: 15px 5px 0px;">Quarantine WellBeing</a>
+                    <a class="navbar-brand" href="index.html" style="padding: 15px 5px 0px;">Q-<span style="color:#007AF3 ;">WELLBEING</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link"  href="./qw.html">Guide</a>
+                    <a class="nav-link"  href="./index.html">Guide</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./virtual_chatbot.html">Virtual Chatbot</a>
+                    <a class="nav-link active" href="./virtual_chatbot.html">Virtual Chatbot</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -109,9 +100,6 @@
 		                                    	
                                             </select>
 
-                                            <!-- <input type="text" data-conv-question="Okay. Have a look at this precautionary measures to protect yourself from coronavirus." > -->
-                                            <!-- data-no-answer="true" -->
-                                            
                                         </div>
                                     </div>
 
@@ -159,6 +147,9 @@
                                     <!-- no consultancy for serious symptoms -->
                                     <div data-conv-fork="doctor_consultancy_extreme">
                                         <div data-conv-case="no">
+                                            <?php 
+                                            $no_of_symptoms+=1;
+                                            ?>
                                             <select name="oximeter[]" data-conv-question="What is your Oximeter pulse rating?" >
                                                 <option value="below90">Below 90</option>
                                                 <option value="90-94">90 - 94</option>
@@ -181,7 +172,7 @@
                                         <div data-conv-case="below90">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
                                             <select name="doctor_consultancy" data-conv-question="Would you like to consult doctor?" >
-                                                <option value="yes" data-callback="login">Yes</option>
+                                                <option value="yes" data-callback="DoctorContact">Yes</option>
 	                                            <option value="no">No</option>
                                             </select>
 
@@ -189,7 +180,7 @@
                                         <div data-conv-case="90-94">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
                                             <select name="doctor_consultancy" data-conv-question="Would you like to consult doctor?" >
-                                                <option value="yes" data-callback="login">Yes</option>
+                                                <option value="yes" data-callback="DoctorContact">Yes</option>
 	                                            <option value="no">No</option>
                                             </select>
 
@@ -243,7 +234,9 @@
 
                                     <div data-conv-fork="doctor_consultancy">
                                         <div data-conv-case="no">
-                                          
+                                            <?php 
+                                                $no_of_symptoms+=1;
+                                            ?>
                                             <select name="less_common[]" data-conv-question="Did you faced any of the following problem?" >
                                                 <option value="sore throat">sore throat</option>
                                                 <option value="loss of taste or smell">loss of taste or smell</option>
@@ -313,6 +306,9 @@
 
                                     <div data-conv-fork="doctor_consultancy">
                                         <div data-conv-case="no">
+                                            <?php 
+                                                $no_of_symptoms+=1;
+                                            ?>
                                             <select name="most_common[]" data-conv-question="Did you faced any of the following problem?" >
                                                 <option value="fever">fever</option>
                                                 <option value="dry cough">dry cough</option>
@@ -355,15 +351,48 @@
                                             </select>
     
                                         </div>
+
+                                        <div data-conv-fork="doctor_consultancy">
+                                        <div data-conv-case="no">
+                                            <?php 
+                                                $no_of_symptoms+=1;
+                                                if($no_of_symptoms>1){
+                                                    ?>
+                                                    
+                                                    <input type="text" data-conv-question="Looks like you have some of prominent covid-19 symptoms" data-no-answer="true">
+                                                    <select name="doctor_consultancy_2" data-conv-question="Would you like to login?" >
+                                                        <option value="yes" data-callback="login">Yes</option>
+                                                        <option value="no">No</option>
+                                                    </select>
+                                                    <?php
+                                                }//end if
+                                            ?>
+                                            
+
+                                        </div>
+
+                                    </div>
                                         
 
                                         <!-- precautionary measures -->
                                         <div data-conv-case="none">
+                                            <?php
+                                            if($no_of_symptoms==0){
+                                            ?>
+
                                             <input type="text" data-conv-question="Looks like you are safe from covid-19" data-no-answer="true">
                                             <select name="p_measures" data-conv-question="Have a look at this precautionary measures to protect yourself." >
                                                 <option value="yes" data-callback="index_page">Ok</option>
 		                                    	
                                             </select>
+                                            <?php
+                                            }
+                                            ?>
+                                            <!-- <input type="text" data-conv-question="Looks like you are safe from covid-19" data-no-answer="true">
+                                            <select name="p_measures" data-conv-question="Have a look at this precautionary measures to protect yourself." >
+                                                <option value="yes" data-callback="index_page">Ok</option>
+		                                    	
+                                            </select> -->
                                             
                                             
                                         </div>
@@ -383,7 +412,7 @@
 	<script>
 		
         function login(stateWrapper, ready) {
-			window.open("login.html");
+			window.open("login.php");
 			ready();
 		}
         function index_page(stateWrapper, ready) {
@@ -391,7 +420,7 @@
 			ready();
 		}
         function DoctorContact(stateWrapper, ready) {
-			window.open("DoctorContact.html");
+			window.open("doctors.html");
 			ready();
 		}
         
