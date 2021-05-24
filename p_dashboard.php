@@ -319,11 +319,12 @@
 <!--end of Navbar-->
 <!--dashboard-->
 <section style="margin: 20px;">
-  <div class="row"  id = "report" >
-  <div class="col-md-12 text-right mb-3" style="float: right;">
+<div class="col-md-12 text-right mb-3" style="float: right;">
   <button style="margin:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactDoc">Contact a Doctor</button>
   <button style="margin:10px;"  class="btn btn-primary" id="download"> Download your report </button>
     </div>
+  <div class="row"  id = "report" >
+  
     <div>
       <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
         <div class="card" id="card1">
@@ -676,11 +677,6 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div class="card" id="card2">
         <div class="card-body" style="margin: 0px; padding: 3%;">
-          <!-- <div class="chart-title">
-            <h4>Oxygen level</h4>
-            <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
-          </div>	
-          <canvas id="linegraph"></canvas> -->
           <div class="container">	
             <h4>Temperature</h4>       
             <canvas id="chart" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #E6E6E6; border-radius:3px; padding:10px;  margin-top: 10px;"></canvas>
@@ -715,11 +711,6 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div class="card" id="card3">
         <div class="card-body" style="margin: 0px; padding: 3%;">
-          <!-- <div class="chart-title">
-            <h4>Temperature</h4>
-            <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
-          </div>	
-          <canvas id="linegraph1"></canvas> -->
           <div class="container">	
             <h4>Heart Rate</h4>       
             <canvas id="chart1" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #E6E6E6; border-radius:3px; padding:10px;  margin-top: 10px;"></canvas>
@@ -756,11 +747,6 @@
     <div class="col-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div class="card" id="card4">
         <div class="card-body" style="margin: 0px; padding: 3%;">
-          <!-- <div class="chart-title">
-            <h4>Heart Rate</h4>
-            <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> Lorem ipsum</span>
-          </div>	
-          <canvas id="linegraph2"></canvas> -->
           <div class="container">	
             <h4>Oxygen</h4>       
             <canvas id="chart2" style="width: 100%; height: 65vh; background: #fffff; border: 1px solid #E6E6E6; border-radius:3px; padding:10px; margin-top: 10px;"></canvas>
@@ -793,7 +779,7 @@
 	    </div>
         </div>
       </div>
-    </div>
+    </div></div>
     
     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div  class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12" >
@@ -812,7 +798,7 @@
             </div>
           </div>
         </div>
-      </div></div>
+      </div></div></div>
       <div  class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12" >
       <div class="card mb-3">
         <div class="row g-0">
@@ -830,8 +816,6 @@
         </div>
       </div></div>
     </div>
-    
-  
   </div>
   </div></div>
 </section>

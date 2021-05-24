@@ -187,7 +187,7 @@
     </header>   
 
 <!--Login form-->
-<section style="margin: 60px;">
+<section style="margin: 40px;">
     <main class="login-form">
         <div class="cotainer">
             <div class="row justify-content-center">
@@ -202,7 +202,7 @@
                                     <label for="fname" class="col-md-4 col-form-label text-md-right">First name: </label>
                                     <div class="col-md-6">
                                         <input type="text" id="fname" class="form-control" name="fname" required autofocus>
-                                        <span id="fnamee"></span>
+                                        <br><span id="fnamee"></span>
                                     </div>
                                 </div><br>
                                 
@@ -211,7 +211,7 @@
                                     <label for="lname" class="col-md-4 col-form-label text-md-right">Last name: </label>
                                     <div class="col-md-6">
                                         <input type="text" id="lname" class="form-control" name="lname" required autofocus>
-                                        <span id="lnamee"></span>
+                                        <br><span id="lnamee"></span>
                                     </div>
                                 </div><br>
                                 
@@ -219,7 +219,7 @@
                                     <label for="age" class="col-md-4 col-form-label text-md-right">Age: </label>
                                     <div class="col-md-6">
                                         <input type="text" id="age" class="form-control" name="age" required autofocus>
-                                        <span id="agee"></span>
+                                        <br><span id="agee"></span>
                                     </div>
                                 </div><br>
 
@@ -260,7 +260,7 @@
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password: </label>
                                     <div class="col-md-6">
                                         <input type="password" id="password" class="form-control" name="password" required>
-                                        <span id="passs"></span>
+                                        <br><span id="passs"></span>
                                     </div>
                                 </div><br>
 
@@ -268,7 +268,7 @@
                                     <label for="conpassword" class="col-md-4 col-form-label text-md-right">Confirm Password: </label>
                                     <div class="col-md-6">
                                         <input type="password" id="conpassword" class="form-control" name="conpassword" required>
-                                        <span id="conpasss"></span>
+                                        <br><span id="conpasss"></span>
                                     </div>
                                 </div><br>
     
@@ -305,99 +305,102 @@ var fname = document.getElementById('fname').value;
 var lname = document.getElementById('lname').value;
 var age = document.getElementById('age').value;
 var password = document.getElementById('password').value;
-var conpass = document.getElementById('conpassword').value;
-//username
-if (user== "")
+var conpassword = document.getElementById('conpassword').value;
+//fname
+if (fname== "")
 {
-document.getElementById('userr').innerHTML="Username can't
-be empty";
+document.getElementById('fnamee').innerHTML="Enter your first name";
 return false;
 }
-if (user.length<5)
+if (fname.length<2)
 {
-document.getElementById('userr').innerHTML="Username should
-be more than 5 characters";
+document.getElementById('fnamee').innerHTML="First name should be more than 2 characters";
 return false;
 }
 else{
-document.getElementById('userr').innerHTML="";
+document.getElementById('fnamee').innerHTML="";
 }
+//lname
+if (lname== "")
+{
+document.getElementById('lnamee').innerHTML="Enter your last name";
+return false;
+}
+else{
+document.getElementById('lnamee').innerHTML="";
+}
+//age
+if (age== "")
+{
+document.getElementById('agee').innerHTML="Enter your age";
+return false;
+}
+if (age.length>3)
+{
+document.getElementById('agee').innerHTML="Enter a valid age";
+return false;
+}
+if (age.search(/[A-Z]/)!=-1)
+{
+document.getElementById('agee').innerHTML="Age should only contain integer value";
+return false;
+}
+if (age.search(/[a-z]/)!=-1)
+{
+    document.getElementById('agee').innerHTML="Age should only contain integer value";
+return false;
+}
+if (age.search(/[@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.]/)!=-1)
+{
+    document.getElementById('agee').innerHTML="Age should only contain integer value";
+return false;
+}
+else{
+document.getElementById('agee').innerHTML="";
+}
+
 //password
-if (pass == "")
+if (password == "")
 {
-document.getElementById('passs').innerHTML="Password can't
-be empty";
+document.getElementById('passs').innerHTML="Password can't be empty";
 return false;
 }
-if (pass.length<8)
+if (password.length<8)
 {
-document.getElementById('passs').innerHTML="Password should
-be more than 8 characters";
+document.getElementById('passs').innerHTML="Password should be more than 8 characters";
 return false;
 }
-if (pass.search(/[0-9]/)==-1)
+if (password.search(/[0-9]/)==-1)
 {
-document.getElementById('passs').innerHTML="Password should
-contain atleast 1 number";
+document.getElementById('passs').innerHTML="Password should contain atleast 1 number";
 return false;
 }
-if (pass.search(/[a-z]/)==-1)
+if (password.search(/[a-z]/)==-1)
 {
-document.getElementById('passs').innerHTML="Password should
-contain atleast 1 lowercase character";
+document.getElementById('passs').innerHTML="Password should contain atleast 1 lowercase character";
 return false;
 }
-if (pass.search(/[A-Z]/)==-1)
+if (password.search(/[A-Z]/)==-1)
 {
-document.getElementById('passs').innerHTML="Password should
-contain atleast 1 uppercase character";
+document.getElementById('passs').innerHTML="Password should contain atleast 1 uppercase character";
 return false;
 }
-if (pass.search(/[@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.]/)==-1)
+if (password.search(/[@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.\#\,\*]/)==-1)
 {
-document.getElementById('passs').innerHTML="Password should
-contain atleast 1 special character";
+document.getElementById('passs').innerHTML="Password should contain atleast 1 special character";
 return false;
 }
-if (pass.search(/[#\,\*]/) != -1)
-{
-document.getElementById('passs').innerHTML="Password can't
-contain # , * ";
-return false; }
 else{
 document.getElementById('passs').innerHTML="";
 }
 //confirm password
-if (conpass != pass)
+if (conpassword != password)
 {
-document.getElementById('conpasss').innerHTML="Password
-isn't matching";
+document.getElementById('conpasss').innerHTML="Password isn't matching";
 return false;
 }
 else{
-document.getElementById('conpasss').innerHTML="";
-}
-//mobile
-if (mobile == "")
-{
-document.getElementById('mobilee').innerHTML="Mobile no.
-can't be empty";
-return false;
-}
-if (mobile.length<10)
-{
-document.getElementById('mobilee').innerHTML="Mobile no.
-can't be less than 10 digits";
-return false;
-}
-if (mobile.length>10)
-{
-document.getElementById('mobilee').innerHTML="Mobile no.
-can't be more than 10 digits";
-return false;
-}
-else{
-alert("Submitted successfully...!");
+    document.getElementById('conpasss').innerHTML="";
 }
 }
 </script>
