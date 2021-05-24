@@ -1,6 +1,6 @@
 <?php
    
-   define('DB_HOST','localhost');
+   define('DB_HOST','localhost: 3307');
    define('DB_NAME','qwellbeing');
    define('DB_USERNAME','root');
    define('DB_PASSWORD','root');
