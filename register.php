@@ -7,13 +7,13 @@
         
         include 'connect.php ';
         
-        // $first_name = $_POST["fname"]; 
+       
         $first_name = mysqli_real_escape_string($conn,strip_tags($_POST["fname"]));
-        // $last_name = $_POST["lname"]; 
+        
         $last_name = mysqli_real_escape_string($conn, strip_tags($_POST["lname"]));
         $age =   $_POST["age"]; 
         $gender = $_POST["gender"]; 
-        // $email_address = $_POST["email-address"]; 
+       
         $email_address = mysqli_real_escape_string($conn, strip_tags($_POST["email-address"]));
         $password = $_POST["password"]; 
         $conpassword = $_POST["conpassword"];
@@ -35,7 +35,11 @@
 
         //invalid email format
         else if(!filter_var($email_address, FILTER_VALIDATE_EMAIL)){
-            echo "Invalid email format";
+            echo "<script>
+            alert('Invalid email format');
+            window.location.href='./register.php';
+        </script>";
+            
         } 
         else{
             $sql = "Select * from patients where email_address='$email_address'";

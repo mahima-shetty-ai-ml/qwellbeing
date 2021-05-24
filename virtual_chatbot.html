@@ -168,7 +168,7 @@
                                         <div data-conv-case="below90">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
                                             <select name="doctor_consultancy" data-conv-question="Would you like to consult doctor?" >
-                                                <option value="yes" data-callback="login">Yes</option>
+                                                <option value="yes" data-callback="DoctorContact">Yes</option>
 	                                            <option value="no">No</option>
                                             </select>
 
@@ -176,7 +176,7 @@
                                         <div data-conv-case="90-94">
                                             <input type="text" data-conv-question="Your health is our utmost priority. Consulting a doctor would help to get proper guidance" data-no-answer="true">
                                             <select name="doctor_consultancy" data-conv-question="Would you like to consult doctor?" >
-                                                <option value="yes" data-callback="login">Yes</option>
+                                                <option value="yes" data-callback="DoctorContact">Yes</option>
 	                                            <option value="no">No</option>
                                             </select>
 
@@ -370,7 +370,7 @@
 	<script>
 		
         function login(stateWrapper, ready) {
-			window.open("login.html");
+			window.open("login.php");
 			ready();
 		}
         function index_page(stateWrapper, ready) {
@@ -378,7 +378,7 @@
 			ready();
 		}
         function DoctorContact(stateWrapper, ready) {
-			window.open("DoctorContact.html");
+			window.open("doctors.html");
 			ready();
 		}
         
