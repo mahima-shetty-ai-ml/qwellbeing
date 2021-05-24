@@ -197,11 +197,12 @@
                     <div class="card">
                         <div class="card-header">Register</div>
                         <div class="card-body">
-                            <form action="register.php" method="POST">
+                            <form action="register.php" method="POST" onsubmit="return validation()>
                             <div class="form-group row">
                                     <label for="fname" class="col-md-4 col-form-label text-md-right">First name: </label>
                                     <div class="col-md-6">
                                         <input type="text" id="fname" class="form-control" name="fname" required autofocus>
+                                        <span id="fnamee"></span>
                                     </div>
                                 </div><br>
                                 
@@ -210,6 +211,7 @@
                                     <label for="lname" class="col-md-4 col-form-label text-md-right">Last name: </label>
                                     <div class="col-md-6">
                                         <input type="text" id="lname" class="form-control" name="lname" required autofocus>
+                                        <span id="lnamee"></span>
                                     </div>
                                 </div><br>
                                 
@@ -217,6 +219,7 @@
                                     <label for="age" class="col-md-4 col-form-label text-md-right">Age: </label>
                                     <div class="col-md-6">
                                         <input type="text" id="age" class="form-control" name="age" required autofocus>
+                                        <span id="agee"></span>
                                     </div>
                                 </div><br>
 
@@ -248,7 +251,7 @@
                                 <div class="form-group row">
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">E-mail address: </label>
                                     <div class="col-md-6">
-                                        <input type="text" id="email_address" class="form-control" name="email-address" required autofocus>
+                                        <input type="email" id="email_address" class="form-control" name="email-address" required autofocus>
                                     </div>
                                 </div><br>
                                 
@@ -257,6 +260,7 @@
                                     <label for="password" class="col-md-4 col-form-label text-md-right">Password: </label>
                                     <div class="col-md-6">
                                         <input type="password" id="password" class="form-control" name="password" required>
+                                        <span id="passs"></span>
                                     </div>
                                 </div><br>
 
@@ -264,6 +268,7 @@
                                     <label for="conpassword" class="col-md-4 col-form-label text-md-right">Confirm Password: </label>
                                     <div class="col-md-6">
                                         <input type="password" id="conpassword" class="form-control" name="conpassword" required>
+                                        <span id="conpasss"></span>
                                     </div>
                                 </div><br>
     
@@ -293,7 +298,109 @@
     </main>
 </section>
 
-
+<script>
+    function validation()
+{
+var fname = document.getElementById('fname').value;
+var lname = document.getElementById('lname').value;
+var age = document.getElementById('age').value;
+var password = document.getElementById('password').value;
+var conpass = document.getElementById('conpassword').value;
+//username
+if (user== "")
+{
+document.getElementById('userr').innerHTML="Username can't
+be empty";
+return false;
+}
+if (user.length<5)
+{
+document.getElementById('userr').innerHTML="Username should
+be more than 5 characters";
+return false;
+}
+else{
+document.getElementById('userr').innerHTML="";
+}
+//password
+if (pass == "")
+{
+document.getElementById('passs').innerHTML="Password can't
+be empty";
+return false;
+}
+if (pass.length<8)
+{
+document.getElementById('passs').innerHTML="Password should
+be more than 8 characters";
+return false;
+}
+if (pass.search(/[0-9]/)==-1)
+{
+document.getElementById('passs').innerHTML="Password should
+contain atleast 1 number";
+return false;
+}
+if (pass.search(/[a-z]/)==-1)
+{
+document.getElementById('passs').innerHTML="Password should
+contain atleast 1 lowercase character";
+return false;
+}
+if (pass.search(/[A-Z]/)==-1)
+{
+document.getElementById('passs').innerHTML="Password should
+contain atleast 1 uppercase character";
+return false;
+}
+if (pass.search(/[@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.]/)==-1)
+{
+document.getElementById('passs').innerHTML="Password should
+contain atleast 1 special character";
+return false;
+}
+if (pass.search(/[#\,\*]/) != -1)
+{
+document.getElementById('passs').innerHTML="Password can't
+contain # , * ";
+return false; }
+else{
+document.getElementById('passs').innerHTML="";
+}
+//confirm password
+if (conpass != pass)
+{
+document.getElementById('conpasss').innerHTML="Password
+isn't matching";
+return false;
+}
+else{
+document.getElementById('conpasss').innerHTML="";
+}
+//mobile
+if (mobile == "")
+{
+document.getElementById('mobilee').innerHTML="Mobile no.
+can't be empty";
+return false;
+}
+if (mobile.length<10)
+{
+document.getElementById('mobilee').innerHTML="Mobile no.
+can't be less than 10 digits";
+return false;
+}
+if (mobile.length>10)
+{
+document.getElementById('mobilee').innerHTML="Mobile no.
+can't be more than 10 digits";
+return false;
+}
+else{
+alert("Submitted successfully...!");
+}
+}
+</script>
 
 </body>
 </html>
