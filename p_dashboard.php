@@ -369,7 +369,10 @@
                   <tr>
                     <th scope="row">Breathing Problem</th>
                     <?php
-                      while ($row = mysqli_fetch_assoc($result4)) {
+                      
+                      $count = mysqli_num_rows($result4); 
+                  
+                      while ($row = mysqli_fetch_assoc($result4) ) {
                     ?>
                     <td> 
                       <?php
@@ -378,7 +381,19 @@
                     </td>
                     <?php
                      }//end of while
-                        // } end of if post
+                     if($count <14){
+                      for ($i=$count;$i<14;$i++){
+                        ?>
+                          <td> 
+                            <?php
+                              echo " \t--";
+                            ?>
+                          </td>
+
+                        <?php
+                      }//end of for loop $i
+
+                     }//end of if
                     ?>
                   </tr>
                   <tr>
@@ -394,6 +409,20 @@
                       </td>
                       <?php
                         }//end of while
+                        if($count <14){
+                          for ($i=$count;$i<14;$i++){
+                            ?>
+                              <td> 
+                                <?php
+                                  echo " \t--";
+                                ?>
+                              </td>
+    
+                            <?php
+                          }//end of for loop $i
+    
+                         }//end of if
+                        
                         // } end of if post
                       ?>
                   </tr>
@@ -410,6 +439,20 @@
                       </td>
                       <?php
                         }//end of while
+                        if($count <14){
+                          for ($i=$count;$i<14;$i++){
+                            ?>
+                              <td> 
+                                <?php
+                                  echo " \t--";
+                                ?>
+                              </td>
+    
+                            <?php
+                          }//end of for loop $i
+    
+                         }//end of if
+                        
                         // } end of if post
                       ?>
                   </tr>
@@ -426,6 +469,20 @@
                     </td>
                     <?php
                     }//end of while
+                    if($count <14){
+                      for ($i=$count;$i<14;$i++){
+                        ?>
+                          <td> 
+                            <?php
+                              echo " \t--";
+                            ?>
+                          </td>
+
+                        <?php
+                      }//end of for loop $i
+
+                     }//end of if
+                    
                         // } end of if post
                     ?>
                   </tr>
@@ -442,6 +499,20 @@
                   </td>
                   <?php
                     }//end of while
+                    if($count <14){
+                      for ($i=$count;$i<14;$i++){
+                        ?>
+                          <td> 
+                            <?php
+                              echo " \t--";
+                            ?>
+                          </td>
+
+                        <?php
+                      }//end of for loop $i
+
+                     }//end of if
+                    
                         // } end of if post
                   ?>
                 </tr>
@@ -458,6 +529,20 @@
                   </td>
                   <?php
                     }//end of while
+                    if($count <14){
+                      for ($i=$count;$i<14;$i++){
+                        ?>
+                          <td> 
+                            <?php
+                              echo " \t--";
+                            ?>
+                          </td>
+
+                        <?php
+                      }//end of for loop $i
+
+                     }//end of if
+                    
                         // } end of if post
                   ?>
                 </tr>
@@ -474,6 +559,20 @@
                   </td>
                   <?php
                     }//end of while
+                    if($count <14){
+                      for ($i=$count;$i<14;$i++){
+                        ?>
+                          <td> 
+                            <?php
+                              echo " \t--";
+                            ?>
+                          </td>
+
+                        <?php
+                      }//end of for loop $i
+
+                     }//end of if
+                    
                         // } end of if post
                   ?>
                 </tr>
@@ -490,6 +589,20 @@
                   </td>
                   <?php
                     }//end of while
+                    if($count <14){
+                      for ($i=$count;$i<14;$i++){
+                        ?>
+                          <td> 
+                            <?php
+                              echo " \t--";
+                            ?>
+                          </td>
+
+                        <?php
+                      }//end of for loop $i
+
+                     }//end of if
+                    
                         // } end of if post
                   ?>
                 </tr>
@@ -506,6 +619,20 @@
                   </td>
                   <?php
                     }//end of while
+                    if($count <14){
+                      for ($i=$count;$i<14;$i++){
+                        ?>
+                          <td> 
+                            <?php
+                              echo " \t--";
+                            ?>
+                          </td>
+
+                        <?php
+                      }//end of for loop $i
+
+                     }//end of if
+                    
                         // } end of if post
                   ?>
                 </tr>
@@ -522,6 +649,20 @@
                   </td>
                   <?php
                     }//end of while
+                    if($count <14){
+                      for ($i=$count;$i<14;$i++){
+                        ?>
+                          <td> 
+                            <?php
+                              echo " \t--";
+                            ?>
+                          </td>
+
+                        <?php
+                      }//end of for loop $i
+
+                     }//end of if
+                    
                         // } end of if post
                   ?>
                 </tr>
