@@ -319,12 +319,12 @@
 <!--end of Navbar-->
 <!--dashboard-->
 <section style="margin: 20px;">
-  <div class="row" >
+  <div class="row"  id = "report" >
   <div class="col-md-12 text-right mb-3" style="float: right;">
   <button style="margin:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactDoc">Contact a Doctor</button>
   <button style="margin:10px;"  class="btn btn-primary" id="download"> Download your report </button>
     </div>
-    <div id = "report">
+    <div>
       <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="padding: 10px;">
         <div class="card" id="card1">
           <div class="card-header" >
@@ -530,8 +530,8 @@
           </div>
         </div>
       </div>
-                  </div></div>
-
+      </div>
+      </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div class="card" id="card2">
         <div class="card-body" style="margin: 0px; padding: 3%;">
@@ -653,6 +653,7 @@
         </div>
       </div>
     </div>
+    
     <div class="col-sm-12 col-xs-12 col-md-12 col-lg-6 col-xl-6" style="padding: 10px;">
       <div  class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12" >
       <div class="card mb-3">
@@ -688,6 +689,7 @@
         </div>
       </div></div>
     </div>
+    
   
   </div>
   </div></div>
